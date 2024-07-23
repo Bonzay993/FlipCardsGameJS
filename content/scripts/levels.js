@@ -12,12 +12,13 @@ document.querySelector(".start-game").addEventListener('click', function(){
     const titleParagraphText = document.createTextNode("Come back soon!")
     titleParagraph.appendChild(titleParagraphText);
 
-    const element=document.querySelector(".title");
+    const element=document.querySelector(".title")
     titleParagraph.style.cssText=
     `
     text-align:center;
     margin-top:50px;
     margin-bottom:50px;
+    font-size:150%;
     
     `
     element.appendChild(titleParagraph);

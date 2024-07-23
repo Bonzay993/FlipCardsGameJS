@@ -1,7 +1,14 @@
+/**
+ * Putting a timeout so that the background loads
+ *
+ */
+
+
 
 /**
  * SETTING THE MENU AUDIO TOGGLE FOR MUSIC
  */
+
 
 let isAudioPlayed = false;
 
