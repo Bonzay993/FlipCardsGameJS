@@ -1,0 +1,48 @@
+body {
+    height:50rem;
+    width:100rem;
+    margin:0 auto;
+    padding:0;
+    background-color: rgb(16, 15, 15);
+    color:white;
+    display:flex;
+    justify-content: center;
+    flex-flow: column wrap;
+    padding-top:5%;
+}
+
+.game-container{
+    height:80%;
+    width: 80%;
+    border:1px solid rgb(254, 0, 0);
+    margin:0 auto;
+    background-color: aliceblue;
+    margin:0 auto;
+    display:flex;
+    flex-flow:column wrap;
+    justify-content: center;
+    align-content:center;
+    gap:1%;
+    
+}
+
+.menu-btn{
+    width:40%;
+    height:10%;
+}
+
+.menu-btn:hover{
+    cursor: pointer;
+}
+
+.grid {
+    width:300px;
+    height:300px;
+}
+
+.version{
+    margin:0 auto;
+    display:flex;
+    justify-content: center;
+    padding-top:5%
+}
