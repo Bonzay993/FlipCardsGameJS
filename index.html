@@ -10,15 +10,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="prevent-select">
    
-    <div class="game-container">
+    <div class="menu-container">
         <div class="title">
             <h3 class="title-heading">CARD FLIPPER <i class="fa-brands fa-square-js"></i></h3>
         </div>
         <div class="button-wrapper">
-            <button class="start-game menu-btn btn-grad">Start Game</button>
-            <button class="music-on-off menu-btn btn-grad">Music:<span class="on-off">On</span></button>
+            
+            <button class="start-game menu-btn ">Start Game</button>
+            <button class="music-on-off menu-btn ">Music:<span class="on-off">On</span></button>
+        
         </div>
         <div class="version-game-container">
             <p class="version-paragraph">v. ALPHA 1.10</p>
@@ -34,6 +36,12 @@
     <audio class="menu-audio">
         <source src="./content/sound/menu.mp3">
     </audio>
+
+<!--LEVEL 1--------------------------------------------------->
+    
+    <section class="level1">
+
+    </section>
     
     
     <footer class="version">
@@ -43,6 +51,7 @@
    
     <script src="./content/scripts/menu.js"></script>
     <script src="./content/scripts/sound.js"></script>
+    <script src="./content/scripts/levels.js"></script>
     
     
 </body>

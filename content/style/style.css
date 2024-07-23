@@ -2,6 +2,11 @@
     font-family: Montserrat;
     padding:0;
     margin:0 auto;
+    .prevent-select {
+        -webkit-user-select: none; /* Safari */
+        -ms-user-select: none; /* IE 10 and IE 11 */
+        user-select: none; /* Standard syntax */
+      }
 }
 
 
@@ -69,7 +74,7 @@ body {
     padding-bottom:30px;
 }
 
-.game-container{
+.menu-container{
     height:80%;
     width: 80%;
     margin:0 auto;
@@ -146,3 +151,5 @@ body {
     color:white;
     text-shadow: 1px 1px 1px black;
 }
+
+
