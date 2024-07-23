@@ -9,5 +9,10 @@ const gameSounds = [
     {
         name:"button-on-click",
         path:'./content/sound/menu-btn-onclick.mp3'
+    },
+
+    {
+        name: "menu-sound",
+        path: ".content/sound/menu-btn-hover"
     }
 ]
