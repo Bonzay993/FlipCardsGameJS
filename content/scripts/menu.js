@@ -1,15 +1,21 @@
 /**
- * Putting a timeout so that the background loads
+ * RUNNING THE GAME
  *
  */
 
+document.addEventListener("DOMContentLoaded", function(){
+    menuBtnHover();
+    playMenuAudio();
+    menuPop();
+    // Set the initial state of the button and audio. 
+    document.querySelector(".music-on-off").onclick = toggleAudio;
+    document.querySelector(".start-game").onclick = menuBtnOnClick(); levelOne(); //TRIGGER THE LEVEL 1 START
+});
 
 
 /**
  * SETTING THE MENU AUDIO TOGGLE FOR MUSIC
  */
-
-
 let isAudioPlayed = false;
 
 function playMenuAudio() {
@@ -26,12 +32,11 @@ function stopMenuAudio() {
     menuAudio.loop = false;
 }
 
+
 function toggleAudio() {
     // Play the button click sound
     menuBtnOnClick();
     
-   
-
     // Toggle the audio state
     let musicButton = document.querySelector(".on-off");
     if (musicButton.innerText === "Off") {
@@ -58,34 +63,31 @@ function menuBtnHover(){
 
 }
 
-// Set the initial state of the button and audio
-document.querySelector(".music-on-off").onclick = toggleAudio;
-document.querySelector(".start-game").onclick = menuBtnOnClick;
-
-menuBtnHover();
-playMenuAudio();
 
 //POPUP
 
-window.addEventListener("load", function(){
-    setTimeout(
-        function open(event){
-            document.querySelector(".popup").style.display = "block";
-        },
-        200
-    )
-
-})
-
-document.querySelector("#close").addEventListener("click", function(){
-    document.querySelector(".popup").style.display = "none";
-    playMenuAudio();
-});
-
- document.querySelector("#close-link").addEventListener("click", function(){
-    document.querySelector(".popup").style.display = "none";
-    playMenuAudio();
-});
+function menuPop(){
+    window.addEventListener("load", function(){
+        setTimeout(
+            function open(event){
+                document.querySelector(".popup").style.display = "block";
+            },
+            200
+        )
+    
+    })
+    
+    document.querySelector("#close").addEventListener("click", function(){
+        document.querySelector(".popup").style.display = "none";
+        playMenuAudio();
+    });
+    
+     document.querySelector("#close-link").addEventListener("click", function(){
+        document.querySelector(".popup").style.display = "none";
+        playMenuAudio();
+    });
+    
+}
 
 
 

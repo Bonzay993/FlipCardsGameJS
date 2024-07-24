@@ -38,7 +38,7 @@ body {
     display:none;
 }
 
-#close{
+#close , #close-level1{
     display:block;
     margin: 0 0 20px auto;
     background-color: transparent;
@@ -153,4 +153,45 @@ body {
     text-shadow: 1px 1px 1px black;
 }
 
+
+/*level 1*/
+
+.popup-level1{
+    background-color: #ffffff;
+    width:450px;
+    height:320px;
+    padding:20px 20px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left:50%;
+    top:50%;
+    border-radius: 15px;
+    color:black;
+    display:none;
+}
+
+.popup-level1 p{
+    font-size: 20px;
+    text-align: center;
+    margin: 20px 0;
+    padding-top:30px;
+    padding-bottom:30px;
+}
+
+.popup-level1 a{
+    display:block;
+    width:150px;
+    position: relative;
+    margin:auto;
+    text-align:center;
+    background-color:  #0f72e5;
+    color: #ffffff;
+    text-decoration: none;
+    padding:5px 0;
+    cursor: pointer;
+}
+
+.popup-level1 h1 {
+    text-align:center;
+}
 
