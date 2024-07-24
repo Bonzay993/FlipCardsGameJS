@@ -2,11 +2,13 @@
     font-family: Montserrat;
     padding:0;
     margin:0 auto;
-    .prevent-select {
-        -webkit-user-select: none; /* Safari */
-        -ms-user-select: none; /* IE 10 and IE 11 */
-        user-select: none; /* Standard syntax */
-      }
+    
+}
+
+.prevent-select {
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 }
 
 
@@ -160,6 +162,7 @@ body {
     flex-flow:row wrap;
     gap:40px;
     justify-content: space-between;
+    display:none;
 }
 
 .game-music-btn{

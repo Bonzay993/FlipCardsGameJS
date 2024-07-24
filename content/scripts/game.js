@@ -57,3 +57,18 @@ function levelOnePop(){
     
 }
 
+//GENERAL GAME SOUND 
+
+//Sound effect for when matching cards
+function successMatchAudio(){
+    const successAudio = new Audio('./content/sound/successmatch.mp3')
+   successAudio.play();
+}
+
+//Sound effect for when not matching cards
+function failedMatchAudio(){
+    const failedAudio = new Audio('./content/sound/failedmatch.mp3')
+    failedAudio.play();
+}
+
+
