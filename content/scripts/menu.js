@@ -50,6 +50,23 @@ function toggleAudio() {
     }
 }
 
+function toggleAudioIngame() {
+    // Play the button click sound
+    menuBtnOnClick();
+    
+    // Toggle the audio state
+    let musicButton = document.querySelector(".ingame-on-off");
+    if (musicButton.innerText === "Off") {
+        document.querySelector(".ingame-on-off").innerText = "On";
+        playMenuAudio();
+        
+    } else {
+        document.querySelector(".ingame-on-off").innerText = "Off";
+        stopMenuAudio();
+        
+    }
+}
+
 function menuBtnOnClick(){
     const menuBtnClick = new Audio('./content/sound/menu-btn-onclick.mp3')
     menuBtnClick.play();
@@ -64,30 +81,6 @@ function menuBtnHover(){
 }
 
 
-//POPUP
-
-function menuPop(){
-    window.addEventListener("load", function(){
-        setTimeout(
-            function open(event){
-                document.querySelector(".popup").style.display = "block";
-            },
-            200
-        )
-    
-    })
-    
-    document.querySelector("#close").addEventListener("click", function(){
-        document.querySelector(".popup").style.display = "none";
-        playMenuAudio();
-    });
-    
-     document.querySelector("#close-link").addEventListener("click", function(){
-        document.querySelector(".popup").style.display = "none";
-        playMenuAudio();
-    });
-    
-}
 
 
 

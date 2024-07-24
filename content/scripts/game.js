@@ -1,3 +1,29 @@
+// Menu POPUP
+
+function menuPop(){
+    window.addEventListener("load", function(){
+        setTimeout(
+            function open(event){
+                document.querySelector(".popup").style.display = "block";
+            },
+            200
+        )
+    
+    })
+    
+    document.querySelector("#close").addEventListener("click", function(){
+        document.querySelector(".popup").style.display = "none";
+        playMenuAudio();
+    });
+    
+     document.querySelector("#close-link").addEventListener("click", function(){
+        document.querySelector(".popup").style.display = "none";
+        playMenuAudio();
+    });
+    
+}
+
+
 /**
  * First level tutorial popup .Removed the Window Onload because
  * the page is already loaded at this point
