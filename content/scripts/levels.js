@@ -32,7 +32,7 @@ function levelOneBoard(){
     
     for ( let i = 0; i < 12; i++ ) {
        const card = document.createElement("img")
-        card.setAttribute('src', '/content/img/card-back.png');
+        card.setAttribute('src', "/content/img/card-back.png");
         card.setAttribute('data-id', i)
         card.addEventListener('click', flipCard)
         gameGrid.appendChild(card);
@@ -48,19 +48,19 @@ function levelOneBoard(){
         
        if (optionOneid == optionTwoid){
             successMatchAudio();
-            cards[optionOneid].setAttribute('src', '/content/img/empty-card.png');
-            cards[optionTwoid].setAttribute('src', '/content/img/empty-card.png');
+            cards[optionOneid].setAttribute('src', "./content/img/empty-card.png");
+            cards[optionTwoid].setAttribute('src', "./content/img/empty-card.png");
        }    
        else if (cardsChosen[0] === cardsChosen[1]) {
             successMatchAudio();
-            cards[optionOneid].setAttribute('src', '/content/img/empty-card.png');
-            cards[optionTwoid].setAttribute('src', '/content/img/empty-card.png');
+            cards[optionOneid].setAttribute('src', "./content/img/empty-card.png");
+            cards[optionTwoid].setAttribute('src', "./content/img/empty-card.png");
             cards[optionOneid].removeEventListener('click',flipCard);
             cards[optionTwoid].removeEventListener('click',flipCard);
             cardsWon.push(cardsChosen);
         } else {
-            cards[optionOneid].setAttribute('src', '/content/img/card-back.png');
-            cards[optionTwoid].setAttribute('src', '/content/img/card-back.png');
+            cards[optionOneid].setAttribute('src', "./content/img/empty-card.png");
+            cards[optionTwoid].setAttribute('src', "./content/img/empty-card.png");
             failedMatchAudio();
         }
 
