@@ -59,8 +59,8 @@ function levelOneBoard(){
             cards[optionTwoid].removeEventListener('click',flipCard);
             cardsWon.push(cardsChosen);
         } else {
-            cards[optionOneid].setAttribute('src', "./content/img/empty-card.png");
-            cards[optionTwoid].setAttribute('src', "./content/img/empty-card.png");
+            cards[optionOneid].setAttribute('src', "./content/img/card-back.png");
+            cards[optionTwoid].setAttribute('src', "./content/img/card-back.png");
             failedMatchAudio();
         }
 
