@@ -89,7 +89,6 @@ body {
     padding: 20px;
     background-image: url("../img/game-background.png");
     background-size: cover;
-    image-rendering: pixelated;
     border-radius: 15px;
 }
 

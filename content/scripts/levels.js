@@ -30,6 +30,7 @@ function levelOneBoard(){
     let cardsChosen = [];
     let cardsChosenIds = [];
     const cardsWon = [];
+    let isCheckingMatch = false; // Variable to track if checking match
     
     for ( let i = 0; i < 12; i++ ) {
        const card = document.createElement("img")
@@ -37,6 +38,18 @@ function levelOneBoard(){
         card.setAttribute('data-id', i)
         card.addEventListener('click', flipCard)
         gameGrid.appendChild(card);
+    }
+
+    // Disable all card clicks
+    function disableCards() {
+        const cards = document.querySelectorAll('.game-grid img');
+        cards.forEach(card => card.removeEventListener('click', flipCard));
+    }
+
+    // Enable all card clicks
+    function enableCards() {
+        const cards = document.querySelectorAll('.game-grid img');
+        cards.forEach(card => card.addEventListener('click', flipCard));
     }
 
     
@@ -68,22 +81,23 @@ function levelOneBoard(){
         result.textContent = cardsWon.length
         cardsChosen = [];
         cardsChosenIds = [];
-
-        /*if (cardsWon.length === cardArray.length /2) {
-            result.textContent = "Congratulations you found them all"
-        }*/
+        isCheckingMatch = false; // Reset the checking match flag
+        enableCards(); // Re-enable card clicks
     }
 
     
     
     function flipCard(){
+        if (isCheckingMatch) return; // Prevent flipping if checking match
         let cardId = this.getAttribute('data-id');
         cardsChosen.push(gameAssetsLevel13[cardId].name);
         cardsChosenIds.push(cardId);
-        console.log(cardsChosen);
+
         this.setAttribute('src', gameAssetsLevel13[cardId].path)
 
         if (cardsChosen.length === 2 ) {
+            isCheckingMatch = true; // Set the checking match flag
+            disableCards(); // Disable card clicks
             setTimeout(checkMatch, 500)
         }
     }
