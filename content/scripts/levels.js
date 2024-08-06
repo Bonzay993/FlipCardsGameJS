@@ -4,6 +4,7 @@
 
 //Loading the assets
 function levelOne(){
+    levelOneBoard()
     
     document.querySelector(".start-game").addEventListener('click', function(){
 
@@ -15,7 +16,7 @@ function levelOne(){
         document.querySelector(".game-area-wrapper").style.display = "flex";
        
         levelOnePop(); // calling the popup message for the level 1
-        levelOneBoard();
+        
     });
     
 }
