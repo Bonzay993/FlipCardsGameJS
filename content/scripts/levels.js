@@ -10,6 +10,7 @@ function levelOne(){
 
         document.querySelector(".button-wrapper").style.display = "none"
         document.querySelector(".menu-container").style["background-image"] = 'url("content/img/level1-background.png")'
+        document.querySelector(".menu-container").style.height = "auto"
         document.querySelector(".title-heading").innerHTML = 'Level 1';
         document.querySelector(".game-music-btn").style.display = "block";
         document.querySelector(".score").style.display = "block";
@@ -21,12 +22,15 @@ function levelOne(){
     
 }
 
+const cardBack = document.querySelector('')
+
 
 function levelOneBoard(){
     gameAssetsLevel13.sort(() => 0.5 - Math.random()) //made the array shuffle random   
     const gameGrid = document.querySelector('.game-grid');
     const result = document.querySelector('.score-value');
     gameGrid.style.display = 'flex';
+
     let cardsChosen = [];
     let cardsChosenIds = [];
     const cardsWon = [];
@@ -35,8 +39,10 @@ function levelOneBoard(){
     for ( let i = 0; i < 12; i++ ) {
        const card = document.createElement("img")
         card.setAttribute('src', "content/img/card-back.png");
+        card.setAttribute('draggable',"false")
         card.setAttribute('data-id', i)
         card.addEventListener('click', flipCard)
+        
         gameGrid.appendChild(card);
     }
 
