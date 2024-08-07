@@ -38,8 +38,11 @@ function levelOnePop(){
         );
 
         document.querySelector("#close-level1").addEventListener("click", function(){
+            gameTimer()
             document.querySelector(".popup-level1").style.display = "none";
             document.querySelector('.menu-container').style.filter = 'none';
+            //starts the game timer after clicking GOT IT!
+            
             //removing the blur when user clicks on close
             
         });
@@ -48,13 +51,13 @@ function levelOnePop(){
             document.querySelector(".popup-level1").style.display = "none";
             document.querySelector('.menu-container').style.filter = 'none';
             //removing the blur when user clicks Ok
-            
+            gameTimer()
         });
 
         //setting a blur so that the popout stands out
         document.querySelector('.menu-container').style.filter = 'blur(3px)';
         
-    
+        
 }
 
 //GENERAL GAME SOUND 
@@ -71,4 +74,19 @@ function failedMatchAudio(){
     failedAudio.play();
 }
 
+function gameTimer(){
+    let timerHtml = document.querySelector('.timer');
 
+    //getting current time
+    var count = 10
+    
+    var timer = setInterval(function() {
+        count--
+        timerHtml.textContent = count;
+        if(count == -1){
+            clearInterval(timer);
+            alert('Sorry Game Over')
+        } 
+    }, 1000);
+    
+}
