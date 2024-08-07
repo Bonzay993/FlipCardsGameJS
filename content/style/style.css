@@ -192,8 +192,8 @@ body {
     display: none;
 }
 
-.timer{
-    
+.popup-game-over{
+    display:none;
 }
 
 .version-game-container {

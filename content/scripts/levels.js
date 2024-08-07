@@ -44,6 +44,14 @@ function levelOneBoard(){
     }    
 }
 
+function resetBoard(){
+    const img = document.querySelector('.game-grid img');
+    for ( let i = 0; i < img.length; i++ ) {
+        img[i].parentNode.removeChild(images[i]);
+    }
+}
+
+
  //check if cards are a match
 function checkMatch(){
     const cards = document.querySelectorAll('.game-grid img');
@@ -76,6 +84,7 @@ function checkMatch(){
      isCheckingMatch = false; // Reset the checking match flag
      enableCards(); // Re-enable card clicks
 }
+
 
 
  // Disable all card clicks
