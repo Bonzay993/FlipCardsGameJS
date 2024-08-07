@@ -86,7 +86,9 @@ function gameTimer(){
         timerHtml.textContent = count;
         if(count == -1){
             clearInterval(timer);
+            timerHtml.textContent = '0'
             gameOver();
+            
         } 
     }, 1000);
 
