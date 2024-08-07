@@ -2,9 +2,21 @@
  * LEVEL1;
  */
 
+let cardsChosen = [];
+let cardsChosenIds = [];
+let cardsWon = [];
+let isCheckingMatch = false; // Variable to track if checking match
+
+
+
+
+
+
+
 //Loading the assets
 function levelOne(){
     levelOneBoard()
+    updateHighScore();
     
     document.querySelector(".start-game").addEventListener('click', function(){
 
@@ -23,10 +35,6 @@ function levelOne(){
 }
 
 
-let cardsChosen = [];
-let cardsChosenIds = [];
-let cardsWon = [];
-let isCheckingMatch = false; // Variable to track if checking match
 
 
 function levelOneBoard(){
@@ -78,11 +86,25 @@ function checkMatch(){
          failedMatchAudio();
      }
 
-     document.querySelector('.score-value').textContent = cardsWon.length;
+    document.querySelector('.score-value').textContent = cardsWon.length;
+    updateHighScore(cardsWon.length); // Update high score if necessary
      cardsChosen = [];
      cardsChosenIds = [];
      isCheckingMatch = false; // Reset the checking match flag
      enableCards(); // Re-enable card clicks
+}
+
+// Update the high score if the current score is higher
+function updateHighScore(currentScore) {
+    // Initialize high score from local storage
+    let highScore = localStorage.getItem('highScore') || 0;
+    document.querySelector('.high-score-value').textContent = highScore;
+    
+    if (currentScore > highScore) {
+        highScore = currentScore;
+        localStorage.setItem('highScore', highScore);
+        document.querySelector('.high-score-value').textContent = highScore;
+    }
 }
 
 

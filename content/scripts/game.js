@@ -96,6 +96,10 @@ function gameTimer(){
     
 }
 
+function highScore(){
+    const lastHighScore = parseFloat(localStorage.score)
+}
+
 function gameOver(){
     let popup = document.querySelector('.popup-game-over')
     popup.style.display= 'block';
