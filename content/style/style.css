@@ -152,8 +152,8 @@ body {
 .game-area-wrapper {
     display: none;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+    justify-content: space-between;
+    gap: 10px;
     width: 100%;
     padding: 20px;
 }
@@ -188,8 +188,12 @@ body {
 }
 
 .score {
-    font-size: 2rem;
+    font-size: 1.6rem;
     display: none;
+    width:10rem;
+    
+    
+    
 }
 
 .high-score-paragraph{
