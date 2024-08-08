@@ -41,22 +41,29 @@ function levelOnePop(){
             //starts the game timer after clicking GOT IT!
             gameTimer()
             document.querySelector(".popup-level1").style.display = "none";
+             //removing the blur when user clicks on close
             document.querySelector('.menu-container').style.filter = 'none';
             
             
-            //removing the blur when user clicks on close
+           
             
         });
         
         document.querySelector("#close-link-level1").addEventListener("click", function(){
             document.querySelector(".popup-level1").style.display = "none";
-            document.querySelector('.menu-container').style.filter = 'none';
             //removing the blur when user clicks Ok
+            document.querySelector('.menu-container').style.filter = 'none';
+            
             gameTimer()
         });
 
         //setting a blur so that the popout stands out
         document.querySelector('.menu-container').style.filter = 'blur(3px)';
+
+        //start the timer;
+        displayTimer()
+
+        
         
         
 }
@@ -77,6 +84,7 @@ function failedMatchAudio(){
 
 function gameTimer(){
     let timerHtml = document.querySelector('.timer');
+    
 
     //getting current time
     var count = 5
@@ -109,4 +117,40 @@ function gameOver(){
 function restartGame(){
     document.querySelector('.score-value').textContent = '0';
     
+}
+
+function displayTimer(){
+    let timerText = document.querySelector('.timer-text');
+    timerText.style.display ='block'
+}
+
+
+
+ // Disable all card clicks
+
+
+ function disableCards() {
+    const cards = document.querySelectorAll('.game-grid img');
+    cards.forEach(card => card.removeEventListener('click', flipCard));
+}
+
+// Enable all card clicks
+function enableCards() {
+    const cards = document.querySelectorAll('.game-grid img');
+    cards.forEach(card => card.addEventListener('click', flipCard));
+}
+
+function flipCard(){
+    if (isCheckingMatch) return; // Prevent flipping if checking match
+    let cardId = this.getAttribute('data-id');
+    cardsChosen.push(gameAssetsLevel13[cardId].name);
+    cardsChosenIds.push(cardId);
+
+    this.setAttribute('src', gameAssetsLevel13[cardId].path)
+
+    if (cardsChosen.length === 2 ) {
+        isCheckingMatch = true; // Set the checking match flag
+        disableCards(); // Disable card clicks
+        setTimeout(checkMatch, 500)
+    }
 }

@@ -1,6 +1,12 @@
 /**
  * LEVEL1;
  */
+const numberOfCardsLevelOne = 12
+const timerLevelOne = 60;
+
+
+
+
 
 let cardsChosen = [];
 let cardsChosenIds = [];
@@ -8,13 +14,8 @@ let cardsWon = [];
 let isCheckingMatch = false; // Variable to track if checking match
 
 
-
-
-
-
-
 //Loading the assets
-function levelOne(){
+function boardInit(){
     levelOneBoard()
     updateHighScore();
     
@@ -36,13 +37,17 @@ function levelOne(){
 
 
 
-
 function levelOneBoard(){
+    shuffleArray(numberOfCardsLevelOne)
+}
+
+
+function shuffleArray(){
     gameAssetsLevel13.sort(() => 0.5 - Math.random()) //made the array shuffle random   
     const gameGrid = document.querySelector('.game-grid');
     gameGrid.style.display = 'flex';
 
-    for ( let i = 0; i < 12; i++ ) {
+    for ( let i = 0; i < numberOfCardsLevelOne; i++ ) {
        const card = document.createElement("img")
         card.setAttribute('src', "content/img/card-back.png");
         card.setAttribute('draggable',"false")
@@ -109,34 +114,6 @@ function updateHighScore(currentScore) {
 
 
 
- // Disable all card clicks
-
-
- function disableCards() {
-    const cards = document.querySelectorAll('.game-grid img');
-    cards.forEach(card => card.removeEventListener('click', flipCard));
-}
-
-// Enable all card clicks
-function enableCards() {
-    const cards = document.querySelectorAll('.game-grid img');
-    cards.forEach(card => card.addEventListener('click', flipCard));
-}
-
-function flipCard(){
-    if (isCheckingMatch) return; // Prevent flipping if checking match
-    let cardId = this.getAttribute('data-id');
-    cardsChosen.push(gameAssetsLevel13[cardId].name);
-    cardsChosenIds.push(cardId);
-
-    this.setAttribute('src', gameAssetsLevel13[cardId].path)
-
-    if (cardsChosen.length === 2 ) {
-        isCheckingMatch = true; // Set the checking match flag
-        disableCards(); // Disable card clicks
-        setTimeout(checkMatch, 500)
-    }
-}
 
 
 

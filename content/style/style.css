@@ -192,6 +192,15 @@ body {
     display: none;
 }
 
+.high-score-paragraph{
+    font-size: 50%;
+}
+
+.timer-text{
+    display:none;
+    text-align: center;
+}
+
 .popup-game-over{
     display:none;
 }
@@ -211,7 +220,7 @@ body {
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
     .title-heading {
-        font-size: 2rem;
+        font-size: 3rem;
     }
 
     .menu-btn {
@@ -220,7 +229,7 @@ body {
     }
 
     .button-wrapper {
-        width: 100%;
+        width: 50%;
         flex-direction: column;
     }
 }

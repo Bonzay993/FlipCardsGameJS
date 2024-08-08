@@ -61,3 +61,12 @@ const gameAssetsLevel13 = [
     },
 
 ]
+
+
+const backgroundImages = [
+    {
+        name: "level1Bg",
+        path: "./content/img/level1-420kb-background"
+    }
+
+]
