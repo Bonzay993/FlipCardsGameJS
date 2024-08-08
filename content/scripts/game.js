@@ -1,4 +1,28 @@
-// Menu POPUP
+/**
+ * RUNNING THE GAME
+ *
+ */
+
+document.addEventListener("DOMContentLoaded", function(){
+    menuBtnHover();
+    playMenuAudio();
+    menuPop();
+    // Set the initial state of the button and audio. 
+    document.querySelector(".music-on-off").onclick = toggleAudio;
+    document.querySelector(".start-game").onclick = menuBtnOnClick(); boardInit(); //INNITIATE THE BOARD
+});
+
+
+
+/**
+ *  Menu POPUP - The popup that loads first when loading the game.
+ * This is here just so the sound works as the user has to interact with the 
+ * game first in order for the sound to play. The user will interact with either the
+ * Let's play button or the close button
+ * 
+ * This is a change happened in Chrome browser
+ *
+ * */ 
 
 function menuPop(){
     window.addEventListener("load", function(){
@@ -11,9 +35,10 @@ function menuPop(){
     
     })
     
+    //the following set the interaction that triggers the menu audio to play
     document.querySelector("#close").addEventListener("click", function(){
         document.querySelector(".popup").style.display = "none";
-        playMenuAudio();
+        playMenuAudio(); 
     });
     
      document.querySelector("#close-link").addEventListener("click", function(){
@@ -39,7 +64,7 @@ function levelOnePop(){
 
         document.querySelector("#close-level1").addEventListener("click", function(){
             //starts the game timer after clicking GOT IT!
-            gameTimer()
+            
             document.querySelector(".popup-level1").style.display = "none";
              //removing the blur when user clicks on close
             document.querySelector('.menu-container').style.filter = 'none';
@@ -54,7 +79,7 @@ function levelOnePop(){
             //removing the blur when user clicks Ok
             document.querySelector('.menu-container').style.filter = 'none';
             
-            gameTimer()
+            
         });
 
         //setting a blur so that the popout stands out
@@ -68,7 +93,10 @@ function levelOnePop(){
         
 }
 
-//GENERAL GAME SOUND 
+/**
+ *  GENERAL GAME SOUND logic
+ */
+//
 
 //Sound effect for when matching cards
 function successMatchAudio(){
@@ -82,31 +110,53 @@ function failedMatchAudio(){
     failedAudio.play();
 }
 
-function gameTimer(){
+/**
+ * GAME FUNCTIONALITY LOGIC
+ */
+
+
+//Function that sets the timer depeding on the level -- coming soon
+function gameTimer(timer){
+    timer.toString();
     let timerHtml = document.querySelector('.timer');
     
 
-    //getting current time
-    var count = 5
-    
-    var timer = setInterval(function() {
-        count--
-        timerHtml.textContent = count;
-        if(count == -1){
-            clearInterval(timer);
+    var count = setInterval(function() {
+        
+        timerHtml.textContent = timer--;
+        if(timer == -1){
+            clearInterval(count);
             timerHtml.textContent = '0'
             gameOver();
             
         } 
     }, 1000);
 
-    
-    
 }
+
+function displayTimer(){
+    let timerText = document.querySelector('.timer-text');
+    timerText.style.display ='block'
+}
+
 
 function highScore(){
     const lastHighScore = parseFloat(localStorage.score)
 }
+
+// Update the high score if the current score is higher
+function updateHighScore(currentScore) {
+    // Initialize high score from local storage
+    let highScore = localStorage.getItem('highScore') || 0;
+    document.querySelector('.high-score-value').textContent = highScore;
+    
+    if (currentScore > highScore) {
+        highScore = currentScore;
+        localStorage.setItem('highScore', highScore);
+        document.querySelector('.high-score-value').textContent = highScore;
+    }
+}
+
 
 function gameOver(){
     let popup = document.querySelector('.popup-game-over')
@@ -119,38 +169,18 @@ function restartGame(){
     
 }
 
-function displayTimer(){
-    let timerText = document.querySelector('.timer-text');
-    timerText.style.display ='block'
-}
 
 
 
- // Disable all card clicks
+
+ 
 
 
- function disableCards() {
-    const cards = document.querySelectorAll('.game-grid img');
-    cards.forEach(card => card.removeEventListener('click', flipCard));
-}
+//Remaining time
 
-// Enable all card clicks
-function enableCards() {
-    const cards = document.querySelectorAll('.game-grid img');
-    cards.forEach(card => card.addEventListener('click', flipCard));
-}
 
-function flipCard(){
-    if (isCheckingMatch) return; // Prevent flipping if checking match
-    let cardId = this.getAttribute('data-id');
-    cardsChosen.push(gameAssetsLevel13[cardId].name);
-    cardsChosenIds.push(cardId);
+//Level Complete
 
-    this.setAttribute('src', gameAssetsLevel13[cardId].path)
-
-    if (cardsChosen.length === 2 ) {
-        isCheckingMatch = true; // Set the checking match flag
-        disableCards(); // Disable card clicks
-        setTimeout(checkMatch, 500)
-    }
+function levelComplete(){
+    
 }

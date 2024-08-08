@@ -1,3 +1,14 @@
+const generalAssets = [
+    {
+        name: "cardBack",
+        path: "content/img/card-back.png"
+    },
+
+    {
+        name: "emptyCard",
+        path: "content/img/empty-card.png"
+    },
+]
 
 const gameAssetsLevel13 = [
     {
@@ -70,3 +81,12 @@ const backgroundImages = [
     }
 
 ]
+
+
+
+
+// Function to get the path based on the name
+function getGeneralAssets(name) {
+    const asset = generalAssets.find(asset => asset.name === name);
+    return asset ? asset.path : null; // Return the path if found, otherwise return null
+}

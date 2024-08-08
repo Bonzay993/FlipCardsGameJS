@@ -2,16 +2,16 @@
  * LEVEL1;
  */
 const numberOfCardsLevelOne = 12
-const timerLevelOne = 60;
+const timerLevelOne = 30;
 
 
-
-
-
+let isCheckingMatch = false; // Variable to track if checking match
 let cardsChosen = [];
 let cardsChosenIds = [];
 let cardsWon = [];
-let isCheckingMatch = false; // Variable to track if checking match
+
+
+
 
 
 //Loading the assets
@@ -32,14 +32,24 @@ function boardInit(){
         levelOnePop(); // calling the popup message for the level 1
         
     });
-    
-}
 
+    // Add event listener for the "Got it!" button
+    document.getElementById("close-link-level1").addEventListener('click', function() {
+        // Start the game timer
+        gameTimer(timerLevelOne);
+        
+        // Optionally, hide the popup after starting the timer
+        document.querySelector('.popup-level1').style.display = 'none';
+    });
+}
 
 
 function levelOneBoard(){
     shuffleArray(numberOfCardsLevelOne)
+    
+    
 }
+
 
 
 function shuffleArray(){
@@ -76,18 +86,20 @@ function checkMatch(){
          successMatchAudio();
          cards[optionOneid].setAttribute('src', "content/img/empty-card.png");
          cards[optionTwoid].setAttribute('src', "content/img/empty-card.png");
+         
     }    
     
     else if (cardsChosen[0] === cardsChosen[1]) {
          successMatchAudio();
          cards[optionOneid].setAttribute('src', "content/img/empty-card.png");
          cards[optionTwoid].setAttribute('src', "content/img/empty-card.png");
-         cards[optionOneid].removeEventListener('click',flipCard());
-         cards[optionTwoid].removeEventListener('click',flipCard());
+         cards[optionOneid].removeEventListener('click',flipCard);
+         cards[optionTwoid].removeEventListener('click',flipCard);
          cardsWon.push(cardsChosen);
      } else {
          cards[optionOneid].setAttribute('src', "content/img/card-back.png");
          cards[optionTwoid].setAttribute('src', "content/img/card-back.png");
+      
          failedMatchAudio();
      }
 
@@ -96,23 +108,25 @@ function checkMatch(){
      cardsChosen = [];
      cardsChosenIds = [];
      isCheckingMatch = false; // Reset the checking match flag
-     enableCards(); // Re-enable card clicks
+     
+    
 }
 
-// Update the high score if the current score is higher
-function updateHighScore(currentScore) {
-    // Initialize high score from local storage
-    let highScore = localStorage.getItem('highScore') || 0;
-    document.querySelector('.high-score-value').textContent = highScore;
-    
-    if (currentScore > highScore) {
-        highScore = currentScore;
-        localStorage.setItem('highScore', highScore);
-        document.querySelector('.high-score-value').textContent = highScore;
+
+function flipCard(){
+    if (isCheckingMatch) return; // Prevent flipping if checking match
+    let cardId = this.getAttribute('data-id');
+    cardsChosen.push(gameAssetsLevel13[cardId].name);
+    cardsChosenIds.push(cardId);
+
+    this.setAttribute('src', gameAssetsLevel13[cardId].path)
+
+    if (cardsChosen.length === 2 ) {
+        isCheckingMatch = true; // Set the checking match flag
+        
+        setTimeout(checkMatch, 500)
     }
 }
-
-
 
 
 

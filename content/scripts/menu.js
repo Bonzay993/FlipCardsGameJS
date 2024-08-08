@@ -1,16 +1,3 @@
-/**
- * RUNNING THE GAME
- *
- */
-
-document.addEventListener("DOMContentLoaded", function(){
-    menuBtnHover();
-    playMenuAudio();
-    menuPop();
-    // Set the initial state of the button and audio. 
-    document.querySelector(".music-on-off").onclick = toggleAudio;
-    document.querySelector(".start-game").onclick = menuBtnOnClick(); boardInit(); //INNITIATE THE BOARD
-});
 
 
 /**
