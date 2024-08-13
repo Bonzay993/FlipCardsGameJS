@@ -1,5 +1,4 @@
 
-
 /**
  * SETTING THE MENU AUDIO TOGGLE FOR MUSIC
  */
@@ -68,14 +67,20 @@ function menuBtnOnClick(){
 }
 
 //Mouse hover sound function that iterates to each menu btn
+/**
+ * This code checks if the audio is currently playing (!menuBtnClick.paused is true). 
+ * If it is, the code resets the audio to the beginning (menuBtnClick.currentTime = 0) before playing it again. 
+ * This ensures that when you hover over the button multiple times in quick succession, 
+ * the sound restarts instead of overlapping.
+ */
 function menuBtnHover() {
-    const menuBtnClick = new Audio('./content/sound/menu-btn-hover.mp3');
+    const menuBtnClick = new Audio(getSounds('menu-hover-sound'));
     const buttons = document.querySelectorAll(".menu-btn");
 
     buttons.forEach(button => {
         button.addEventListener('mouseover', function() {
             if (!menuBtnClick.paused) {
-                menuBtnClick.currentTime = 0;
+                menuBtnClick.currentTime = 0; //resets to the beginning
             }
             menuBtnClick.play();
         });

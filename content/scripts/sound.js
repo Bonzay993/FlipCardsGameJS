@@ -13,8 +13,19 @@ const gameSounds = [
 
     {
         name: "menu-hover-sound",
-        path: ".content/sound/menu-btn-hover.mp3"
-    }
+        path: "./content/sound/menu-btn-hover.mp3"
+    },
+
+    {
+        name: "succes-match",
+        path: "./content/sound/successmatch.mp3"
+    },
+
+    {
+        name: "failed-match",
+        path: "./content/sound/failedmatch.mp3"
+    },
+
 ]
 
 function getSounds(name) {

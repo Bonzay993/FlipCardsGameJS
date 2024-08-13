@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", gameInit)
 
 
 function gameInit(){
-    
     menuBtnHover();
     playMenuAudio();
     menuPop();
@@ -103,13 +102,13 @@ function levelOnePop(){
 
 //Sound effect for when matching cards
 function successMatchAudio(){
-    const successAudio = new Audio('./content/sound/successmatch.mp3')
+    const successAudio = new Audio(getSounds("succes-match"));
    successAudio.play();
 }
 
 //Sound effect for when not matching cards
 function failedMatchAudio(){
-    const failedAudio = new Audio('./content/sound/failedmatch.mp3')
+    const failedAudio = new Audio(getSounds('failed-match'));
     failedAudio.play();
 }
 
