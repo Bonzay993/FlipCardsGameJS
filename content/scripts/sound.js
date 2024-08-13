@@ -1,4 +1,6 @@
-
+/**
+ * Sound objects
+ */
 
 const gameSounds = [
     {

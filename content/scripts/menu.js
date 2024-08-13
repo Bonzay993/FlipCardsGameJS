@@ -26,41 +26,34 @@ function toggleAudio() {
     // Play the button click sound
     menuBtnOnClick();
     
-    // Toggle the audio state
-    let musicButton = document.querySelector(".on-off");
-    if (musicButton.innerText === "Off") {
-        document.querySelector(".on-off").innerText = "On";
-        playMenuAudio();
-        
-    } else {
-        document.querySelector(".on-off").innerText = "Off";
-        stopMenuAudio();
-        
-    }
-}
-
-
-
-// Sets the audio on /off on the ingame Music button
-function toggleAudioIngame() {
-    // Play the button click sound
-    menuBtnOnClick();
+    // Get all music toggle buttons
+    let musicButtons = document.querySelectorAll(".on-off");
     
-    // Toggle the audio state
-    let musicButton = document.querySelector(".ingame-on-off");
-    if (musicButton.innerText === "Off") {
-        document.querySelector(".ingame-on-off").innerText = "On";
+    // Determine the current state based on the first button
+    let currentState = musicButtons[0].innerText;
+
+    // Toggle the state
+    let newState = currentState === "Off" ? "On" : "Off";
+
+    // Update all buttons to the new state
+    musicButtons.forEach(button => {
+        button.innerText = newState;
+    });
+
+    // Play or stop the music based on the new state
+    if (newState === "On") {
         playMenuAudio();
-        
     } else {
-        document.querySelector(".ingame-on-off").innerText = "Off";
         stopMenuAudio();
-        
     }
 }
 
-//Click sound
 
+
+
+/**
+ * Menu Click Button Sound
+ */
 function menuBtnOnClick(){
     const menuBtnClick = new Audio(getSounds('menu-btn-onclick'));
     menuBtnClick.play();

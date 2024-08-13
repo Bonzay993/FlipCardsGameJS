@@ -1,3 +1,7 @@
+/**
+ * ASSETS
+ */
+
 const generalAssets = [
     {
         name: "cardBack",
@@ -83,9 +87,6 @@ const backgroundImages = [
     }
 
 ]
-
-
-
 
 
 // Function to get the path based on the name

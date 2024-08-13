@@ -1,8 +1,8 @@
 /**
  * LEVEL1;
  */
-const numberOfCardsLevelOne = 12
-const timerLevelOne = 30;
+const numberOfCardsLevelOne = 12   //declare number of cards
+const timerLevelOne = 30;          //declare timer
 
 
 let isCheckingMatch = false; // Variable to track if checking match
@@ -18,6 +18,7 @@ let cardsWon = [];
 function boardInit(){
     levelOneBoard()
     updateHighScore();
+   
     
     document.querySelector(".start-game").addEventListener('click', function(){
 
@@ -30,6 +31,7 @@ function boardInit(){
         document.querySelector(".game-area-wrapper").style.display = "flex";
        
         levelOnePop(); // calling the popup message for the level 1
+        
         
     });
 
@@ -46,10 +48,8 @@ function boardInit(){
 
 function levelOneBoard(){
     shuffleArray(numberOfCardsLevelOne)
-    
-    
-}
 
+}
 
 
 function shuffleArray(){
@@ -67,13 +67,6 @@ function shuffleArray(){
     }    
 }
 
-function resetBoard(){
-    const img = document.querySelector('.game-grid img');
-    for ( let i = 0; i < img.length; i++ ) {
-        img[i].parentNode.removeChild(images[i]);
-    }
-}
-
 
  //check if cards are a match
 function checkMatch(){
@@ -83,14 +76,12 @@ function checkMatch(){
    
      
     if (optionOneid == optionTwoid){
-         successMatchAudio();
+         successMatchAudio();   //plays the success audio file
          cards[optionOneid].setAttribute('src', getGeneralAssets("emptyCard"));
-         cards[optionTwoid].setAttribute('src', getGeneralAssets("emptyCard"));
-         
+         cards[optionTwoid].setAttribute('src', getGeneralAssets("emptyCard")); 
     }    
-    
     else if (cardsChosen[0] === cardsChosen[1]) {
-         successMatchAudio();
+         successMatchAudio();     //plays the success audio file
          cards[optionOneid].setAttribute('src', getGeneralAssets("emptyCard"));
          cards[optionTwoid].setAttribute('src', getGeneralAssets("emptyCard"));
          cards[optionOneid].removeEventListener('click',flipCard);
@@ -99,8 +90,7 @@ function checkMatch(){
      } else {
          cards[optionOneid].setAttribute('src', getGeneralAssets("cardBack"));
          cards[optionTwoid].setAttribute('src', getGeneralAssets("cardBack"));
-      
-         failedMatchAudio();
+         failedMatchAudio();     //plays the faile audio file
      }
 
     document.querySelector('.score-value').textContent = cardsWon.length;
@@ -109,7 +99,6 @@ function checkMatch(){
      cardsChosenIds = [];
      isCheckingMatch = false; // Reset the checking match flag
      
-    
 }
 
 
@@ -124,7 +113,7 @@ function flipCard(){
     if (cardsChosen.length === 2 ) {
         isCheckingMatch = true; // Set the checking match flag
         
-        setTimeout(checkMatch, 500)
+        setTimeout(checkMatch, 500)   //the timer that sets how long the card is shown
     }
 }
 

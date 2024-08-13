@@ -11,8 +11,12 @@ function gameInit(){
     playMenuAudio();
     menuPop();
     // Set the initial state of the button and audio. 
-    document.querySelector(".music-on-off").onclick = toggleAudio;  
-    document.querySelector(".start-game").onclick = menuBtnOnClick(); boardInit() ; //INNITIATE THE BOARD
+    
+    document.querySelector(".start-game").onclick = menuBtnOnClick(); boardInit() ; //INITIATE THE BOARD
+
+    document.querySelectorAll(".music-on-off").forEach(button => {
+        button.addEventListener('click', toggleAudio);
+    });
 
 }
 
@@ -167,8 +171,8 @@ function gameOver(){
 }
 
 function restartGame(){
-    document.querySelector('.score-value').textContent = '0';
-    
+    document.querySelector('.score-value').textContent = '';
+
 }
 
 
