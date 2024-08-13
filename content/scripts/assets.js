@@ -10,6 +10,8 @@ const generalAssets = [
     },
 ]
 
+//Game assets level 1-3 total of 6 assets
+
 const gameAssetsLevel13 = [
     {
         name: "card",
@@ -81,6 +83,7 @@ const backgroundImages = [
     }
 
 ]
+
 
 
 

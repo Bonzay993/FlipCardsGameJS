@@ -3,14 +3,19 @@
  *
  */
 
-document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("DOMContentLoaded", gameInit)
+
+
+function gameInit(){
+    
     menuBtnHover();
     playMenuAudio();
     menuPop();
     // Set the initial state of the button and audio. 
-    document.querySelector(".music-on-off").onclick = toggleAudio;
-    document.querySelector(".start-game").onclick = menuBtnOnClick(); boardInit(); //INNITIATE THE BOARD
-});
+    document.querySelector(".music-on-off").onclick = toggleAudio;  
+    document.querySelector(".start-game").onclick = menuBtnOnClick(); boardInit() ; //INNITIATE THE BOARD
+
+}
 
 
 
@@ -88,8 +93,6 @@ function levelOnePop(){
         //start the timer;
         displayTimer()
 
-        
-        
         
 }
 

@@ -84,21 +84,21 @@ function checkMatch(){
      
     if (optionOneid == optionTwoid){
          successMatchAudio();
-         cards[optionOneid].setAttribute('src', "content/img/empty-card.png");
-         cards[optionTwoid].setAttribute('src', "content/img/empty-card.png");
+         cards[optionOneid].setAttribute('src', getGeneralAssets("emptyCard"));
+         cards[optionTwoid].setAttribute('src', getGeneralAssets("emptyCard"));
          
     }    
     
     else if (cardsChosen[0] === cardsChosen[1]) {
          successMatchAudio();
-         cards[optionOneid].setAttribute('src', "content/img/empty-card.png");
-         cards[optionTwoid].setAttribute('src', "content/img/empty-card.png");
+         cards[optionOneid].setAttribute('src', getGeneralAssets("emptyCard"));
+         cards[optionTwoid].setAttribute('src', getGeneralAssets("emptyCard"));
          cards[optionOneid].removeEventListener('click',flipCard);
          cards[optionTwoid].removeEventListener('click',flipCard);
          cardsWon.push(cardsChosen);
      } else {
-         cards[optionOneid].setAttribute('src', "content/img/card-back.png");
-         cards[optionTwoid].setAttribute('src', "content/img/card-back.png");
+         cards[optionOneid].setAttribute('src', getGeneralAssets("cardBack"));
+         cards[optionTwoid].setAttribute('src', getGeneralAssets("cardBack"));
       
          failedMatchAudio();
      }

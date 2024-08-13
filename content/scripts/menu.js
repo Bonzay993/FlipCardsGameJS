@@ -3,6 +3,7 @@
 /**
  * SETTING THE MENU AUDIO TOGGLE FOR MUSIC
  */
+
 let isAudioPlayed = false;
 
 function playMenuAudio() {
@@ -19,6 +20,8 @@ function stopMenuAudio() {
     menuAudio.loop = false;
 }
 
+
+// Sets the audio on /off on  the main menu
 
 function toggleAudio() {
     // Play the button click sound
@@ -37,6 +40,9 @@ function toggleAudio() {
     }
 }
 
+
+
+// Sets the audio on /off on the ingame Music button
 function toggleAudioIngame() {
     // Play the button click sound
     menuBtnOnClick();
@@ -54,17 +60,26 @@ function toggleAudioIngame() {
     }
 }
 
+//Click sound
+
 function menuBtnOnClick(){
-    const menuBtnClick = new Audio('./content/sound/menu-btn-onclick.mp3')
+    const menuBtnClick = new Audio(getSounds('menu-btn-onclick'));
     menuBtnClick.play();
 }
 
-function menuBtnHover(){
+//Mouse hover sound function that iterates to each menu btn
+function menuBtnHover() {
     const menuBtnClick = new Audio('./content/sound/menu-btn-hover.mp3');
-    document.querySelector(".menu-btn").addEventListener('mouseover', function(){
-        menuBtnClick.play();
-    })
+    const buttons = document.querySelectorAll(".menu-btn");
 
+    buttons.forEach(button => {
+        button.addEventListener('mouseover', function() {
+            if (!menuBtnClick.paused) {
+                menuBtnClick.currentTime = 0;
+            }
+            menuBtnClick.play();
+        });
+    });
 }
 
 
