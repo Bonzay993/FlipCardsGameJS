@@ -73,6 +73,7 @@ function checkMatch(){
     const cards = document.querySelectorAll('.game-grid img');
     const optionOneid = cardsChosenIds[0];
     const optionTwoid = cardsChosenIds[1];
+    const totalPairs = cards.length / 2;  // Calculate total number of pairs
    
      
     if (optionOneid == optionTwoid){
@@ -98,8 +99,16 @@ function checkMatch(){
      cardsChosen = [];
      cardsChosenIds = [];
      isCheckingMatch = false; // Reset the checking match flag
+
+     // Check if all pairs have been matched
+    if (cardsWon.length === totalPairs) {
+        levelComplete(); // Call the function to display the success message
+    }
      
 }
+
+
+
 
 
 function flipCard(){

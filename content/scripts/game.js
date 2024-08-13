@@ -170,6 +170,12 @@ function gameOver(){
     restartGame()
 }
 
+//Level Complete PopUp
+function levelComplete(){
+    let levelCompletePop = document.querySelector(".popup-level-complete");
+    levelCompletePop.style.display = "block";
+}
+
 function restartGame(){
     document.querySelector('.score-value').textContent = '';
 
