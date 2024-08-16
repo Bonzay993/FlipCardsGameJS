@@ -2,7 +2,7 @@
  * LEVEL1;
  */
 const numberOfCardsLevelOne = 12   //declare number of cards
-const timerLevelOne = 30;          //declare timer
+const timerLevelOne = 4;          //declare timer
 
 
 let isCheckingMatch = false; // Variable to track if checking match
@@ -14,7 +14,9 @@ let cardsWon = [];
 
 
 
-//Loading the assets
+/**
+ * Initialise the visual elements 
+ */
 function boardInit(){
     levelOneBoard()
     updateHighScore();
@@ -36,7 +38,7 @@ function boardInit(){
     });
 
     // Add event listener for the "Got it!" button
-    document.getElementById("close-link-level1").addEventListener('click', function() {
+        document.getElementById("close-link-level1").addEventListener('click', function() {
         // Start the game timer
         gameTimer(timerLevelOne);
         
@@ -45,13 +47,18 @@ function boardInit(){
     });
 }
 
-
+/**Level 1 board settings as:
+ * Number of cards 
+ */
 function levelOneBoard(){
     shuffleArray(numberOfCardsLevelOne)
 
 }
 
 
+/**
+ * Shuffles the array of cards 
+ */
 function shuffleArray(){
     gameAssetsLevel13.sort(() => 0.5 - Math.random()) //made the array shuffle random   
     const gameGrid = document.querySelector('.game-grid');
@@ -68,7 +75,29 @@ function shuffleArray(){
 }
 
 
- //check if cards are a match
+/**
+ * Flipping cards rules .
+ * Prevents flipping more cards after the second choosen card.
+ * Uses a timer that sets for how long each card is shown
+ */
+function flipCard(){
+    if (isCheckingMatch) return; // Prevent flipping if checking match
+    let cardId = this.getAttribute('data-id');
+    cardsChosen.push(gameAssetsLevel13[cardId].name);
+    cardsChosenIds.push(cardId);
+
+    this.setAttribute('src', gameAssetsLevel13[cardId].path)
+
+    if (cardsChosen.length === 2 ) {
+        isCheckingMatch = true; // Set the checking match flag
+        
+        setTimeout(checkMatch, 500)   //the timer that sets how long the card is shown
+    }
+}
+
+/**
+ * Checking if the two chosen cards match and check when level is complete
+ */
 function checkMatch(){
     const cards = document.querySelectorAll('.game-grid img');
     const optionOneid = cardsChosenIds[0];
@@ -91,7 +120,7 @@ function checkMatch(){
      } else {
          cards[optionOneid].setAttribute('src', getGeneralAssets("cardBack"));
          cards[optionTwoid].setAttribute('src', getGeneralAssets("cardBack"));
-         failedMatchAudio();     //plays the faile audio file
+         failedMatchAudio();     //plays the failed audio file
      }
 
     document.querySelector('.score-value').textContent = cardsWon.length;
@@ -110,21 +139,6 @@ function checkMatch(){
 
 
 
-
-function flipCard(){
-    if (isCheckingMatch) return; // Prevent flipping if checking match
-    let cardId = this.getAttribute('data-id');
-    cardsChosen.push(gameAssetsLevel13[cardId].name);
-    cardsChosenIds.push(cardId);
-
-    this.setAttribute('src', gameAssetsLevel13[cardId].path)
-
-    if (cardsChosen.length === 2 ) {
-        isCheckingMatch = true; // Set the checking match flag
-        
-        setTimeout(checkMatch, 500)   //the timer that sets how long the card is shown
-    }
-}
 
 
 

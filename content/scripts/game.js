@@ -1,3 +1,5 @@
+
+
 /**
  * RUNNING THE GAME
  *
@@ -6,6 +8,11 @@
 document.addEventListener("DOMContentLoaded", gameInit)
 
 
+/**
+ * Initialise the elements when loading the game
+ * Ex: Hover sound effect, Menu Music, Menu Popup
+ * boardInit();
+ */
 function gameInit(){
     menuBtnHover();
     playMenuAudio();
@@ -99,29 +106,11 @@ function levelOnePop(){
         
 }
 
-/**
- *  GENERAL GAME SOUND logic
- */
-//
-
-//Sound effect for when matching cards
-function successMatchAudio(){
-    const successAudio = new Audio(getSounds("succes-match"));
-   successAudio.play();
-}
-
-//Sound effect for when not matching cards
-function failedMatchAudio(){
-    const failedAudio = new Audio(getSounds('failed-match'));
-    failedAudio.play();
-}
 
 /**
- * GAME FUNCTIONALITY LOGIC
+ * Function that displays the timer and accepts a timer value
+ * that can be set.
  */
-
-
-//Function that sets the timer depeding on the level -- coming soon
 function gameTimer(timer){
     timer.toString();
     let timerHtml = document.querySelector('.timer');
@@ -140,6 +129,9 @@ function gameTimer(timer){
 
 }
 
+/**
+ * Function that displays the timer element
+ */
 function displayTimer(){
     let timerText = document.querySelector('.timer-text');
     timerText.style.display ='block'
@@ -150,7 +142,9 @@ function highScore(){
     const lastHighScore = parseFloat(localStorage.score)
 }
 
-// Update the high score if the current score is higher
+/**
+ * Function that keeps track of highscore and stores it into the browsers cache
+ */
 function updateHighScore(currentScore) {
     // Initialize high score from local storage
     let highScore = localStorage.getItem('highScore') || 0;
@@ -164,35 +158,20 @@ function updateHighScore(currentScore) {
 }
 
 
-function gameOver(){
-    let popup = document.querySelector('.popup-game-over')
-    popup.style.display= 'block';
-    restartGame()
-}
 
-//Level Complete PopUp
+/**
+ * Level complete function
+ */
 function levelComplete(){
     let levelCompletePop = document.querySelector(".popup-level-complete");
     levelCompletePop.style.display = "block";
 }
 
-function restartGame(){
-    document.querySelector('.score-value').textContent = '';
-
-}
-
-
-
-
-
- 
-
-
-//Remaining time
-
-
-//Level Complete
-
-function levelComplete(){
-    
+/**
+ * GameOver function restars the game and displays the GameOver popup
+ */
+function gameOver(){
+    let popup = document.querySelector('.popup-game-over')
+    popup.style.display= 'block';
+   
 }

@@ -27,8 +27,7 @@ body {
     flex-direction: column;
 }
 
-.popup,
-.popup-level1 {
+.popup{
     background-color: #ffffff;
     width: 90%;
     max-width: 450px;
@@ -44,8 +43,7 @@ body {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-#close,
-#close-level1 {
+#close , #close-level1 {
     display: block;
     margin: 0 0 20px auto;
     background-color: transparent;
@@ -248,8 +246,7 @@ body {
         font-size: 0.9rem;
     }
 
-    .popup,
-    .popup-level1 {
+    .popup{
         width: 80%;
     }
 
