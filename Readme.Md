@@ -4,7 +4,30 @@
 
 The Memory Card Game is designed as a fun and educational tool to enhance memory and cognitive skills. The project was developed to create an engaging experience where users can challenge themselves to match pairs of cards within a limited time. It also aims to teach basic web development concepts through the creation of a simple, yet interactive, browser-based game.
 
-## 2. User Stories
+## 2. Installation
+
+1. **Clone the repository:**
+
+    ```bash
+    git clone https://github.com/your-username/memory-card-game.git
+    ```
+
+2. **Navigate to the project directory:**
+
+    ```bash
+    cd memory-card-game
+    ```
+
+3. **Open `index.html` in your preferred browser.**
+
+## 3. Usage
+
+- **Start the Game:** Click on the "Start Game" button to begin.
+- **Flip Cards:** Click on any card to flip it over. Match pairs of cards to win.
+- **Complete Levels:** Once all pairs are matched, the level is complete.
+- **Sound Toggle:** You can toggle the sound on and off using the provided button.
+
+## 4. User Stories
 
 - **As a player**, I want to start a new game and understand the objective immediately.
 - **As a player**, I want the game to be responsive and work well on my mobile device.
@@ -14,7 +37,7 @@ The Memory Card Game is designed as a fun and educational tool to enhance memory
 - **As a player**, I want the game to remember my highest score, so I can aim to beat it in future sessions.
 - **As a player**, I want to see visual feedback when I successfully match a pair of cards.
 
-## 3. Features
+## 5. Features
 
 ### Core Features
 
@@ -30,7 +53,7 @@ The Memory Card Game is designed as a fun and educational tool to enhance memory
 - **Sound Effects:** Includes sounds for button clicks, card flips, and successful or failed matches.
 - **Audio Toggle:** Allows users to turn the background music on or off.
 
-## 4. Future Features
+## 6. Future Features
 
 - **Additional Levels:** Introduce more levels with increasing difficulty, including more cards and complex patterns.
 - **Themes:** Offer different visual themes (e.g., nature, space, animals) that players can select before starting the game.
@@ -38,7 +61,7 @@ The Memory Card Game is designed as a fun and educational tool to enhance memory
 - **Leaderboard:** Implement a global leaderboard where players can submit their high scores and compete with others worldwide.
 - **Hints:** Add a hint feature that temporarily reveals all cards for a few seconds to assist players.
 
-## 5. Typography and Color Scheme
+## 7. Typography and Color Scheme
 
 ### Typography
 
@@ -51,7 +74,7 @@ The Memory Card Game is designed as a fun and educational tool to enhance memory
 - **Card Colors:** Cards have distinct, vibrant colors to differentiate them easily. The card back design uses a subtle pattern.
 - **Text Colors:** Dark colors (like navy blue or black) for text to ensure readability against lighter backgrounds.
 
-## 6. Wireframes
+## 8. Wireframes
 
 Wireframes were designed to plan the layout of the game interface across different screen sizes.
 
@@ -60,7 +83,7 @@ Wireframes were designed to plan the layout of the game interface across differe
   
 Wireframes were created using tools like Figma or Adobe XD. (Add screenshots or links to wireframes if available.)
 
-## 7. Technology
+## 9. Technology
 
 ### Languages
 
@@ -81,3 +104,43 @@ Wireframes were created using tools like Figma or Adobe XD. (Add screenshots or 
 
 ---
 
+## 10. Code Testing
+
+## Code Testing
+
+### Testing Framework
+
+The Memory Card Game uses [Jest](https://jestjs.io/) for unit testing. Jest is a delightful JavaScript Testing Framework with a focus on simplicity.
+
+### How to Run Tests
+
+1. **Install Jest:**
+   - Before running the tests, ensure you have Jest installed. You can install it using npm:
+     ```
+     npm install --save-dev jest
+     ```
+
+2. **Run the Tests:**
+   - To run the tests, use the following command in your terminal:
+     ```
+     npm test
+     ```
+   - Jest will automatically find and run any test files following the naming convention `*.test.js` or located in the `__tests__` directory.
+
+### Test Coverage
+
+The tests focus on the following core functionalities:
+
+- **Array Shuffling:** Ensures the game’s shuffle logic randomizes card placement effectively.
+- **Card Matching:** Verifies that the game correctly identifies matching pairs of cards.
+- **High Score Updates:** Tests whether the game properly updates and stores the high score.
+
+### Future Testing
+
+Additional tests can be added to cover other game functionalities such as:
+
+- **Timer Countdown:** Ensuring the timer counts down correctly and triggers the game over state when it reaches zero.
+- **Sound Effects:** Verifying that the correct sound effects play during different game events (e.g., card flip, match success/failure).
+- **UI/UX Elements:** Testing the responsiveness and visibility of UI components like popups, buttons, and score displays.
+
+---
