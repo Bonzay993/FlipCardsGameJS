@@ -104,3 +104,43 @@ Wireframes were created using tools like Figma or Adobe XD. (Add screenshots or 
 
 ---
 
+## 10. Code Testing
+
+## Code Testing
+
+### Testing Framework
+
+The Memory Card Game uses [Jest](https://jestjs.io/) for unit testing. Jest is a delightful JavaScript Testing Framework with a focus on simplicity.
+
+### How to Run Tests
+
+1. **Install Jest:**
+   - Before running the tests, ensure you have Jest installed. You can install it using npm:
+     ```
+     npm install --save-dev jest
+     ```
+
+2. **Run the Tests:**
+   - To run the tests, use the following command in your terminal:
+     ```
+     npm test
+     ```
+   - Jest will automatically find and run any test files following the naming convention `*.test.js` or located in the `__tests__` directory.
+
+### Test Coverage
+
+The tests focus on the following core functionalities:
+
+- **Array Shuffling:** Ensures the game’s shuffle logic randomizes card placement effectively.
+- **Card Matching:** Verifies that the game correctly identifies matching pairs of cards.
+- **High Score Updates:** Tests whether the game properly updates and stores the high score.
+
+### Future Testing
+
+Additional tests can be added to cover other game functionalities such as:
+
+- **Timer Countdown:** Ensuring the timer counts down correctly and triggers the game over state when it reaches zero.
+- **Sound Effects:** Verifying that the correct sound effects play during different game events (e.g., card flip, match success/failure).
+- **UI/UX Elements:** Testing the responsiveness and visibility of UI components like popups, buttons, and score displays.
+
+---

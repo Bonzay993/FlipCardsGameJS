@@ -13,18 +13,18 @@ document.addEventListener("DOMContentLoaded", gameInit)
  * Ex: Hover sound effect, Menu Music, Menu Popup
  * boardInit();
  */
-function gameInit(){
+function gameInit() {
     menuBtnHover();
     playMenuAudio();
     menuPop();
-    // Set the initial state of the button and audio. 
-    
-    document.querySelector(".start-game").onclick = menuBtnOnClick(); boardInit() ; //INITIATE THE BOARD
+
+    // Assign the function reference instead of calling it immediately
+    document.querySelector(".start-game").onclick = menuBtnOnClick;
+    boardInit(); // INITIATE THE BOARD
 
     document.querySelectorAll(".music-on-off").forEach(button => {
         button.addEventListener('click', toggleAudio);
     });
-
 }
 
 
@@ -39,17 +39,15 @@ function gameInit(){
  *
  * */ 
 
-function menuPop(){
-    window.addEventListener("load", function(){
-        setTimeout(
-            function open(event){
-                document.querySelector(".popup").style.display = "block";
-            },
-            200
-        )
-    
-    })
-    
+function menuPop() {
+    function openPopup() {
+        document.querySelector(".popup").style.display = "block";
+    }
+
+    window.addEventListener("load", function() {
+        setTimeout(openPopup, 200);
+    });
+
     //the following set the interaction that triggers the menu audio to play
     document.querySelector("#close").addEventListener("click", function(){
         document.querySelector(".popup").style.display = "none";
@@ -61,6 +59,8 @@ function menuPop(){
         playMenuAudio();
     });
     
+    // Expose openPopup for testing
+    return { openPopup };
 }
 
 
@@ -111,23 +111,17 @@ function levelOnePop(){
  * Function that displays the timer and accepts a timer value
  * that can be set.
  */
-function gameTimer(timer){
-    timer.toString();
-    let timerHtml = document.querySelector('.timer');
-    
-
-    var count = setInterval(function() {
-        
-        timerHtml.textContent = timer--;
-        if(timer == -1){
-            clearInterval(count);
-            timerHtml.textContent = '0'
-            gameOver();
-            
-        } 
+function gameTimer(timer) {
+    const timerHtml = document.querySelector('.timer');
+    const count = setInterval(() => {
+      timerHtml.textContent = timer--;
+      if (timer < 0) {
+        clearInterval(count);
+        timerHtml.textContent = '0';
+        gameOver(); // Call gameOver when the timer hits 0
+      }
     }, 1000);
-
-}
+  }
 
 /**
  * Function that displays the timer element
@@ -175,3 +169,13 @@ function gameOver(){
     popup.style.display= 'block';
    
 }
+
+module.exports = {
+    gameInit,
+    menuPop,
+    levelOnePop,
+    gameTimer,
+    updateHighScore,
+    levelComplete,
+    gameOver
+};
