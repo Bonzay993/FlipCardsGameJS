@@ -61,4 +61,41 @@ describe('Game Initialization and Functionality Tests', () => {
           expect(toggleAudio).toHaveBeenCalled();
       });
   });
+  
+  test('menuPop should display the popup and set up close button events', () => {
+    const { openPopup } = menuPop();
+
+    // Directly invoke the popup opening for testing
+    openPopup();
+    expect(document.querySelector('.popup').style.display).toBe('block');
+
+    document.querySelector("#close").click();
+    expect(document.querySelector('.popup').style.display).toBe('none');
+  });
+
+  
+  test('updateHighScore should update the high score in local storage if the current score is higher', () => {
+        updateHighScore(100);
+        expect(localStorage.getItem('highScore')).toBe('100');
+        expect(document.querySelector('.high-score-value').textContent).toBe('100');
+  
+        updateHighScore(50);
+        expect(localStorage.getItem('highScore')).toBe('100'); // Should not change
+        expect(document.querySelector('.high-score-value').textContent).toBe('100');
+  
+        updateHighScore(150);
+        expect(localStorage.getItem('highScore')).toBe('150'); // Should update
+        expect(document.querySelector('.high-score-value').textContent).toBe('150');
+  });
+  
+  test('levelComplete should display the level complete popup', () => {
+        levelComplete();
+        expect(document.querySelector('.popup-level-complete').style.display).toBe('block');
+  });
+  
+  test('gameOver should display the game over popup', () => {
+        gameOver();
+        expect(document.querySelector('.popup-game-over').style.display).toBe('block');
+  });
+
 });  
