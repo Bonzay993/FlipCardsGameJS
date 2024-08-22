@@ -43,7 +43,7 @@ body {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-#close , #close-level1 {
+.close {
     display: block;
     margin: 0 0 20px auto;
     background-color: transparent;
@@ -54,8 +54,7 @@ body {
     cursor: pointer;
 }
 
-.popup a,
-.popup-level1 a {
+.popup-anchor {
     display: block;
     width: 150px;
     margin: 20px auto 0;
@@ -68,13 +67,11 @@ body {
     border-radius: 5px;
 }
 
-.popup h1,
-.popup-level1 h1 {
+.popup-heading {
     text-align: center;
 }
 
-.popup p,
-.popup-level1 p {
+.popup-paragraph {
     font-size: 1rem;
     text-align: center;
     margin: 20px 0;

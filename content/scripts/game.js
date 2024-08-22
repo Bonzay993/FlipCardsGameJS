@@ -54,12 +54,12 @@ function menuPop() {
     });
 
     //the following set the interaction that triggers the menu audio to play
-    document.querySelector("#close").addEventListener("click", function(){
+    document.querySelector(".close").addEventListener("click", function(){
         document.querySelector(".popup").style.display = "none";
         playMenuAudio(); 
     });
     
-     document.querySelector("#close-link").addEventListener("click", function(){
+     document.querySelector(".close-link").addEventListener("click", function(){
         document.querySelector(".popup").style.display = "none";
         playMenuAudio();
     });
@@ -82,7 +82,7 @@ function levelOnePop(){
             200
         );
 
-        document.querySelector("#close-level1").addEventListener("click", function(){
+        document.querySelector(".close-level1").addEventListener("click", function(){
             //starts the game timer after clicking GOT IT!
             
             document.querySelector(".popup-level1").style.display = "none";
@@ -94,7 +94,7 @@ function levelOnePop(){
             
         });
         
-        document.querySelector("#close-link-level1").addEventListener("click", function(){
+        document.querySelector(".close-link-level1").addEventListener("click", function(){
             document.querySelector(".popup-level1").style.display = "none";
             //removing the blur when user clicks Ok
             document.querySelector('.menu-container').style.filter = 'none';
