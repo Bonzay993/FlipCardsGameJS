@@ -5,8 +5,6 @@
 const {
   gameInit,
   menuPop,
-  levelOnePop,
-  gameTimer,
   updateHighScore,
   levelComplete,
   gameOver
@@ -97,5 +95,7 @@ describe('Game Initialization and Functionality Tests', () => {
         gameOver();
         expect(document.querySelector('.popup-game-over').style.display).toBe('block');
   });
+
+  
 
 });  

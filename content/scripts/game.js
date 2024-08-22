@@ -170,6 +170,8 @@ function gameOver(){
    
 }
 
+//Exporting Jest Tests
+
 module.exports = {
     gameInit,
     menuPop,

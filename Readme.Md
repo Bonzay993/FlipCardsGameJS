@@ -4,6 +4,11 @@
 
 The Memory Card Game is designed as a fun and educational tool to enhance memory and cognitive skills. The project was developed to create an engaging experience where users can challenge themselves to match pairs of cards within a limited time. It also aims to teach basic web development concepts through the creation of a simple, yet interactive, browser-based game.
 
+## Releases
+
+For detailed changelogs and download links, see the [Releases](https://github.com/Bonzay993/FlipCardsGameJS/releases) section on GitHub. Each release includes a summary of changes and improvements made, ensuring that users and developers can easily understand what has been updated or fixed in each version of the game.
+
+
 ## 2. Installation
 
 1. **Clone the repository:**
@@ -131,9 +136,22 @@ The Memory Card Game uses [Jest](https://jestjs.io/) for unit testing. Jest is a
 
 The tests focus on the following core functionalities:
 
-- **Array Shuffling:** Ensures the game’s shuffle logic randomizes card placement effectively.
-- **Card Matching:** Verifies that the game correctly identifies matching pairs of cards.
-- **High Score Updates:** Tests whether the game properly updates and stores the high score.
+- **Game Initialization**
+  - Tests the `gameInit` function to ensure proper setup of game elements and event listeners.
+  - Verifies that buttons for starting the game and toggling audio are functional and correctly trigger their associated actions.
+
+- **Popup Management**
+  - Tests for functions like `menuPop`, `levelOnePop`, and `gameOver` to verify the correct display and closure of popups.
+  - Ensures popups appear and hide as expected, providing a seamless user experience.
+
+- **Game Progression**
+  - Tests the `levelComplete` function to confirm that the level completion popup is displayed when appropriate.
+  - Verifies that the `gameOver` function correctly triggers the game over popup.
+
+- **High Score Handling**
+  - Tests the `updateHighScore` function to ensure high scores are accurately updated in `localStorage` only when a new score surpasses the existing one.
+  - Confirms that the high score is correctly displayed in the UI after an update.
+
 
 ### Future Testing
 
@@ -144,3 +162,45 @@ Additional tests can be added to cover other game functionalities such as:
 - **UI/UX Elements:** Testing the responsiveness and visibility of UI components like popups, buttons, and score displays.
 
 ---
+## Test Cases
+
+### 1. Game Initialization
+- **Test Case 1.1:** Ensure the game initializes correctly when the page is loaded.
+  - Verify that the hover sound effect is active.
+  - Verify that the menu music starts playing automatically.
+  - Check that the menu popup appears on page load.
+- **Test Case 1.2:** Confirm that all interactive elements (buttons) are clickable and responsive.
+- **Test Case 1.3:** Validate that the "Start Game" button initializes the game and hides the menu.
+
+### 2. Audio Functionality
+- **Test Case 2.1:** Verify that the background music plays when toggled on.
+- **Test Case 2.2:** Check that clicking the "Music" button toggles the audio state between "On" and "Off".
+- **Test Case 2.3:** Ensure that sound effects play correctly when buttons are hovered over or clicked.
+- **Test Case 2.4:** Validate that the correct sound effect plays when two cards match or fail to match.
+
+### 3. Game Mechanics
+- **Test Case 3.1:** Verify that cards are shuffled and displayed correctly when the game starts.
+- **Test Case 3.2:** Test the card flipping mechanism to ensure only two cards can be flipped at a time.
+- **Test Case 3.3:** Confirm that the correct actions occur when a match is found (e.g., cards disappear, sound plays).
+- **Test Case 3.4:** Check that the game over condition is triggered when the timer runs out.
+- **Test Case 3.5:** Validate the correct functionality of the high score system (e.g., updating, storing in local storage).
+
+### 4. Pop-up Handling
+- **Test Case 4.1:** Verify that the initial welcome popup appears correctly.
+- **Test Case 4.2:** Confirm that the level one tutorial popup appears and functions correctly.
+- **Test Case 4.3:** Ensure that the game over and level complete popups display at the appropriate times.
+
+### 5. Responsive Design
+- **Test Case 5.1:** Check that the game layout adjusts correctly on different screen sizes (desktop, tablet, mobile).
+- **Test Case 5.2:** Validate that all game elements (e.g., buttons, grid) are usable and visually appropriate on various devices.
+
+### 6. Error Handling
+- **Test Case 6.1:** Ensure that the game gracefully handles cases where audio files fail to load.
+- **Test Case 6.2:** Verify that no actions can break the game, such as clicking multiple buttons rapidly.
+- **Test Case 6.3:** Check for any console errors during gameplay that could indicate issues.
+
+### 7. Timer and Score
+- **Test Case 7.1:** Validate the timer starts correctly when the game begins and stops when the game ends.
+- **Test Case 7.2:** Confirm the score is accurately calculated and displayed after each match.
+- **Test Case 7.3:** Check that the high score is updated and stored properly across game sessions.
+
