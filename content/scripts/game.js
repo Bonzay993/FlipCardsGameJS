@@ -20,7 +20,12 @@ function gameInit() {
 
     // Assign the function reference instead of calling it immediately
     document.querySelector(".start-game").onclick = menuBtnOnClick;
-    boardInit(); // INITIATE THE BOARD
+        try {
+            boardInit(); //Initialise the board
+        } catch (error) {
+            console.error('Error during board initialization:', error);
+            alert('An error occurred while initializing the game. Please try reloading the page.');
+        }
 
     document.querySelectorAll(".music-on-off").forEach(button => {
         button.addEventListener('click', toggleAudio);
@@ -140,14 +145,15 @@ function highScore(){
  * Function that keeps track of highscore and stores it into the browsers cache
  */
 function updateHighScore(currentScore) {
-    // Initialize high score from local storage
-    let highScore = localStorage.getItem('highScore') || 0;
-    document.querySelector('.high-score-value').textContent = highScore;
-    
-    if (currentScore > highScore) {
-        highScore = currentScore;
-        localStorage.setItem('highScore', highScore);
-        document.querySelector('.high-score-value').textContent = highScore;
+    try {
+        let highScore = localStorage.getItem('highScore') || 0;
+        if (currentScore > highScore) {
+            localStorage.setItem('highScore', currentScore);
+            document.querySelector('.high-score-value').textContent = currentScore;
+        }
+    } catch (error) {
+        console.error('Error accessing localStorage:', error);
+        alert('An error occurred while saving your high score.');
     }
 }
 

@@ -161,7 +161,6 @@ Additional tests can be added to cover other game functionalities such as:
 - **Sound Effects:** Verifying that the correct sound effects play during different game events (e.g., card flip, match success/failure).
 - **UI/UX Elements:** Testing the responsiveness and visibility of UI components like popups, buttons, and score displays.
 
----
 ## Test Cases
 
 ### 1. Game Initialization

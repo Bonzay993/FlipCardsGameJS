@@ -7,7 +7,7 @@ const {
   menuPop,
   updateHighScore,
   levelComplete,
-  gameOver
+  gameOver,
 } = require('./game.js');
 
 describe('Game Initialization and Functionality Tests', () => {

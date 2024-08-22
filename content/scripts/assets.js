@@ -92,5 +92,9 @@ const backgroundImages = [
 // Function to get the path based on the name
 function getGeneralAssets(name) {
     const asset = generalAssets.find(asset => asset.name === name);
-    return asset ? asset.path : null; // Return the path if found, otherwise return null
+    if (!asset) {
+        console.error(`Asset not found: ${name}`);
+        return './content/img/default.jpg'; // Fallback asset
+    }
+    return asset.path;
 }

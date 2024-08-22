@@ -13,7 +13,6 @@ let cardsWon = [];
 
 
 
-
 /**
  * Initialise the visual elements 
  */
