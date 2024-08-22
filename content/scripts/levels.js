@@ -2,7 +2,7 @@
  * LEVEL1;
  */
 const numberOfCardsLevelOne = 12   //declare number of cards
-const timerLevelOne = 4;          //declare timer
+const timerLevelOne = 15;          //declare timer
 
 
 let isCheckingMatch = false; // Variable to track if checking match
@@ -37,7 +37,7 @@ function boardInit(){
     });
 
     // Add event listener for the "Got it!" button
-        document.getElementById("close-link-level1").addEventListener('click', function() {
+        document.querySelector(".close-link-level1").addEventListener('click', function() {
         // Start the game timer
         gameTimer(timerLevelOne);
         
@@ -60,11 +60,11 @@ function levelOneBoard(){
  */
 function shuffleArray(){
     gameAssetsLevel13.sort(() => 0.5 - Math.random()) //made the array shuffle random   
-    const gameGrid = document.querySelector('.game-grid');
+    let gameGrid = document.querySelector('.game-grid');
     gameGrid.style.display = 'flex';
 
     for ( let i = 0; i < numberOfCardsLevelOne; i++ ) {
-       const card = document.createElement("img")
+       let card = document.createElement("img")
         card.setAttribute('src', "content/img/card-back.png");
         card.setAttribute('draggable',"false")
         card.setAttribute('data-id', i)
@@ -98,10 +98,10 @@ function flipCard(){
  * Checking if the two chosen cards match and check when level is complete
  */
 function checkMatch(){
-    const cards = document.querySelectorAll('.game-grid img');
-    const optionOneid = cardsChosenIds[0];
-    const optionTwoid = cardsChosenIds[1];
-    const totalPairs = cards.length / 2;  // Calculate total number of pairs
+    let cards = document.querySelectorAll('.game-grid img');
+    let optionOneid = cardsChosenIds[0];
+    let optionTwoid = cardsChosenIds[1];
+    let totalPairs = cards.length / 2;  // Calculate total number of pairs
    
      
     if (optionOneid == optionTwoid){
