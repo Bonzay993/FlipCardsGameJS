@@ -14,13 +14,13 @@ For detailed changelogs and download links, see the [Releases](https://github.co
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/your-username/memory-card-game.git
+    git clone https://github.com/Bonzay993/FlipCardsGameJS
     ```
 
 2. **Navigate to the project directory:**
 
     ```bash
-    cd memory-card-game
+    cd FlipCardsGameJS
     ```
 
 3. **Open `index.html` in your preferred browser.**
