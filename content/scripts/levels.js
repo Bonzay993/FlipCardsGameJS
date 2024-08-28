@@ -19,6 +19,7 @@ let cardsWon = [];
 function boardInit(){
     levelOneBoard()
     updateHighScore();
+    
    
     
     document.querySelector(".start-game").addEventListener('click', function(){

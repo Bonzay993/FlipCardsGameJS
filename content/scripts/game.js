@@ -17,6 +17,7 @@ function gameInit() {
     menuBtnHover();
     playMenuAudio();
     menuPop();
+    
 
     // Assign the function reference instead of calling it immediately
     document.querySelector(".start-game").onclick = menuBtnOnClick;
@@ -76,28 +77,29 @@ function menuPop() {
 
 function levelOnePop(){
     const menuContainer = document.querySelector('.menu-container')
+    displayTimer();
 
         setTimeout(
             function open(event){
                 document.querySelector(".popup-level1").style.display = "block";
+                popupClose();
             },
-            200
+            200,
+
+            
+    
         );
         
         //setting a blur so that the popout stands out
         menuContainer.style.filter = 'blur(3px)';
-
-        popupClose();
-    
+        
+       
         
     /**Function responsible for closing the 
      *level1 popup by clicking X or Got it!
      *
      */
     function popupClose() {
-        displayTimer();
-
-        document.querySelector(".close").addEventListener("click", closePopup); 
         document.querySelector(".close-link-level1").addEventListener("click", closePopup);
         
         function closePopup(){
