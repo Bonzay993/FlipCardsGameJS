@@ -97,42 +97,56 @@ function flipCard(){
 /**
  * Checking if the two chosen cards match and check when level is complete
  */
-function checkMatch(){
-    let cards = document.querySelectorAll('.game-grid img');
-    let optionOneid = cardsChosenIds[0];
-    let optionTwoid = cardsChosenIds[1];
-    let totalPairs = cards.length / 2;  // Calculate total number of pairs
-   
-     
-    if (optionOneid == optionTwoid){
-         successMatchAudio();   //plays the success audio file
-         cards[optionOneid].setAttribute('src', getGeneralAssets("emptyCard"));
-         cards[optionTwoid].setAttribute('src', getGeneralAssets("emptyCard")); 
-    }    
-    else if (cardsChosen[0] === cardsChosen[1]) {
-         successMatchAudio();     //plays the success audio file
-         cards[optionOneid].setAttribute('src', getGeneralAssets("emptyCard"));
-         cards[optionTwoid].setAttribute('src', getGeneralAssets("emptyCard"));
-         cards[optionOneid].removeEventListener('click',flipCard);
-         cards[optionTwoid].removeEventListener('click',flipCard);
-         cardsWon.push(cardsChosen);
-     } else {
-         cards[optionOneid].setAttribute('src', getGeneralAssets("cardBack"));
-         cards[optionTwoid].setAttribute('src', getGeneralAssets("cardBack"));
-         failedMatchAudio();     //plays the failed audio file
-     }
+function checkMatch() {
+    const cards = document.querySelectorAll('.game-grid img');
+    const [optionOneId, optionTwoId] = cardsChosenIds;
+    const totalPairs = cards.length / 2;  // Calculate total number of pairs
+    const isMatch = cardsChosen[0] === cardsChosen[1];
+    const isSameCard = optionOneId === optionTwoId;
+
+    function handleMatch() {
+        successMatchAudio();
+        setCardToEmpty(optionOneId);
+        setCardToEmpty(optionTwoId);
+        cards[optionOneId].removeEventListener('click', flipCard);
+        cards[optionTwoId].removeEventListener('click', flipCard);
+        cardsWon.push(cardsChosen);
+    }
+
+    function setCardToEmpty(cardId) {
+        cards[cardId].setAttribute('src', getGeneralAssets("emptyCard"));
+    }
+
+    function resetCards() {
+        cards[optionOneId].setAttribute('src', getGeneralAssets("cardBack"));
+        cards[optionTwoId].setAttribute('src', getGeneralAssets("cardBack"));
+        failedMatchAudio();
+    }
+
+    // Prevent matching the same card with itself
+    if (isSameCard) {
+        resetCards();
+    } else if (isMatch) {
+        handleMatch();
+    } else {
+        resetCards();
+    }
 
     document.querySelector('.score-value').textContent = cardsWon.length;
     updateHighScore(cardsWon.length); // Update high score if necessary
-     cardsChosen = [];
-     cardsChosenIds = [];
-     isCheckingMatch = false; // Reset the checking match flag
+    resetChosenCards(); // Reset the checking match flag
 
-     // Check if all pairs have been matched
+    // Check if all pairs have been matched
     if (cardsWon.length === totalPairs) {
         levelComplete(); // Call the function to display the success message
     }
-     
+    
+    // Resets the cards
+    function resetChosenCards() {
+        cardsChosen = [];
+        cardsChosenIds = [];
+        isCheckingMatch = false;
+    }
 }
 
 

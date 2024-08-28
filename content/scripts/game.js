@@ -75,32 +75,35 @@ function menuPop() {
  */
 
 function levelOnePop(){
+    const menuContainer = document.querySelector('.menu-container')
+
         setTimeout(
             function open(event){
                 document.querySelector(".popup-level1").style.display = "block";
             },
             200
         );
-        popupClose();
+        
         //setting a blur so that the popout stands out
-        document.querySelector('.menu-container').style.filter = 'blur(3px)';
-    
-        //start the timer;
-        displayTimer();
+        menuContainer.style.filter = 'blur(3px)';
 
+        popupClose();
+    
+        
     /**Function responsible for closing the 
      *level1 popup by clicking X or Got it!
      *
      */
     function popupClose() {
+        displayTimer();
 
-        document.querySelector(".close-level1").addEventListener("click", closePopup()); 
-        document.querySelector(".close-link-level1").addEventListener("click", closePopup());
+        document.querySelector(".close").addEventListener("click", closePopup); 
+        document.querySelector(".close-link-level1").addEventListener("click", closePopup);
         
         function closePopup(){
                 document.querySelector(".popup-level1").style.display = "none";
                 //removing the blur when user clicks Ok
-                document.querySelector('.menu-container').style.filter = 'none';
+                menuContainer.style.filter = '';
             }
     }
  
