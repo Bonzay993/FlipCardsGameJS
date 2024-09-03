@@ -17,6 +17,7 @@ function gameInit() {
     menuBtnHover();
     playMenuAudio();
     menuPop();
+    
 
     // Assign the function reference instead of calling it immediately
     document.querySelector(".start-game").onclick = menuBtnOnClick;
@@ -75,32 +76,36 @@ function menuPop() {
  */
 
 function levelOnePop(){
+    const menuContainer = document.querySelector('.menu-container')
+    displayTimer();
+
         setTimeout(
             function open(event){
                 document.querySelector(".popup-level1").style.display = "block";
+                popupClose();
             },
-            200
-        );
-        popupClose();
-        //setting a blur so that the popout stands out
-        document.querySelector('.menu-container').style.filter = 'blur(3px)';
-    
-        //start the timer;
-        displayTimer();
+            200,
 
+            
+    
+        );
+        
+        //setting a blur so that the popout stands out
+        menuContainer.style.filter = 'blur(3px)';
+        
+       
+        
     /**Function responsible for closing the 
-     *level1 popup by clicking X or Got it!
+     *level1 popup by clicking Got it!
      *
      */
     function popupClose() {
-
-        document.querySelector(".close-level1").addEventListener("click", closePopup()); 
-        document.querySelector(".close-link-level1").addEventListener("click", closePopup());
+        document.querySelector(".close-link-level1").addEventListener("click", closePopup);
         
         function closePopup(){
                 document.querySelector(".popup-level1").style.display = "none";
-                //removing the blur when user clicks Ok
-                document.querySelector('.menu-container').style.filter = 'none';
+                //removing the blur when user clicks Got It!
+                menuContainer.style.filter = '';
             }
     }
  
@@ -132,26 +137,26 @@ function displayTimer(){
 }
 
 
-function highScore(){
-    const lastHighScore = parseFloat(localStorage.score)
+function highScore() {
+    // Get the high score from localStorage, default to 0 if not found
+    return parseFloat(localStorage.getItem('highScore')) || 0;
 }
 
 /**
- * Function that keeps track of highscore and stores it into the browsers cache
+ * Function that keeps track of highscore and stores it into the browser's cache
  */
 function updateHighScore(currentScore) {
     try {
-        let highScore = localStorage.getItem('highScore') || 0;
-        if (currentScore > highScore) {
-            localStorage.setItem('highScore', currentScore);
-            document.querySelector('.high-score-value').textContent = currentScore;
+        let storedHighScore = highScore(); // Retrieve the current high score and store it in a variable
+        if (currentScore > storedHighScore) { // Compare current score with the stored high score
+            localStorage.setItem('highScore', currentScore); // Update localStorage with the new high score
+            document.querySelector('.high-score-value').textContent = currentScore; // Update the UI
         }
     } catch (error) {
         console.error('Error accessing localStorage:', error);
         alert('An error occurred while saving your high score.');
     }
 }
-
 
 
 /**
