@@ -96,7 +96,7 @@ function levelOnePop(){
        
         
     /**Function responsible for closing the 
-     *level1 popup by clicking X or Got it!
+     *level1 popup by clicking Got it!
      *
      */
     function popupClose() {
@@ -104,7 +104,7 @@ function levelOnePop(){
         
         function closePopup(){
                 document.querySelector(".popup-level1").style.display = "none";
-                //removing the blur when user clicks Ok
+                //removing the blur when user clicks Got It!
                 menuContainer.style.filter = '';
             }
     }
@@ -137,26 +137,26 @@ function displayTimer(){
 }
 
 
-function highScore(){
-    const lastHighScore = parseFloat(localStorage.score)
+function highScore() {
+    // Get the high score from localStorage, default to 0 if not found
+    return parseFloat(localStorage.getItem('highScore')) || 0;
 }
 
 /**
- * Function that keeps track of highscore and stores it into the browsers cache
+ * Function that keeps track of highscore and stores it into the browser's cache
  */
 function updateHighScore(currentScore) {
     try {
-        let highScore = localStorage.getItem('highScore') || 0;
-        if (currentScore > highScore) {
-            localStorage.setItem('highScore', currentScore);
-            document.querySelector('.high-score-value').textContent = currentScore;
+        let storedHighScore = highScore(); // Retrieve the current high score and store it in a variable
+        if (currentScore > storedHighScore) { // Compare current score with the stored high score
+            localStorage.setItem('highScore', currentScore); // Update localStorage with the new high score
+            document.querySelector('.high-score-value').textContent = currentScore; // Update the UI
         }
     } catch (error) {
         console.error('Error accessing localStorage:', error);
         alert('An error occurred while saving your high score.');
     }
 }
-
 
 
 /**

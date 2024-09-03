@@ -36,6 +36,7 @@ const gameSounds = [
 
 ]
 
+/**Function that gets the sound objects based on their name */
 function getSounds(name) {
     const asset = gameSounds.find(asset => asset.name === name);
     return asset ? asset.path : null; // Return the path if found, otherwise return null
