@@ -132,7 +132,7 @@ function checkMatch() {
     } else {
         resetCards();
     }
-
+    
     document.querySelector('.score-value').textContent = cardsWon.length;
     updateHighScore(cardsWon.length); // Update high score if necessary
     resetChosenCards(); // Reset the checking match flag

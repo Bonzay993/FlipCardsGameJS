@@ -137,13 +137,10 @@ function displayTimer(){
 }
 
 
-function highScore() {
-    // Get the high score from localStorage, default to 0 if not found
-    return parseFloat(localStorage.getItem('highScore')) || 0;
-}
+
 
 /**
- * Function that keeps track of highscore and stores it into the browser's cache
+ * Function that keeps track of high score and stores it into the browser's cache
  */
 function updateHighScore(currentScore) {
     try {
@@ -151,11 +148,19 @@ function updateHighScore(currentScore) {
         if (currentScore > storedHighScore) { // Compare current score with the stored high score
             localStorage.setItem('highScore', currentScore); // Update localStorage with the new high score
             document.querySelector('.high-score-value').textContent = currentScore; // Update the UI
+        } else {
+            document.querySelector('.high-score-value').textContent = storedHighScore; // Ensure UI shows current high score if not updated
         }
     } catch (error) {
         console.error('Error accessing localStorage:', error);
         alert('An error occurred while saving your high score.');
     }
+}
+
+function highScore() {
+    // Get the high score from localStorage, default to 0 if not found
+    let score = parseFloat(localStorage.getItem('highScore'));
+    return isNaN(score) ? 0 : score;
 }
 
 
