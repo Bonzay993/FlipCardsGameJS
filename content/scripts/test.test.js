@@ -19,10 +19,10 @@ describe('Game Initialization and Functionality Tests', () => {
           <div class="popup-level1"></div>
           <div class="popup-level-complete"></div>
           <div class="popup-game-over"></div>
-          <button id="close"></button>
-          <button id="close-link"></button>
-          <button id="close-level1"></button>
-          <button id="close-link-level1"></button>
+          <button class="close"></button>
+          <button class="close-link"></button>
+          <button class="close-level1"></button>
+          <button class="close-link-level1"></button>
           <button class="start-game"></button>
           <button class="music-on-off"></button>
           <div class="timer"></div>
@@ -67,7 +67,7 @@ describe('Game Initialization and Functionality Tests', () => {
     openPopup();
     expect(document.querySelector('.popup').style.display).toBe('block');
 
-    document.querySelector("#close").click();
+    document.querySelector(".close").click();
     expect(document.querySelector('.popup').style.display).toBe('none');
   });
 
