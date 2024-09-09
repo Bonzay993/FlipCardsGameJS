@@ -14,6 +14,7 @@
 </head>
 
 <body class="prevent-select">
+    <!--MAIN MENU-->
     <div class="menu-container">
         <div class="title">
             <h3 class="title-heading">CARD FLIPPER <i class="fa-brands fa-square-js"></i>
@@ -26,6 +27,7 @@
             <button class="music-on-off menu-btn">Music: <span class="on-off">On</span>
             </button>
         </div>
+        <!--GAME AREA-->
         <div class="game-area-wrapper">
             <button class="music-on-off game-music-btn">Music: <span class="on-off">On</span>
             </button>
@@ -37,10 +39,13 @@
                 </p>
             </div>
         </div>
+        <!--GAME VERSION-->
         <div class="version-game-container">
             <p class="version-paragraph">v.1.0.2</p>
         </div>
     </div>
+    <!--POP-UPS-------------------------------------------------->
+    <!--WELCOME POPUP-->
     <div class="popup">
         <button class="close">&times;</button>
         <h1 class="popup-heading">Welcome to CardFlipperJS!</h1>
@@ -50,20 +55,19 @@
     <audio class="menu-audio">
         <source src="./content/sound/menu.mp3">
     </audio>
-    <!--POP-UPS-------------------------------------------------->
+    <!--TUTORIAL POPUP-->
     <div class="popup popup-level1 hide">
-        <!--Got IT button-->
         <h1 class="popup-heading">Tutorial</h1>
         <p class="popup-paragraph">Earn points by matching pair of cards before the time runs out!</p>
         <a class="popup-anchor close-link-level1">Got it!</a>
     </div>
-    <!--GAME OVER POP-->
+    <!--GAME OVER POPUP-->
     <div class="popup popup-game-over hide">
         <h1 class="popup-heading">TIME EXPIRED</h1>
         <p class="popup-paragraph">Sorry, time is up!</p>
         <a class="popup-anchor" href="./index.html">Restart</a>
     </div>
-    <!--Pass level Pop-->
+    <!--LEVEL COMPLETE POPUP-->
     <div class="popup  popup-level-complete hide">
         <h1 class="popup-heading">Congratulations</h1>
         <p class="popup-paragraph">You have passed this level</p>

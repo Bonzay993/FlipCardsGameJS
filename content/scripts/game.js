@@ -186,7 +186,9 @@ function gameOver() {
     hideShowElement(false, ".popup-game-over");
 }
 
-//Function that hides and show elements
+/**
+ * Function that hides and show elements
+ */
 function hideShowElement(hide, elementSelector) {
     let element = document.querySelector(elementSelector);
     if (hide) {
