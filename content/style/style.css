@@ -1,15 +1,18 @@
+/* GLOBAL STYLE */
 * {
     font-family: Montserrat, sans-serif;
     padding: 0;
     margin: 0;
   }
   
+  /* PREVENTS THE TEXT SELECTION */
   .prevent-select {
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
   }
   
+  /* STOP DRAGGING IMAGES */
   .no-pointer-events {
     pointer-events: none;
   }
@@ -27,6 +30,7 @@
     flex-direction: column;
   }
   
+  /* POPUPS STYLE */
   .popup {
     background-color: #ffffff;
     width: 90%;
@@ -42,15 +46,8 @@
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   }
   
-  .close {
-    display: block;
-    margin: 0 0 20px auto;
-    background-color: transparent;
-    font-size: 30px;
-    color: #c5c5c5;
-    border: none;
-    outline: none;
-    cursor: pointer;
+  .popup-heading {
+    text-align: center;
   }
   
   .popup-anchor {
@@ -66,16 +63,24 @@
     border-radius: 5px;
   }
   
-  .popup-heading {
-    text-align: center;
-  }
-  
   .popup-paragraph {
     font-size: 1rem;
     text-align: center;
     margin: 20px 0;
   }
+  /* POPUPS CLOSE "X" STYLE*/
+  .close {
+    display: block;
+    margin: 0 0 20px auto;
+    background-color: transparent;
+    font-size: 30px;
+    color: #c5c5c5;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
   
+  /* MAIN MENU STYLE */
   .menu-container {
     width: 90%;
     height: 50%;
@@ -90,7 +95,7 @@
     background-size: cover;
     border-radius: 15px;
   }
-  
+  /* MAIN MENU BUTTONS WRAPPER */
   .button-wrapper {
     display: flex;
     flex-wrap: column wrap;
@@ -102,6 +107,24 @@
     flex-direction: column;
   }
   
+  .menu-btn {
+    width: 30%;
+    min-width: 120px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 15px;
+    border: 1.2px solid black;
+    padding: 10px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+  }
+  
+  .menu-btn:hover {
+    cursor: pointer;
+    background-color: rgb(179, 217, 249);
+  }
+  
+  /* GAME LOGO TITLE */
   .title {
     background-color: rgba(255, 255, 255, 0.4);
     box-shadow: 1px 10px 20px rgba(255, 255, 255, 0.6);
@@ -124,23 +147,9 @@
     text-shadow: 1px 1px 0.5px rgb(0, 0, 0);
   }
   
-  .menu-btn {
-    width: 30%;
-    min-width: 120px;
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 15px;
-    border: 1.2px solid black;
-    padding: 10px;
-    text-align: center;
-    transition: background-color 0.3s ease;
-  }
+  /* GAME AREA STYLE*/
   
-  .menu-btn:hover {
-    cursor: pointer;
-    background-color: rgb(179, 217, 249);
-  }
-  
+  /* GAME AREA WRAPPER */
   .game-area-wrapper {
     display: none;
     flex-wrap: wrap;
@@ -159,7 +168,7 @@
     border: 1.2px solid black;
     display: none;
   }
-  
+  /* CARD GRID STYLE */
   .game-grid {
     display: none;
     flex-wrap: wrap;
@@ -172,17 +181,18 @@
     box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.4);
     backdrop-filter: blur(2px);
   }
-  
-  .hide {
-    display: none;
-  }
-  
+  /* CARD SQUARE */
   .game-grid img {
     width: 100px;
     height: 100px;
     box-shadow: 10px 10px 2px rgba(30, 30, 30, 0.15);
   }
+  /* USED TO HIDE USING FUNCTION hideShowElement*/
+  .hide {
+    display: none;
+  }
   
+  /* SCORE AREA STYLE */
   .score {
     font-size: 1.6rem;
     display: none;
@@ -197,6 +207,7 @@
     text-align: center;
   }
   
+  /* GAME VERSION STYLE */
   .version-game-container {
     margin: 20px 0;
     display: flex;
