@@ -2,15 +2,15 @@
  * ASSETS
  */
 
-const generalAssets = [
+const GENERAL_ASSETS = [
     {
         name: "cardBack",
-        path: "content/img/card-back.png"
+        path: "content/img/card-back.webp"
     },
 
     {
         name: "emptyCard",
-        path: "content/img/empty-card.png"
+        path: "content/img/empty-card.webp"
     },
 ]
 
@@ -91,10 +91,10 @@ const backgroundImages = [
 
 // Function to get the path based on the name
 function getGeneralAssets(name) {
-    const asset = generalAssets.find(asset => asset.name === name);
+    let asset = GENERAL_ASSETS.find(asset => asset.name === name);
     if (!asset) {
         console.error(`Asset not found: ${name}`);
-        return './content/img/default.jpg'; // Fallback asset
+        return './content/img/error.webp'; // Fallback asset
     }
     return asset.path;
 }

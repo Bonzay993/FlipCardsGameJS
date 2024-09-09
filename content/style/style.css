@@ -91,7 +91,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-image: url("../img/game-background.png");
+    background-image: url("../img/game-background.webp");
     background-size: cover;
     border-radius: 15px;
   }
