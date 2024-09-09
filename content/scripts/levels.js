@@ -25,7 +25,7 @@ function boardInit() {
     document.querySelector(".start-game").addEventListener('click', function() {
 
         document.querySelector(".button-wrapper").style.display = "none"
-        document.querySelector(".menu-container").style["background-image"] = 'url("content/img/level1-background.png")'
+        document.querySelector(".menu-container").style["background-image"] = 'url("content/img/level1-background.webp")'
         document.querySelector(".menu-container").style.height = "auto"
         document.querySelector(".title-heading").innerHTML = 'Level 1';
         document.querySelector(".game-music-btn").style.display = "block";
@@ -66,7 +66,7 @@ function shuffleArray() {
 
     for (let i = 0; i < NUMBER_OF_CARDS_LEVEL_ONE; i++) {
         let card = document.createElement("img")
-        card.setAttribute('src', "content/img/card-back.png");
+        card.setAttribute('src', "content/img/card-back.webp");
         card.setAttribute('draggable', "false")
         card.setAttribute('data-id', i)
         card.addEventListener('click', flipCard)
