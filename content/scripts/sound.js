@@ -8,15 +8,14 @@ let isAudioPlayed = false;
  * Sound objects
  */
 
-const gameSounds = [
-    {
+const GAME_SOUNDS = [{
         name: "background-music",
         path: './content/sound/menu.mp3'
     },
 
     {
-        name:"menu-btn-onclick",
-        path:'./content/sound/menu-btn-onclick.mp3'
+        name: "menu-btn-onclick",
+        path: './content/sound/menu-btn-onclick.mp3'
     },
 
     {
@@ -38,7 +37,7 @@ const gameSounds = [
 
 /**Function that gets the sound objects based on their name */
 function getSounds(name) {
-    const asset = gameSounds.find(asset => asset.name === name);
+    let asset = GAME_SOUNDS.find(asset => asset.name === name);
     return asset ? asset.path : null; // Return the path if found, otherwise return null
 }
 
@@ -49,15 +48,15 @@ function getSounds(name) {
  */
 function playMenuAudio() {
     isAudioPlayed = true;
-    const menuAudio = document.querySelector(".menu-audio");
-    menuAudio.loop = true;
+    let menuAudio = document.querySelector(".menu-audio");
     menuAudio.play();
+    menuAudio.loop = true;
 }
 
 /**Function that stops the Music */
 function stopMenuAudio() {
     isAudioPlayed = false;
-    const menuAudio = document.querySelector(".menu-audio");
+    let menuAudio = document.querySelector(".menu-audio");
     menuAudio.pause();
     menuAudio.loop = false;
 }
@@ -71,10 +70,10 @@ function stopMenuAudio() {
 function toggleAudio() {
     // Play the button click sound
     menuBtnOnClick();
-    
+
     // Get all music toggle buttons
     let musicButtons = document.querySelectorAll(".on-off");
-    
+
     // Determine the current state based on the first button
     let currentState = musicButtons[0].innerText;
 
@@ -100,8 +99,8 @@ function toggleAudio() {
 /**
  * Sound when clicking on buttons
  */
-function menuBtnOnClick(){
-    const menuBtnClick = new Audio(getSounds('menu-btn-onclick'));
+function menuBtnOnClick() {
+    let menuBtnClick = new Audio(getSounds('menu-btn-onclick'));
     menuBtnClick.play();
 }
 
@@ -113,8 +112,8 @@ function menuBtnOnClick(){
  * the sound restarts instead of overlapping.
  */
 function menuBtnHover() {
-    const menuBtnClick = new Audio(getSounds('menu-hover-sound'));
-    const buttons = document.querySelectorAll(".menu-btn");
+    let menuBtnClick = new Audio(getSounds('menu-hover-sound'));
+    let buttons = document.querySelectorAll(".menu-btn");
 
     buttons.forEach(button => {
         button.addEventListener('mouseover', function() {
@@ -129,16 +128,15 @@ function menuBtnHover() {
 /**
  * Sound Effect when 2 cards are matched
  */
-function successMatchAudio(){
-    const successAudio = new Audio(getSounds("succes-match"));
-   successAudio.play();
+function successMatchAudio() {
+    let successAudio = new Audio(getSounds("succes-match"));
+    successAudio.play();
 }
 
 /**
  * Sound Effect when 2 cards are not matched
  */
-function failedMatchAudio(){
-    const failedAudio = new Audio(getSounds('failed-match'));
+function failedMatchAudio() {
+    let failedAudio = new Audio(getSounds('failed-match'));
     failedAudio.play();
 }
-

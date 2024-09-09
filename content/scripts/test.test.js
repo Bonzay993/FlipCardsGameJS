@@ -14,21 +14,21 @@ describe('Game Initialization and Functionality Tests', () => {
   beforeEach(() => {
       // Set up our document body
       document.body.innerHTML = `
-          <div class="menu-container"></div>
-          <div class="popup"></div>
-          <div class="popup-level1"></div>
-          <div class="popup-level-complete"></div>
-          <div class="popup-game-over"></div>
-          <button id="close"></button>
-          <button id="close-link"></button>
-          <button id="close-level1"></button>
-          <button id="close-link-level1"></button>
-          <button class="start-game"></button>
-          <button class="music-on-off"></button>
-          <div class="timer"></div>
-          <div class="timer-text"></div>
-          <div class="high-score-value"></div>
-      `;
+        <div class="menu-container"></div>
+        <div class="popup"></div>
+        <div class="popup-level1"></div>
+        <div class="popup-level-complete"></div>
+        <div class="popup-game-over"></div>
+        <button class="close"></button>
+        <button class="close-link"></button>
+        <button class="close-level1"></button>
+        <button class="close-link-level1"></button>
+        <button class="start-game"></button>
+        <button class="music-on-off"></button>
+        <div class="timer"></div>
+        <div class="timer-text"></div>
+        <div class="high-score-value"></div>
+    `;
 
       jest.useFakeTimers();
       localStorage.clear();
@@ -59,43 +59,45 @@ describe('Game Initialization and Functionality Tests', () => {
           expect(toggleAudio).toHaveBeenCalled();
       });
   });
-  
+
   test('menuPop should display the popup and set up close button events', () => {
-    const { openPopup } = menuPop();
+      const {
+          openPopup
+      } = menuPop();
 
-    // Directly invoke the popup opening for testing
-    openPopup();
-    expect(document.querySelector('.popup').style.display).toBe('block');
+      // Directly invoke the popup opening for testing
+      openPopup();
+      expect(document.querySelector('.popup').style.display).toBe('block');
 
-    document.querySelector("#close").click();
-    expect(document.querySelector('.popup').style.display).toBe('none');
+      document.querySelector(".close").click();
+      expect(document.querySelector('.popup').style.display).toBe('none');
   });
 
-  
+
   test('updateHighScore should update the high score in local storage if the current score is higher', () => {
-        updateHighScore(100);
-        expect(localStorage.getItem('highScore')).toBe('100');
-        expect(document.querySelector('.high-score-value').textContent).toBe('100');
-  
-        updateHighScore(50);
-        expect(localStorage.getItem('highScore')).toBe('100'); // Should not change
-        expect(document.querySelector('.high-score-value').textContent).toBe('100');
-  
-        updateHighScore(150);
-        expect(localStorage.getItem('highScore')).toBe('150'); // Should update
-        expect(document.querySelector('.high-score-value').textContent).toBe('150');
+      updateHighScore(100);
+      expect(localStorage.getItem('highScore')).toBe('100');
+      expect(document.querySelector('.high-score-value').textContent).toBe('100');
+
+      updateHighScore(50);
+      expect(localStorage.getItem('highScore')).toBe('100'); // Should not change
+      expect(document.querySelector('.high-score-value').textContent).toBe('100');
+
+      updateHighScore(150);
+      expect(localStorage.getItem('highScore')).toBe('150'); // Should update
+      expect(document.querySelector('.high-score-value').textContent).toBe('150');
   });
-  
+
   test('levelComplete should display the level complete popup', () => {
-        levelComplete();
-        expect(document.querySelector('.popup-level-complete').style.display).toBe('block');
+      levelComplete();
+      expect(document.querySelector('.popup-level-complete').style.display).toBe('block');
   });
-  
+
   test('gameOver should display the game over popup', () => {
-        gameOver();
-        expect(document.querySelector('.popup-game-over').style.display).toBe('block');
+      gameOver();
+      expect(document.querySelector('.popup-game-over').style.display).toBe('block');
   });
 
-  
 
-});  
+
+});

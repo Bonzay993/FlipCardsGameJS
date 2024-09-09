@@ -1,5 +1,3 @@
-
-
 /**
  * RUNNING THE GAME
  *
@@ -17,17 +15,26 @@ function gameInit() {
     menuBtnHover();
     playMenuAudio();
     menuPop();
-    
+    btnToggleAudio();
+
+
 
     // Assign the function reference instead of calling it immediately
     document.querySelector(".start-game").onclick = menuBtnOnClick;
-        try {
-            boardInit(); //Initialise the board
-        } catch (error) {
-            console.error('Error during board initialization:', error);
-            alert('An error occurred while initializing the game. Please try reloading the page.');
-        }
+    try {
+        boardInit(); //Initialise the board
 
+
+    } catch (error) {
+        console.error('Error during board initialization:', error);
+        alert('An error occurred while initializing the game. Please try reloading the page.');
+    }
+
+
+}
+
+/**Function that adds Menu Toggle to music on-off buttons */
+function btnToggleAudio() {
     document.querySelectorAll(".music-on-off").forEach(button => {
         button.addEventListener('click', toggleAudio);
     });
@@ -43,11 +50,11 @@ function gameInit() {
  * 
  * This is a change happened in Chrome browser
  *
- * */ 
+ * */
 
 function menuPop() {
     function openPopup() {
-        document.querySelector(".popup").style.display = "block";
+        hideShowElement(false, ".popup"); //shows the popup
     }
 
     window.addEventListener("load", function() {
@@ -55,18 +62,22 @@ function menuPop() {
     });
 
     //the following set the interaction that triggers the menu audio to play
-    document.querySelector(".close").addEventListener("click", function(){
-        document.querySelector(".popup").style.display = "none";
-        playMenuAudio(); 
-    });
-    
-     document.querySelector(".close-link").addEventListener("click", function(){
-        document.querySelector(".popup").style.display = "none";
+    document.querySelector(".close").addEventListener("click", function() {
+        hideShowElement(true, ".popup"); //closes the popup
         playMenuAudio();
+
     });
-    
+
+    document.querySelector(".close-link").addEventListener("click", function() {
+        hideShowElement(true, ".popup"); //closes the popup
+        playMenuAudio();
+
+    });
+
     // Expose openPopup for testing
-    return { openPopup };
+    return {
+        openPopup
+    };
 }
 
 
@@ -75,40 +86,38 @@ function menuPop() {
  * the page is already loaded at this point
  */
 
-function levelOnePop(){
+function levelOnePop() {
     const menuContainer = document.querySelector('.menu-container')
     displayTimer();
 
-        setTimeout(
-            function open(event){
-                document.querySelector(".popup-level1").style.display = "block";
-                popupClose();
-            },
-            200,
+    setTimeout(
+        function open(event) {
+            hideShowElement(false, ".popup-level1");
+            popupClose();
+        },
+        200,
 
-            
-    
-        );
-        
-        //setting a blur so that the popout stands out
-        menuContainer.style.filter = 'blur(3px)';
-        
-       
-        
+    );
+
+    //setting a blur so that the popout stands out
+    menuContainer.style.filter = 'blur(3px)';
+
+
+
     /**Function responsible for closing the 
      *level1 popup by clicking Got it!
      *
      */
     function popupClose() {
         document.querySelector(".close-link-level1").addEventListener("click", closePopup);
-        
-        function closePopup(){
-                document.querySelector(".popup-level1").style.display = "none";
-                //removing the blur when user clicks Got It!
-                menuContainer.style.filter = '';
-            }
+
+        function closePopup() {
+            hideShowElement(true, ".popup-level1");
+            //removing the blur when user clicks Got It!
+            menuContainer.style.filter = '';
+        }
     }
- 
+
 }
 
 
@@ -117,23 +126,22 @@ function levelOnePop(){
  * that can be set.
  */
 function gameTimer(timer) {
-    const timerHtml = document.querySelector('.timer');
-    const count = setInterval(() => {
-      timerHtml.textContent = timer--;
-      if (timer < 0) {
-        clearInterval(count);
-        timerHtml.textContent = '0';
-        gameOver(); // Call gameOver when the timer hits 0
-      }
+    let timerHtml = document.querySelector('.timer');
+    let count = setInterval(() => {
+        timerHtml.textContent = timer--;
+        if (timer < 0) {
+            clearInterval(count);
+            timerHtml.textContent = '0';
+            gameOver(); // Call gameOver when the timer hits 0
+        }
     }, 1000);
-  }
+}
 
 /**
  * Function that displays the timer element
  */
-function displayTimer(){
-    let timerText = document.querySelector('.timer-text');
-    timerText.style.display ='block';
+function displayTimer() {
+    hideShowElement(false, ".timer-text");
 }
 
 
@@ -167,18 +175,25 @@ function highScore() {
 /**
  * Level complete function
  */
-function levelComplete(){
-    let levelCompletePop = document.querySelector(".popup-level-complete");
-    levelCompletePop.style.display = "block";
+function levelComplete() {
+    hideShowElement(false, ".popup-level-complete");
 }
 
 /**
  * GameOver function restars the game and displays the GameOver popup
  */
-function gameOver(){
-    let popup = document.querySelector('.popup-game-over')
-    popup.style.display= 'block';
-   
+function gameOver() {
+    hideShowElement(false, ".popup-game-over");
+}
+
+//Function that hides and show elements
+function hideShowElement(hide, elementSelector) {
+    let element = document.querySelector(elementSelector);
+    if (hide) {
+        element.classList.add("hide");
+    } else {
+        element.classList.remove("hide");
+    }
 }
 
 //Exporting Jest Tests

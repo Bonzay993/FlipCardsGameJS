@@ -1,5 +1,7 @@
+</html>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,84 +12,70 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
+
 <body class="prevent-select">
-   
     <div class="menu-container">
-        
         <div class="title">
-            <h3 class="title-heading">CARD FLIPPER <i class="fa-brands fa-square-js"></i></h3>
-            <h3 class="timer-text">Time:<span class="timer"></span></h3>
+            <h3 class="title-heading">CARD FLIPPER <i class="fa-brands fa-square-js"></i>
+        </h3>
+            <h3 class="timer-text">Time: <span class="timer"></span>
+        </h3>
         </div>
         <div class="button-wrapper">
-            
             <button class="start-game menu-btn">Start Game</button>
-            <button class="music-on-off menu-btn">Music:<span class="on-off">On</span></button>
-        
+            <button class="music-on-off menu-btn">Music: <span class="on-off">On</span>
+            </button>
         </div>
         <div class="game-area-wrapper">
-            <button class="music-on-off game-music-btn">Music:<span class="on-off">On</span></button>
+            <button class="music-on-off game-music-btn">Music: <span class="on-off">On</span>
+            </button>
             <div class="game-grid prevent-select"></div>
             <div class="score">
-                <p class="score-paragraph">SCORE: <span class="score-value">0</span></p>
-                <p class="high-score-paragraph">HIGH SCORE: <span class="high-score-value">0</span></p>
+                <p class="score-paragraph">SCORE: <span class="score-value">0</span>
+                </p>
+                <p class="high-score-paragraph">HIGH SCORE: <span class="high-score-value">0</span>
+                </p>
             </div>
-
         </div>
-       
         <div class="version-game-container">
             <p class="version-paragraph">v.1.0.2</p>
         </div>
     </div>
-   <div class="popup">
+    <div class="popup">
         <button class="close">&times;</button>
         <h1 class="popup-heading">Welcome to CardFlipperJS!</h1>
         <p class="popup-paragraph">Your goal is to get the highest points in this thrilling Card Flipper Game</p>
         <a class="popup-anchor close-link">Let's Play</a>
-   </div> 
+    </div>
     <audio class="menu-audio">
         <source src="./content/sound/menu.mp3">
     </audio>
-
-<!--POP-UPS-------------------------------------------------->
-    
-    <div class="popup popup-level1">
+    <!--POP-UPS-------------------------------------------------->
+    <div class="popup popup-level1 hide">
         <!--Got IT button-->
         <h1 class="popup-heading">Tutorial</h1>
         <p class="popup-paragraph">Earn points by matching pair of cards before the time runs out!</p>
         <a class="popup-anchor close-link-level1">Got it!</a>
-    </div> 
-
+    </div>
     <!--GAME OVER POP-->
-    <div class="popup popup-game-over">
+    <div class="popup popup-game-over hide">
         <h1 class="popup-heading">TIME EXPIRED</h1>
         <p class="popup-paragraph">Sorry, time is up!</p>
         <a class="popup-anchor" href="./index.html">Restart</a>
     </div>
-
-   <!--Pass level Pop-->
-   <div class="popup  popup-level-complete">
+    <!--Pass level Pop-->
+    <div class="popup  popup-level-complete hide">
         <h1 class="popup-heading">Congratulations</h1>
         <p class="popup-paragraph">You have passed this level</p>
         <p class="popup-paragraph">Next Level under Construction</p>
         <a class="popup-anchor" href="./index.html">Restart</a>
-   </div>
-
-    
-   
-
-    
-    <footer class="version">
-       
-    </footer>
-   
-   
+    </div>
+    <footer class="version"></footer>
     <script src="./content/scripts/menu.js"></script>
     <script src="./content/scripts/game.js"></script>
     <script src="./content/scripts/sound.js"></script>
     <script src="./content/scripts/levels.js"></script>
     <script src="./content/scripts/assets.js"></script>
-    
-    
-    
 </body>
+
 </html>
