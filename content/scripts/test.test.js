@@ -8,6 +8,7 @@ const {
   updateHighScore,
   levelComplete,
   gameOver,
+  hideShowElement,
 } = require('./game.js');
 
 describe('Game Initialization and Functionality Tests', () => {
@@ -67,10 +68,10 @@ describe('Game Initialization and Functionality Tests', () => {
 
       // Directly invoke the popup opening for testing
       openPopup();
-      expect(document.querySelector('.popup').style.display).toBe('block');
+      expect(hideShowElement).toBe(false);
 
       document.querySelector(".close").click();
-      expect(document.querySelector('.popup').style.display).toBe('none');
+      expect(hideShowElement).toBe(true);
   });
 
 

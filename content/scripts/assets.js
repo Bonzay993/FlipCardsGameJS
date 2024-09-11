@@ -16,7 +16,7 @@ const GENERAL_ASSETS = [
 
 //Game assets level 1-3 total of 6 assets
 
-const gameAssetsLevel13 = [
+const GAME_ASSETS_LEVEL_1TO3 = [
     {
         name: "card",
         path: "./content/img/level1-level3/card.png"
@@ -80,7 +80,7 @@ const gameAssetsLevel13 = [
 ]
 
 
-const backgroundImages = [
+const BACKGROUND_IMAGES= [
     {
         name: "level1Bg",
         path: "./content/img/level1-420kb-background"

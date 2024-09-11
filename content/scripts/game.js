@@ -3,7 +3,8 @@
  *
  */
 
-document.addEventListener("DOMContentLoaded", gameInit)
+const MENU_CONTAINER = document.querySelector('.menu-container');
+document.addEventListener("DOMContentLoaded", gameInit);
 
 
 /**
@@ -17,20 +18,15 @@ function gameInit() {
     menuPop();
     btnToggleAudio();
 
-
-
     // Assign the function reference instead of calling it immediately
     document.querySelector(".start-game").onclick = menuBtnOnClick;
     try {
-        boardInit(); //Initialise the board
-
+        boardInit(); 
 
     } catch (error) {
         console.error('Error during board initialization:', error);
         alert('An error occurred while initializing the game. Please try reloading the page.');
     }
-
-
 }
 
 /**Function that adds Menu Toggle to music on-off buttons */
@@ -40,8 +36,6 @@ function btnToggleAudio() {
     });
 }
 
-
-
 /**
  *  Menu POPUP - The popup that loads first when loading the game.
  * This is here just so the sound works as the user has to interact with the 
@@ -49,75 +43,63 @@ function btnToggleAudio() {
  * Let's play button or the close button
  * 
  * This is a change happened in Chrome browser
- *
+ *  Expose openPopup for testing
  * */
-
 function menuPop() {
-    function openPopup() {
-        hideShowElement(false, ".popup"); //shows the popup
-    }
-
     window.addEventListener("load", function() {
         setTimeout(openPopup, 200);
     });
-
-    //the following set the interaction that triggers the menu audio to play
-    document.querySelector(".close").addEventListener("click", function() {
-        hideShowElement(true, ".popup"); //closes the popup
-        playMenuAudio();
-
-    });
-
-    document.querySelector(".close-link").addEventListener("click", function() {
-        hideShowElement(true, ".popup"); //closes the popup
-        playMenuAudio();
-
-    });
-
-    // Expose openPopup for testing
+    closePopup();
     return {
         openPopup
     };
+}
+
+function openPopup() {
+    hideShowElement(false, ".popup");
+}
+
+/**
+ * Function that enables the the user to close the popup
+ */
+function closePopup(){
+    document.querySelector(".close").addEventListener("click", function() {
+        hideShowElement(true, ".popup"); //closes the popup
+        playMenuAudio();
+    });
+    document.querySelector(".close-link").addEventListener("click", function() {
+        hideShowElement(true, ".popup"); //closes the popup
+        playMenuAudio();
+    });
 }
 
 
 /**
  * First level tutorial popup .Removed the Window Onload because
  * the page is already loaded at this point
+ * It also set a background blur so that the popout stands out
  */
-
 function levelOnePop() {
-    const menuContainer = document.querySelector('.menu-container')
     displayTimer();
-
     setTimeout(
         function open(event) {
             hideShowElement(false, ".popup-level1");
             popupClose();
         },
         200,
-
     );
+    MENU_CONTAINER.style.filter = 'blur(3px)';
+}
 
-    //setting a blur so that the popout stands out
-    menuContainer.style.filter = 'blur(3px)';
-
-
-
-    /**Function responsible for closing the 
-     *level1 popup by clicking Got it!
+ /**Function responsible for closing the 
+     *level1 popup and removing the blur when user clicks Got It! 
      *
      */
-    function popupClose() {
-        document.querySelector(".close-link-level1").addEventListener("click", closePopup);
-
-        function closePopup() {
-            hideShowElement(true, ".popup-level1");
-            //removing the blur when user clicks Got It!
-            menuContainer.style.filter = '';
-        }
-    }
-
+function popupClose() {
+    document.querySelector(".close-link-level1").addEventListener("click", function() {
+        hideShowElement(true, ".popup-level1");
+        MENU_CONTAINER.style.filter = '';
+    });
 }
 
 
@@ -143,8 +125,6 @@ function gameTimer(timer) {
 function displayTimer() {
     hideShowElement(false, ".timer-text");
 }
-
-
 
 
 /**
@@ -199,7 +179,6 @@ function hideShowElement(hide, elementSelector) {
 }
 
 //Exporting Jest Tests
-
 module.exports = {
     gameInit,
     menuPop,
@@ -207,5 +186,6 @@ module.exports = {
     gameTimer,
     updateHighScore,
     levelComplete,
-    gameOver
+    gameOver,
+    hideShowElement
 };
