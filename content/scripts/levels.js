@@ -1,7 +1,7 @@
 /**
  * LEVEL1;
  */
-const NUMBER_OF_CARDS_LEVEL_ONE = 12 //declare number of cards
+const NUMBER_OF_CARDS_LEVEL_ONE = 12; //declare number of cards
 const TIMER_LEVEL_ONE = 15; //declare timer
 
 
@@ -11,22 +11,20 @@ let cardsChosenIds = [];
 let cardsWon = [];
 
 
-
-
 /**
  * Initialise the visual elements 
  */
 function boardInit() {
-    levelOneBoard()
+    levelOneBoard();
     updateHighScore();
 
 
 
     document.querySelector(".start-game").addEventListener('click', function() {
 
-        document.querySelector(".button-wrapper").style.display = "none"
-        document.querySelector(".menu-container").style["background-image"] = 'url("content/img/level1-background.webp")'
-        document.querySelector(".menu-container").style.height = "auto"
+        document.querySelector(".button-wrapper").style.display = "none";
+        document.querySelector(".menu-container").style["background-image"] = 'url("content/img/level1-background.webp")';
+        document.querySelector(".menu-container").style.height = "auto";
         document.querySelector(".title-heading").innerHTML = 'Level 1';
         document.querySelector(".game-music-btn").style.display = "block";
         document.querySelector(".score").style.display = "block";
@@ -51,8 +49,7 @@ function boardInit() {
  * Number of cards 
  */
 function levelOneBoard() {
-    shuffleArray(NUMBER_OF_CARDS_LEVEL_ONE)
-
+    shuffleArray(NUMBER_OF_CARDS_LEVEL_ONE);
 }
 
 
@@ -60,16 +57,16 @@ function levelOneBoard() {
  * Shuffles the array of cards 
  */
 function shuffleArray() {
-    gameAssetsLevel13.sort(() => 0.5 - Math.random()) //made the array shuffle random   
+    GAME_ASSETS_LEVEL_1TO3.sort(() => 0.5 - Math.random()) //made the array shuffle random   
     let gameGrid = document.querySelector('.game-grid');
     gameGrid.style.display = 'flex';
 
     for (let i = 0; i < NUMBER_OF_CARDS_LEVEL_ONE; i++) {
-        let card = document.createElement("img")
+        let card = document.createElement("img");
         card.setAttribute('src', "content/img/card-back.webp");
-        card.setAttribute('draggable', "false")
-        card.setAttribute('data-id', i)
-        card.addEventListener('click', flipCard)
+        card.setAttribute('draggable', "false");
+        card.setAttribute('data-id', i);
+        card.addEventListener('click', flipCard);
         gameGrid.appendChild(card);
     }
 }
@@ -83,15 +80,15 @@ function shuffleArray() {
 function flipCard() {
     if (isCheckingMatch) return; // Prevent flipping if checking match
     let cardId = this.getAttribute('data-id');
-    cardsChosen.push(gameAssetsLevel13[cardId].name);
+    cardsChosen.push(GAME_ASSETS_LEVEL_1TO3[cardId].name);
     cardsChosenIds.push(cardId);
 
-    this.setAttribute('src', gameAssetsLevel13[cardId].path)
+    this.setAttribute('src', GAME_ASSETS_LEVEL_1TO3[cardId].path);
 
     if (cardsChosen.length === 2) {
         isCheckingMatch = true; // Set the checking match flag
 
-        setTimeout(checkMatch, 500) //the timer that sets how long the card is shown
+        setTimeout(checkMatch, 500); //the timer that sets how long the card is shown
     }
 }
 
@@ -104,25 +101,7 @@ function checkMatch() {
     let totalPairs = cards.length / 2; // Calculate total number of pairs
     let isMatch = cardsChosen[0] === cardsChosen[1];
     let isSameCard = optionOneId === optionTwoId;
-
-    function handleMatch() {
-        successMatchAudio();
-        setCardToEmpty(optionOneId);
-        setCardToEmpty(optionTwoId);
-        cards[optionOneId].removeEventListener('click', flipCard);
-        cards[optionTwoId].removeEventListener('click', flipCard);
-        cardsWon.push(cardsChosen);
-    }
-
-    function setCardToEmpty(cardId) {
-        cards[cardId].setAttribute('src', getGeneralAssets("emptyCard"));
-    }
-
-    function resetCards() {
-        cards[optionOneId].setAttribute('src', getGeneralAssets("cardBack"));
-        cards[optionTwoId].setAttribute('src', getGeneralAssets("cardBack"));
-        failedMatchAudio();
-    }
+    
 
     // Prevent matching the same card with itself
     if (isSameCard) {
@@ -142,6 +121,26 @@ function checkMatch() {
         levelComplete(); // Call the function to display the success message
     }
 
+    function resetCards() {
+        cards[optionOneId].setAttribute('src', getGeneralAssets("cardBack"));
+        cards[optionTwoId].setAttribute('src', getGeneralAssets("cardBack"));
+        failedMatchAudio();
+
+    }
+
+    function handleMatch() {
+        successMatchAudio();
+        setCardToEmpty(optionOneId);
+        setCardToEmpty(optionTwoId);
+        cards[optionOneId].removeEventListener('click', flipCard);
+        cards[optionTwoId].removeEventListener('click', flipCard);
+        cardsWon.push(cardsChosen);
+    }
+    
+    function setCardToEmpty(cardId) {
+        cards[cardId].setAttribute('src', getGeneralAssets("emptyCard"));
+    }
+    
     // Resets the cards
     function resetChosenCards() {
         cardsChosen = [];
@@ -149,6 +148,7 @@ function checkMatch() {
         isCheckingMatch = false;
     }
 }
+
 
 
 
