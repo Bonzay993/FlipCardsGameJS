@@ -1,8 +1,9 @@
+
 /**
  * LEVEL1;
  */
 const NUMBER_OF_CARDS_LEVEL_ONE = 12; //declare number of cards
-const TIMER_LEVEL_ONE = 15; //declare timer
+const TIMER_LEVEL_ONE = 20; //declare timer
 
 
 let isCheckingMatch = false; // Variable to track if checking match
@@ -11,39 +12,7 @@ let cardsChosenIds = [];
 let cardsWon = [];
 
 
-/**
- * Initialise the visual elements 
- */
-function boardInit() {
-    levelOneBoard();
-    updateHighScore();
 
-
-
-    document.querySelector(".start-game").addEventListener('click', function() {
-
-        document.querySelector(".button-wrapper").style.display = "none";
-        document.querySelector(".menu-container").style["background-image"] = 'url("content/img/level1-background.webp")';
-        document.querySelector(".menu-container").style.height = "auto";
-        document.querySelector(".title-heading").innerHTML = 'Level 1';
-        document.querySelector(".game-music-btn").style.display = "block";
-        document.querySelector(".score").style.display = "block";
-        document.querySelector(".game-area-wrapper").style.display = "flex";
-
-        levelOnePop(); // calling the popup message for the level 1
-
-
-    });
-
-    // Add event listener for the "Got it!" button
-    document.querySelector(".close-link-level1").addEventListener('click', function() {
-        // Start the game timer
-        gameTimer(TIMER_LEVEL_ONE);
-
-        // Optionally, hide the popup after starting the timer
-        document.querySelector('.popup-level1').style.display = 'none';
-    });
-}
 
 /**Level 1 board settings as:
  * Number of cards 
@@ -125,7 +94,6 @@ function checkMatch() {
         cards[optionOneId].setAttribute('src', getGeneralAssets("cardBack"));
         cards[optionTwoId].setAttribute('src', getGeneralAssets("cardBack"));
         failedMatchAudio();
-
     }
 
     function handleMatch() {

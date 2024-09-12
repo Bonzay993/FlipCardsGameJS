@@ -95,6 +95,12 @@
     background-size: cover;
     border-radius: 15px;
   }
+
+  .game-container{
+    background-image: url("../img/level1-background.webp");
+    height:auto;
+  }
+
   /* MAIN MENU BUTTONS WRAPPER */
   .button-wrapper {
     display: flex;
@@ -151,12 +157,12 @@
   
   /* GAME AREA WRAPPER */
   .game-area-wrapper {
-    display: none;
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 10px;
     width: 100%;
     padding: 20px;
+    display:flex;
   }
   
   .game-music-btn {
@@ -166,7 +172,7 @@
     font-weight: bold;
     border-radius: 15px;
     border: 1.2px solid black;
-    display: none;
+    display: block;
   }
   /* CARD GRID STYLE */
   .game-grid {
@@ -195,8 +201,8 @@
   /* SCORE AREA STYLE */
   .score {
     font-size: 1.6rem;
-    display: none;
     width: 10rem;
+    display:block;
   }
   
   .high-score-paragraph {

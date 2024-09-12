@@ -2,9 +2,13 @@
  * RUNNING THE GAME
  *
  */
+document.addEventListener("DOMContentLoaded", gameInit);
 
 const MENU_CONTAINER = document.querySelector('.menu-container');
-document.addEventListener("DOMContentLoaded", gameInit);
+const START_GAME_BUTTON =  document.querySelector(".start-game");
+const GOT_IT_BUTTON = document.querySelector(".got-it-button");
+const TITLE_HEADING = document.querySelector(".title-heading");
+
 
 
 /**
@@ -17,9 +21,10 @@ function gameInit() {
     playMenuAudio();
     menuPop();
     btnToggleAudio();
+    
 
     // Assign the function reference instead of calling it immediately
-    document.querySelector(".start-game").onclick = menuBtnOnClick;
+    START_GAME_BUTTON.onclick = menuBtnOnClick;
     try {
         boardInit(); 
 
@@ -28,6 +33,41 @@ function gameInit() {
         alert('An error occurred while initializing the game. Please try reloading the page.');
     }
 }
+
+/**
+ * Initialise the visual elements after pressing the START GAME button 
+ * Start the game timer after pressing GOT IT button on the level one popup
+ */
+function boardInit() {
+    levelOneBoard();
+    updateHighScore();
+    menuElements();
+
+    START_GAME_BUTTON.addEventListener('click', boardElements);
+    GOT_IT_BUTTON.addEventListener('click', function(){
+        gameTimer(TIMER_LEVEL_ONE);
+        closePopup();
+    }); 
+}
+
+function menuElements(){
+    hideShowElement(true, ".score");
+    hideShowElement(true, ".game-area-wrapper");
+    hideShowElement(true, ".game-music-btn");
+    hideShowElement(true, ".popup-level1");
+  }
+
+function boardElements(){
+    TITLE_HEADING.innerHTML= 'Level 1';
+    hideShowElement(true, ".button-wrapper");
+    MENU_CONTAINER.classList.add('game-container');
+    hideShowElement(false, ".game-music-btn");
+    hideShowElement(false, ".score");
+    hideShowElement(false, ".game-area-wrapper");
+    hideShowElement(false, ".game-music-btn");
+    levelOnePop();
+}
+
 
 /**Function that adds Menu Toggle to music on-off buttons */
 function btnToggleAudio() {
@@ -63,14 +103,22 @@ function openPopup() {
  * Function that enables the the user to close the popup
  */
 function closePopup(){
-    document.querySelector(".close").addEventListener("click", function() {
+   /* document.querySelector(".close").addEventListener("click", function() {
         hideShowElement(true, ".popup"); //closes the popup
         playMenuAudio();
     });
     document.querySelector(".close-link").addEventListener("click", function() {
-        hideShowElement(true, ".popup"); //closes the popup
+        ; //closes the popup
         playMenuAudio();
-    });
+   }); */
+
+    let close = document.querySelector(".close");
+    let closeLink = document.querySelector(".close-link")
+    let closeButtons = [close,closeLink];
+    closeButtons.forEach(function{
+        hideShowElement(true, ".popup");
+        playMenuAudio();
+    })
 }
 
 
@@ -84,24 +132,14 @@ function levelOnePop() {
     setTimeout(
         function open(event) {
             hideShowElement(false, ".popup-level1");
-            popupClose();
+            closePopup();
+            
         },
         200,
+        MENU_CONTAINER.style.filter = '',
     );
     MENU_CONTAINER.style.filter = 'blur(3px)';
 }
-
- /**Function responsible for closing the 
-     *level1 popup and removing the blur when user clicks Got It! 
-     *
-     */
-function popupClose() {
-    document.querySelector(".close-link-level1").addEventListener("click", function() {
-        hideShowElement(true, ".popup-level1");
-        MENU_CONTAINER.style.filter = '';
-    });
-}
-
 
 /**
  * Function that displays the timer and accepts a timer value
