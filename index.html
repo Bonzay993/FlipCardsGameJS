@@ -30,7 +30,7 @@
         </div>
         <!--GAME AREA-->
         <div class="game-area-wrapper">
-            <button class="music-on-off game-music-btn">Music: <span class="on-off">On</span>
+            <button class="music-on-off game-music-btn hide">Music: <span class="on-off">On</span>
             </button>
             <div class="game-grid prevent-select"></div>
             <div class="score">
@@ -57,10 +57,10 @@
         <source src="./content/sound/menu.mp3">
     </audio>
     <!--TUTORIAL POPUP-->
-    <div class="popup popup-level1 hide">
+    <div class="popup popup-level1">
         <h1 class="popup-heading">Tutorial</h1>
         <p class="popup-paragraph">Earn points by matching pair of cards before the time runs out!</p>
-        <a class="popup-anchor close-link-level1">Got it!</a>
+        <a class="popup-anchor close-link">Got it!</a>
     </div>
     <!--GAME OVER POPUP-->
     <div class="popup popup-game-over hide">
@@ -76,7 +76,6 @@
         <a class="popup-anchor" href="./index.html">Restart</a>
     </div>
     <footer class="version"></footer>
-    <script src="./content/scripts/menu.js"></script>
     <script src="./content/scripts/game.js"></script>
     <script src="./content/scripts/sound.js"></script>
     <script src="./content/scripts/levels.js"></script>
