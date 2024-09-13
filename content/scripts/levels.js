@@ -3,7 +3,7 @@
  * LEVEL1;
  */
 const NUMBER_OF_CARDS_LEVEL_ONE = 12; //declare number of cards
-const TIMER_LEVEL_ONE = 20; //declare timer
+const TIMER_LEVEL_ONE = 60; //declare timer
 
 
 let isCheckingMatch = false; // Variable to track if checking match

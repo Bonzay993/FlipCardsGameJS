@@ -60,7 +60,7 @@
     <div class="popup popup-level1">
         <h1 class="popup-heading">Tutorial</h1>
         <p class="popup-paragraph">Earn points by matching pair of cards before the time runs out!</p>
-        <a class="popup-anchor close-link">Got it!</a>
+        <a class="popup-anchor got-it-button">Got it!</a>
     </div>
     <!--GAME OVER POPUP-->
     <div class="popup popup-game-over hide">
@@ -70,11 +70,14 @@
     </div>
     <!--LEVEL COMPLETE POPUP-->
     <div class="popup  popup-level-complete hide">
-        <h1 class="popup-heading">Congratulations</h1>
+        <h1 class="popup-heading popup-level-complete-heading">Congratulations</h1>
         <p class="popup-paragraph">You have passed this level</p>
-        <p class="popup-paragraph">Next Level under Construction</p>
-        <a class="popup-anchor" href="./index.html">Restart</a>
+        <h2 class="popup-second-paragraph">Your score is:</h2>
+        <p class="score-calculator"><span class="score-calculated">0</span></p>
+        <p class="popup-paragraph popup-level-under-construction">Next Level under Construction</p>
+        <a class="popup-anchor popup-restart" href="./index.html">Restart</a>
     </div>
+    <!--CALCULATE SCORE-->
     <footer class="version"></footer>
     <script src="./content/scripts/game.js"></script>
     <script src="./content/scripts/sound.js"></script>

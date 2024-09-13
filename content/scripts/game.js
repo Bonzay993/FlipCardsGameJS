@@ -1,15 +1,18 @@
-/**
- * RUNNING THE GAME
- *
- */
-document.addEventListener("DOMContentLoaded", gameInit);
 
-const MENU_CONTAINER = document.querySelector('.menu-container');
+const MENU_CONTAINER = document.querySelector(".menu-container");
 const START_GAME_BUTTON =  document.querySelector(".start-game");
 const GOT_IT_BUTTON = document.querySelector(".got-it-button");
 const TITLE_HEADING = document.querySelector(".title-heading");
 
-
+let count;  
+let currentTimer;
+/**
+ * RUNNING THE GAME
+ *
+ */
+window.onload = function() {
+    gameInit();
+};
 
 /**
  * Initialise the elements when loading the game
@@ -45,8 +48,9 @@ function boardInit() {
 
     START_GAME_BUTTON.addEventListener('click', boardElements);
     GOT_IT_BUTTON.addEventListener('click', function(){
+        hideShowElement(true, ".popup-level1");
         gameTimer(TIMER_LEVEL_ONE);
-        closePopup();
+        
     }); 
 }
 
@@ -95,31 +99,32 @@ function menuPop() {
     };
 }
 
+/**Unhide the Popup */
 function openPopup() {
     hideShowElement(false, ".popup");
 }
 
 /**
  * Function that enables the the user to close the popup
+ *  Add event listeners for each selector
+ * Special case for popup-level1 with additional logic
  */
-function closePopup(){
-   /* document.querySelector(".close").addEventListener("click", function() {
-        hideShowElement(true, ".popup"); //closes the popup
-        playMenuAudio();
-    });
-    document.querySelector(".close-link").addEventListener("click", function() {
-        ; //closes the popup
-        playMenuAudio();
-   }); */
-
-    let close = document.querySelector(".close");
-    let closeLink = document.querySelector(".close-link")
-    let closeButtons = [close,closeLink];
-    closeButtons.forEach(function{
+function closePopup() {
+    function closeAndPlayAudio(selector) {
+        document.querySelector(selector).addEventListener("click", function() {
+            hideShowElement(true, ".popup");
+            playMenuAudio();
+        });
+    }
+    closeAndPlayAudio(".close");
+    closeAndPlayAudio(".close-link");
+    
+    document.querySelector(".popup-level1").addEventListener("click", function() {
         hideShowElement(true, ".popup");
-        playMenuAudio();
-    })
+        MENU_CONTAINER.style.filter = '';
+    });
 }
+
 
 
 /**
@@ -132,29 +137,10 @@ function levelOnePop() {
     setTimeout(
         function open(event) {
             hideShowElement(false, ".popup-level1");
-            closePopup();
-            
         },
         200,
-        MENU_CONTAINER.style.filter = '',
     );
     MENU_CONTAINER.style.filter = 'blur(3px)';
-}
-
-/**
- * Function that displays the timer and accepts a timer value
- * that can be set.
- */
-function gameTimer(timer) {
-    let timerHtml = document.querySelector('.timer');
-    let count = setInterval(() => {
-        timerHtml.textContent = timer--;
-        if (timer < 0) {
-            clearInterval(count);
-            timerHtml.textContent = '0';
-            gameOver(); // Call gameOver when the timer hits 0
-        }
-    }, 1000);
 }
 
 /**
@@ -163,6 +149,32 @@ function gameTimer(timer) {
 function displayTimer() {
     hideShowElement(false, ".timer-text");
 }
+
+/**
+ * Function that displays the timer and accepts a timer value
+ * that can be set.
+ * Start the interval and store its reference in the global 'count'
+ *
+ * Call gameOver when the timer hits 0
+ */
+function gameTimer(timer) {
+    let timerHtml = document.querySelector('.timer');
+    currentTimer = timer;  
+    
+   
+    count = setInterval(() => {
+        timerHtml.textContent = currentTimer;  // Display the current value of timer
+        if (currentTimer < 0) {
+            clearInterval(count);  // Stop the timer when it reaches below 0
+            timerHtml.textContent = '0';
+            gameOver();
+        } else {
+            currentTimer--;  
+        }
+    }, 1000);  
+}
+
+
 
 
 /**
@@ -195,6 +207,14 @@ function highScore() {
  */
 function levelComplete() {
     hideShowElement(false, ".popup-level-complete");
+    clearInterval(count);  // Freeze the timer by clearing the interval
+    // At this point, 'currentTimer' holds the frozen value
+    console.log('Timer frozen at:', currentTimer);
+
+}
+
+function calculateScore(){
+    
 }
 
 /**
