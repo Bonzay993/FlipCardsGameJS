@@ -44,6 +44,7 @@
     border-radius: 15px;
     color: black;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
   }
   
   .popup-heading {
@@ -68,6 +69,40 @@
     text-align: center;
     margin: 20px 0;
   }
+
+  .popup-second-paragraph{
+    margin-top:15%;
+  }
+
+  .popup-level-complete{
+    height:40%;
+  }
+
+  .popup-level-complete-heading{
+    color:#38b23a
+  }
+
+  .score-calculator{
+    margin-top:4%;
+  }
+
+  .score-calculated{
+    font-size: 150%;
+    font-weight: bold;
+  }
+
+  .popup-level-under-construction{
+    color:#f7360b;
+    font-weight: bold;
+    font-size: 120%;
+    margin-top:10%;
+  }
+
+  .popup-restart{
+    margin-top:10%;
+    
+  }
+
   /* POPUPS CLOSE "X" STYLE*/
   .close {
     display: block;
