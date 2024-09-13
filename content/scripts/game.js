@@ -6,6 +6,8 @@ const TITLE_HEADING = document.querySelector(".title-heading");
 
 let count;  
 let currentTimer;
+
+
 /**
  * RUNNING THE GAME
  *
@@ -174,6 +176,26 @@ function gameTimer(timer) {
     }, 1000);  
 }
 
+function calculateScore(){
+    let timerHtml = document.querySelector('.score-calculated');
+    let score = document.querySelector('.score-value');
+    let multiplierThree = currentTimer * 3.5;
+    let multiplierTwo = currentTimer * 2.5;
+    let multiplierOne = currentTimer *1.5;
+
+    if (currentTimer > 40 && currentTimer <50){
+        timerHtml.innerHTML = multiplierThree;
+        score.textContent = multiplierThree;
+    } else if (currentTimer > 30 && currentTimer < 40) {
+        timerHtml.innerHTML = multiplierTwo;
+        score.textContent= multiplierTwo;
+    } else if (currentTimer > 20 && currentTimer < 30) {
+        timerHtml.innerHTML = multiplierOne;
+        score.textContent = multiplierOne;
+    }
+    
+}
+
 
 
 
@@ -209,13 +231,11 @@ function levelComplete() {
     hideShowElement(false, ".popup-level-complete");
     clearInterval(count);  // Freeze the timer by clearing the interval
     // At this point, 'currentTimer' holds the frozen value
-    console.log('Timer frozen at:', currentTimer);
+    calculateScore();
 
 }
 
-function calculateScore(){
-    
-}
+
 
 /**
  * GameOver function restars the game and displays the GameOver popup
