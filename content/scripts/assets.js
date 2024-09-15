@@ -83,7 +83,12 @@ const GAME_ASSETS_LEVEL_1TO3 = [
 const BACKGROUND_IMAGES= [
     {
         name: "level1Bg",
-        path: "./content/img/level1-420kb-background"
+        path: "./content/img/level1-background.webp"
+    },
+
+    {
+        name: "menuBg",
+        path: "./content/img/game-background.webp"
     }
 
 ]
@@ -92,6 +97,15 @@ const BACKGROUND_IMAGES= [
 // Function to get the path based on the name
 function getGeneralAssets(name) {
     let asset = GENERAL_ASSETS.find(asset => asset.name === name);
+    if (!asset) {
+        console.error(`Asset not found: ${name}`);
+        return './content/img/error.webp'; // Fallback asset
+    }
+    return asset.path;
+}
+
+function getBackgroundImages(name) {
+    let asset = BACKGROUND_IMAGES.find(asset => asset.name === name);
     if (!asset) {
         console.error(`Asset not found: ${name}`);
         return './content/img/error.webp'; // Fallback asset

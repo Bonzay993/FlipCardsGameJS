@@ -12,6 +12,9 @@ let cardsChosenIds = [];
 let cardsWon = [];
 
 
+let levelOneBackground = getBackgroundImages("level1Bg");
+
+
 
 
 /**Level 1 board settings as:
@@ -19,6 +22,7 @@ let cardsWon = [];
  */
 function levelOneBoard() {
     shuffleArray(NUMBER_OF_CARDS_LEVEL_ONE);
+    assignBackground(levelOneBackground);
 }
 
 
@@ -113,6 +117,15 @@ function checkMatch() {
         cardsChosenIds = [];
         isCheckingMatch = false;
     }
+}
+
+function assignBackground(background) {
+    let gameContainer = document.querySelector(".set-background");
+    if (!gameContainer) {
+        console.error("Error: '.menu-container' element not found.");
+        return;
+    }
+    gameContainer.style.backgroundImage = `url('${background}')`;
 }
 
 

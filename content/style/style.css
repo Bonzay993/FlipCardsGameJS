@@ -126,14 +126,14 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-image: url("../img/game-background.webp");
     background-size: cover;
     border-radius: 15px;
   }
 
+
   .game-container{
-    background-image: url("../img/level1-background.webp");
     height:auto;
+    width:80%;
   }
 
   /* MAIN MENU BUTTONS WRAPPER */
@@ -222,7 +222,7 @@
     width: 100%;
     max-width: 500px;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: #ffffff66;
     box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.4);
     backdrop-filter: blur(2px);
   }
@@ -239,9 +239,10 @@
   
   /* SCORE AREA STYLE */
   .score {
-    font-size: 1.6rem;
+    font-size: 2.1rem;
     width: 10rem;
     display:block;
+    text-shadow: 0 1px 5px #090909
   }
   
   .high-score-paragraph {
@@ -291,6 +292,10 @@
       width: 100%;
       font-size: 0.9rem;
     }
+
+    .game-music-btn{
+      width:25%;
+    } 
   
     .popup {
       width: 80%;
@@ -300,5 +305,34 @@
       width: 80px;
       height: 80px;
     }
+
+    .score{
+      margin:0 auto;
+      text-align: center;
+      font-weight: bold;
+      font-size: 2rem;
+    }
+    
+    @media (max-width: 375px)  {
+
+      .title{
+        padding:3%;
+      }
+      .game-grid{
+        padding:2%;
+        max-width:300px;
+        margin:0 auto;
+      }
+      .version-game-container{
+        margin:0 auto;
+      }
+
+      .game-music-btn{
+        width:20%;
+        height:8%;
+      }
+    }
+    
+    
   }
   

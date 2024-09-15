@@ -8,6 +8,7 @@ let count;
 let currentTimer;
 let timerHtml = document.querySelector('.score-calculated');
 let score = document.querySelector('.score-value');
+let menuBackground = getBackgroundImages("menuBg");
 
 
 /**
@@ -16,6 +17,7 @@ let score = document.querySelector('.score-value');
  */
 window.onload = function() {
     gameInit();
+    
 };
 
 /**
@@ -24,6 +26,7 @@ window.onload = function() {
  * boardInit();
  */
 function gameInit() {
+    assignBackground(menuBackground);
     menuBtnHover();
     playMenuAudio();
     menuPop();
