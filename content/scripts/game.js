@@ -75,6 +75,7 @@ function boardElements(){
     hideShowElement(false, ".score");
     hideShowElement(false, ".game-area-wrapper");
     hideShowElement(false, ".game-music-btn");
+    hideShowElement(true, ".version-paragraph");
     levelOnePop();
     levelOneBoard();
 }
