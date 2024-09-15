@@ -132,8 +132,8 @@
 
 
   .game-container{
-    height:auto;
-    width:80%;
+    height:100%;
+    
   }
 
   /* MAIN MENU BUTTONS WRAPPER */
@@ -310,7 +310,7 @@
       margin:0 auto;
       text-align: center;
       font-weight: bold;
-      font-size: 2rem;
+      font-size: 1.5rem;
     }
     
     @media (max-width: 375px)  {
