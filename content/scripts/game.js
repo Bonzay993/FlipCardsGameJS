@@ -49,7 +49,6 @@ function gameInit() {
  * Start the game timer after pressing GOT IT button on the level one popup
  */
 function boardInit() {
-    levelOneBoard();
     updateHighScore();
     menuElements();
 
@@ -77,6 +76,7 @@ function boardElements(){
     hideShowElement(false, ".game-area-wrapper");
     hideShowElement(false, ".game-music-btn");
     levelOnePop();
+    levelOneBoard();
 }
 
 
