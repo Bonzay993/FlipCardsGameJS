@@ -6,6 +6,8 @@ const TITLE_HEADING = document.querySelector(".title-heading");
 
 let count;  
 let currentTimer;
+let timerHtml = document.querySelector('.score-calculated');
+let score = document.querySelector('.score-value');
 
 
 /**
@@ -177,23 +179,37 @@ function gameTimer(timer) {
 }
 
 function calculateScore(){
-    let timerHtml = document.querySelector('.score-calculated');
-    let score = document.querySelector('.score-value');
-    let multiplierThree = currentTimer * 3.5;
-    let multiplierTwo = currentTimer * 2.5;
-    let multiplierOne = currentTimer *1.5;
+    
 
     if (currentTimer > 40 && currentTimer <50){
-        timerHtml.innerHTML = multiplierThree;
-        score.textContent = multiplierThree;
+        scoreHighMultiplier();
     } else if (currentTimer > 30 && currentTimer < 40) {
-        timerHtml.innerHTML = multiplierTwo;
-        score.textContent= multiplierTwo;
+        scoreMediumMultiplier();
     } else if (currentTimer > 20 && currentTimer < 30) {
-        timerHtml.innerHTML = multiplierOne;
-        score.textContent = multiplierOne;
+        scoreLowMultiplier();
     }
     
+}
+
+function scoreLowMultiplier(){
+    let multiplierOne = currentTimer *1.5;
+    timerHtml.innerHTML = multiplierOne;
+    score.textContent = multiplierOne;
+    updateHighScore(multiplierOne);
+}
+
+function scoreMediumMultiplier(){
+    let multiplierTwo = currentTimer * 2.5;
+    timerHtml.innerHTML = multiplierTwo;
+    score.textContent= multiplierTwo;
+    updateHighScore(multiplierTwo);
+}
+
+function scoreHighMultiplier(){
+    let multiplierThree = currentTimer * 3.5;
+    timerHtml.innerHTML = multiplierThree;
+    score.textContent = multiplierThree;
+    updateHighScore(multiplierThree)
 }
 
 
@@ -234,8 +250,6 @@ function levelComplete() {
     calculateScore();
 
 }
-
-
 
 /**
  * GameOver function restars the game and displays the GameOver popup
