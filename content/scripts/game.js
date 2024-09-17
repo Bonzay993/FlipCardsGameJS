@@ -17,7 +17,6 @@ let menuBackground = getBackgroundImages("menuBg");
  */
 window.onload = function() {
     gameInit();
-    
 };
 
 /**
@@ -216,9 +215,6 @@ function scoreHighMultiplier(){
     updateHighScore(multiplierThree)
 }
 
-
-
-
 /**
  * Function that keeps track of high score and stores it into the browser's cache
  */
@@ -252,7 +248,6 @@ function levelComplete() {
     clearInterval(count);  // Freeze the timer by clearing the interval
     // At this point, 'currentTimer' holds the frozen value
     calculateScore();
-
 }
 
 /**
