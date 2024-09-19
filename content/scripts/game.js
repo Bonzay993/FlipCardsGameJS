@@ -14,13 +14,12 @@ let score = document.querySelector(".score-value");
  * RUNNING THE GAME
  *
  */
-window.onload = function () {
-    
+window.addEventListener('DOMContentLoaded', () => {
         let menuBackground = getBackgroundImages("menuBg");
         gameInit();
         assignBackground(menuBackground);
     
-  }
+  });
 
   /**
  * Function that hides and show elements
