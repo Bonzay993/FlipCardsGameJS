@@ -112,3 +112,7 @@ function getBackgroundImages(name) {
     }
     return asset.path;
 }
+
+module.exports = {
+    getBackgroundImages,
+};

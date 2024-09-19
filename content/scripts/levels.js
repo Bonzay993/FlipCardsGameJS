@@ -10,8 +10,6 @@ let isCheckingMatch = false; // Variable to track if checking match
 let cardsChosen = [];
 let cardsChosenIds = [];
 let cardsWon = [];
-
-
 let levelOneBackground = getBackgroundImages("level1Bg");
 
 
@@ -119,14 +117,6 @@ function checkMatch() {
     }
 }
 
-function assignBackground(background) {
-    let gameContainer = document.querySelector(".set-background");
-    if (!gameContainer) {
-        console.error("Error: '.menu-container' element not found.");
-        return;
-    }
-    gameContainer.style.backgroundImage = `url('${background}')`;
-}
 
 
 

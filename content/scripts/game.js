@@ -1,14 +1,13 @@
 
 const MENU_CONTAINER = document.querySelector(".menu-container");
-const START_GAME_BUTTON =  document.querySelector(".start-game");
-const GOT_IT_BUTTON = document.querySelector(".got-it-button");
+
 const TITLE_HEADING = document.querySelector(".title-heading");
 
 let count;  
 let currentTimer;
-let timerHtml = document.querySelector('.score-calculated');
-let score = document.querySelector('.score-value');
-let menuBackground = getBackgroundImages("menuBg");
+let timerHtml = document.querySelector(".score-calculated");
+let score = document.querySelector(".score-value");
+
 
 
 /**
@@ -16,7 +15,9 @@ let menuBackground = getBackgroundImages("menuBg");
  *
  */
 window.onload = function() {
+    let menuBackground = getBackgroundImages("menuBg");
     gameInit();
+    assignBackground(menuBackground);
 };
 
 /**
@@ -25,22 +26,11 @@ window.onload = function() {
  * boardInit();
  */
 function gameInit() {
-    assignBackground(menuBackground);
     menuBtnHover();
     playMenuAudio();
     menuPop();
     btnToggleAudio();
-    
-
-    // Assign the function reference instead of calling it immediately
-    START_GAME_BUTTON.onclick = menuBtnOnClick;
-    try {
-        boardInit(); 
-
-    } catch (error) {
-        console.error('Error during board initialization:', error);
-        alert('An error occurred while initializing the game. Please try reloading the page.');
-    }
+    boardInit(); 
 }
 
 /**
@@ -48,15 +38,26 @@ function gameInit() {
  * Start the game timer after pressing GOT IT button on the level one popup
  */
 function boardInit() {
+    const START_GAME_BUTTON = document.querySelector('.start-game');
+    const GOT_IT_BUTTON = document.querySelector('.got-it-button');
+
     updateHighScore();
     menuElements();
 
-    START_GAME_BUTTON.addEventListener('click', boardElements);
-    GOT_IT_BUTTON.addEventListener('click', function(){
-        hideShowElement(true, ".popup-level1");
-        gameTimer(TIMER_LEVEL_ONE);
-        
-    }); 
+    if (START_GAME_BUTTON) {
+        START_GAME_BUTTON.addEventListener('click', boardElements);
+    } else {
+        console.error("START_GAME_BUTTON is null.");
+    }
+
+    if (GOT_IT_BUTTON) {
+        GOT_IT_BUTTON.addEventListener('click', function () {
+            hideShowElement(true, ".popup-level1");
+            gameTimer(TIMER_LEVEL_ONE);
+        });
+    } else {
+        console.error("GOT_IT_BUTTON is null.");
+    }
 }
 
 function menuElements(){
@@ -131,6 +132,17 @@ function closePopup() {
         MENU_CONTAINER.style.filter = '';
     });
 }
+
+/**Function that assigns a background so the menu and levels have different backgrounds */
+function assignBackground(background) {
+    let gameContainer = document.querySelector(".set-background");
+    if (!gameContainer) {
+        console.error("Error: '.menu-container' element not found.");
+        return;
+    }
+    gameContainer.style.backgroundImage = `url('${background}')`;
+}
+
 
 
 
@@ -269,6 +281,10 @@ function hideShowElement(hide, elementSelector) {
     }
 }
 
+
+
+
+
 //Exporting Jest Tests
 module.exports = {
     gameInit,
@@ -278,5 +294,6 @@ module.exports = {
     updateHighScore,
     levelComplete,
     gameOver,
-    hideShowElement
+    hideShowElement,
+    
 };
