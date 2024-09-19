@@ -1,7 +1,7 @@
-
 const MENU_CONTAINER = document.querySelector(".menu-container");
-
 const TITLE_HEADING = document.querySelector(".title-heading");
+const SCORE_PARAGRAPH = document.querySelector(".score-paragraph");
+const HIGH_SCORE_PARAGRAPH = document.querySelector(".high-score-paragraph");
 
 let count;  
 let currentTimer;
@@ -14,11 +14,25 @@ let score = document.querySelector(".score-value");
  * RUNNING THE GAME
  *
  */
-window.onload = function() {
-    let menuBackground = getBackgroundImages("menuBg");
-    gameInit();
-    assignBackground(menuBackground);
-};
+window.onload = function () {
+    
+        let menuBackground = getBackgroundImages("menuBg");
+        gameInit();
+        assignBackground(menuBackground);
+    
+  }
+
+  /**
+ * Function that hides and show elements
+ */
+function hideShowElement(hide, elementSelector) {
+    let element = document.querySelector(elementSelector);
+    if (hide) {
+        element.classList.add("hide");
+    } else {
+        element.classList.remove("hide");
+    }
+}
 
 /**
  * Initialise the elements when loading the game
@@ -26,6 +40,7 @@ window.onload = function() {
  * boardInit();
  */
 function gameInit() {
+    menuElements();
     menuBtnHover();
     playMenuAudio();
     menuPop();
@@ -42,7 +57,7 @@ function boardInit() {
     const GOT_IT_BUTTON = document.querySelector('.got-it-button');
 
     updateHighScore();
-    menuElements();
+    
 
     if (START_GAME_BUTTON) {
         START_GAME_BUTTON.addEventListener('click', boardElements);
@@ -61,7 +76,6 @@ function boardInit() {
 }
 
 function menuElements(){
-    hideShowElement(true, ".score");
     hideShowElement(true, ".game-area-wrapper");
     hideShowElement(true, ".game-music-btn");
     hideShowElement(true, ".popup-level1");
@@ -71,8 +85,9 @@ function boardElements(){
     TITLE_HEADING.innerHTML= 'Level 1';
     hideShowElement(true, ".button-wrapper");
     MENU_CONTAINER.classList.add('game-container');
+    SCORE_PARAGRAPH.classList.remove('hide');
+    HIGH_SCORE_PARAGRAPH.classList.remove('hide');
     hideShowElement(false, ".game-music-btn");
-    hideShowElement(false, ".score");
     hideShowElement(false, ".game-area-wrapper");
     hideShowElement(false, ".game-music-btn");
     hideShowElement(true, ".version-paragraph");
@@ -278,17 +293,7 @@ function gameOver() {
     hideShowElement(false, ".popup-game-over");
 }
 
-/**
- * Function that hides and show elements
- */
-function hideShowElement(hide, elementSelector) {
-    let element = document.querySelector(elementSelector);
-    if (hide) {
-        element.classList.add("hide");
-    } else {
-        element.classList.remove("hide");
-    }
-}
+
 
 
 //Exporting Jest Tests
