@@ -213,11 +213,11 @@ function gameTimer(timer) {
 function calculateScore(){
     
 
-    if (currentTimer > 40 && currentTimer <50){
+    if (currentTimer >= 40 && currentTimer <= 50){
         scoreHighMultiplier();
-    } else if (currentTimer > 30 && currentTimer < 40) {
+    } else if (currentTimer >= 30 && currentTimer <= 40) {
         scoreMediumMultiplier();
-    } else if (currentTimer > 20 && currentTimer < 30) {
+    } else if (currentTimer >= 20 && currentTimer <= 30) {
         scoreLowMultiplier();
     } else {
         scoreLowestMultiplier();
