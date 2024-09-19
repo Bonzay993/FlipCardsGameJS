@@ -202,8 +202,17 @@ function calculateScore(){
         scoreMediumMultiplier();
     } else if (currentTimer > 20 && currentTimer < 30) {
         scoreLowMultiplier();
+    } else {
+        scoreLowestMultiplier();
     }
     
+}
+
+function scoreLowestMultiplier(){
+    let multiplierLowest = currentTimer *1;
+    timerHtml.innerHTML = multiplierLowest;
+    score.textContent = multiplierLowest;
+    updateHighScore(multiplierLowest);
 }
 
 function scoreLowMultiplier(){
@@ -280,9 +289,6 @@ function hideShowElement(hide, elementSelector) {
         element.classList.remove("hide");
     }
 }
-
-
-
 
 
 //Exporting Jest Tests
