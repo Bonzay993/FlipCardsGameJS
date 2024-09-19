@@ -19,62 +19,62 @@ const GENERAL_ASSETS = [
 const GAME_ASSETS_LEVEL_1TO3 = [
     {
         name: "card",
-        path: "./content/img/level1-level3/card.png"
+        path: "content/img/level1-level3/card.webp"
         
     },
     {
         name: "clepsidre",
-        path: "./content/img/level1-level3/clepsidre.png"
+        path: "./content/img/level1-level3/clepsidre.webp"
     },
 
     {
         name: "currency",
-        path: "./content/img/level1-level3/currency.png"
+        path: "./content/img/level1-level3/currency.webp"
     },
 
     {
         name: "globe",
-        path: "./content/img/level1-level3/globe.png"
+        path: "./content/img/level1-level3/globe.webp"
     },
 
     {
         name: "graph",
-        path: "./content/img/level1-level3/Graph.png"
+        path: "./content/img/level1-level3/graph.webp"
     },
 
     {
         name: "id",
-        path: "./content/img/level1-level3/id.png"
+        path: "./content/img/level1-level3/id.webp"
     },
 
     {
         name: "card",
-        path: "./content/img/level1-level3/card.png"
+        path: "./content/img/level1-level3/card.webp"
         
     },
     {
         name: "clepsidre",
-        path: "./content/img/level1-level3/clepsidre.png"
+        path: "./content/img/level1-level3/clepsidre.webp"
     },
 
     {
         name: "currency",
-        path: "./content/img/level1-level3/currency.png"
+        path: "./content/img/level1-level3/currency.webp"
     },
 
     {
         name: "globe",
-        path: "./content/img/level1-level3/globe.png"
+        path: "./content/img/level1-level3/globe.webp"
     },
 
     {
         name: "graph",
-        path: "./content/img/level1-level3/Graph.png"
+        path: "./content/img/level1-level3/graph.webp"
     },
 
     {
         name: "id",
-        path: "./content/img/level1-level3/id.png"
+        path: "./content/img/level1-level3/id.webp"
     },
 
 ]
