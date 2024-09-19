@@ -259,8 +259,9 @@
   }
   
   .version-paragraph {
-    color: white;
-    text-shadow: 1px 1px 1px black;
+    color: #e7dc49df;
+    text-shadow: 0.5px 0.5px 0.5px #3b3232;
+    
   }
   
   /* Media Queries for Responsiveness */
