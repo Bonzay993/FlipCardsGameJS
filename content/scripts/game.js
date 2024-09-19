@@ -67,6 +67,7 @@ function boardInit() {
     if (GOT_IT_BUTTON) {
         GOT_IT_BUTTON.addEventListener('click', function () {
             hideShowElement(true, ".popup-level1");
+            menuBtnOnClick();
             gameTimer(TIMER_LEVEL_ONE);
         });
     } else {
@@ -81,6 +82,7 @@ function menuElements(){
   }
 
 function boardElements(){
+    menuBtnOnClick();
     TITLE_HEADING.innerHTML= 'Level 1';
     hideShowElement(true, ".button-wrapper");
     MENU_CONTAINER.classList.add('game-container');
@@ -136,6 +138,7 @@ function closePopup() {
         document.querySelector(selector).addEventListener("click", function() {
             hideShowElement(true, ".popup");
             playMenuAudio();
+            menuBtnOnClick();
         });
     }
     closeAndPlayAudio(".close");
