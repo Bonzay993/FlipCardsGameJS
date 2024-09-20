@@ -136,7 +136,7 @@
   /* MAIN MENU BUTTONS WRAPPER */
   .button-wrapper {
     display: flex;
-    flex-wrap: column wrap;
+    flex-flow: column wrap;
     width: 100%;
     justify-content: center;
     align-items: center;
