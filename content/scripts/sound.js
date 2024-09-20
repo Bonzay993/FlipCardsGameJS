@@ -33,7 +33,7 @@ const GAME_SOUNDS = [{
         path: "./content/sound/failedmatch.mp3"
     },
 
-]
+];
 
 /**Function that gets the sound objects based on their name */
 function getSounds(name) {

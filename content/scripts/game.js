@@ -56,7 +56,6 @@ function boardInit() {
     const GOT_IT_BUTTON = document.querySelector('.got-it-button');
 
     updateHighScore();
-    
 
     if (START_GAME_BUTTON) {
         START_GAME_BUTTON.addEventListener('click', boardElements);
@@ -161,8 +160,6 @@ function assignBackground(background) {
 }
 
 
-
-
 /**
  * First level tutorial popup .Removed the Window Onload because
  * the page is already loaded at this point
@@ -174,7 +171,7 @@ function levelOnePop() {
         function open(event) {
             hideShowElement(false, ".popup-level1");
         },
-        200,
+        200
     );
     MENU_CONTAINER.style.filter = 'blur(3px)';
 }
@@ -209,7 +206,7 @@ function gameTimer(timer) {
         }
     }, 1000);  
 }
-
+/**NEEDS REFACTORING */
 function calculateScore(){
     
 
@@ -250,7 +247,7 @@ function scoreHighMultiplier(){
     let multiplierThree = currentTimer * 3.5;
     timerHtml.innerHTML = multiplierThree;
     score.textContent = multiplierThree;
-    updateHighScore(multiplierThree)
+    updateHighScore(multiplierThree);
 }
 
 /**
@@ -277,7 +274,6 @@ function highScore() {
     return isNaN(score) ? 0 : score;
 }
 
-
 /**
  * Level complete function
  */
@@ -294,9 +290,6 @@ function levelComplete() {
 function gameOver() {
     hideShowElement(false, ".popup-game-over");
 }
-
-
-
 
 //Exporting Jest Tests
 module.exports = {

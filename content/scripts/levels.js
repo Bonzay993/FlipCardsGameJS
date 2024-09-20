@@ -28,7 +28,7 @@ function levelOneBoard() {
  * Shuffles the array of cards 
  */
 function shuffleArray() {
-    GAME_ASSETS_LEVEL_1TO3.sort(() => 0.5 - Math.random()) //made the array shuffle random   
+    GAME_ASSETS_LEVEL_1TO3.sort(() => 0.5 - Math.random()); //made the array shuffle random   
     let gameGrid = document.querySelector('.game-grid');
     gameGrid.style.display = 'flex';
 
@@ -73,7 +73,6 @@ function checkMatch() {
     let isMatch = cardsChosen[0] === cardsChosen[1];
     let isSameCard = optionOneId === optionTwoId;
     
-
     // Prevent matching the same card with itself
     if (isSameCard) {
         resetCards();
