@@ -12,7 +12,7 @@ const GENERAL_ASSETS = [
         name: "emptyCard",
         path: "content/img/empty-card.webp"
     },
-]
+];
 
 //Game assets level 1-3 total of 6 assets
 
@@ -77,7 +77,7 @@ const GAME_ASSETS_LEVEL_1TO3 = [
         path: "./content/img/level1-level3/id.webp"
     },
 
-]
+];
 
 
 const BACKGROUND_IMAGES= [
@@ -91,7 +91,7 @@ const BACKGROUND_IMAGES= [
         path: "./content/img/game-background.webp"
     }
 
-]
+];
 
 
 // Function to get the path based on the name
