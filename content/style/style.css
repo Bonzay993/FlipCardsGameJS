@@ -288,7 +288,7 @@
 
     .menu-container{
       width:88%;
-      height:90%;
+      height:92%;
       position: absolute;
       top:0%;
     }
@@ -318,7 +318,7 @@
       font-size: 1.5rem;
     }
     
-    @media (max-width: 375px)  {
+    @media (max-width: 380px)  {
 
 
       .title{
@@ -342,15 +342,23 @@
 
       .popup-level-complete{
         height:50%;
+        margin: 0 auto;
+      }
+
+      .popup-first-paragraph{
+       padding:0%;
       }
 
       .title {
         font-size: 80%;
       }
 
-    
+    }
 
-      
+    @media (max-width: 325px){
+      .menu-container{
+        width: 85%;
+      }
     }
     
     
