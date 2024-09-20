@@ -12,12 +12,9 @@ let cardsChosenIds = [];
 let cardsWon = [];
 let levelOneBackground = getBackgroundImages("level1Bg");
 
-
-
-
 /**Level 1 board settings as:
  * Number of cards 
- */
+*/
 function levelOneBoard() {
     shuffleArray(NUMBER_OF_CARDS_LEVEL_ONE);
     assignBackground(levelOneBackground);
@@ -26,7 +23,7 @@ function levelOneBoard() {
 
 /**
  * Shuffles the array of cards 
- */
+*/
 function shuffleArray() {
     GAME_ASSETS_LEVEL_1TO3.sort(() => 0.5 - Math.random()); //made the array shuffle random   
     let gameGrid = document.querySelector('.game-grid');
@@ -47,7 +44,7 @@ function shuffleArray() {
  * Flipping cards rules .
  * Prevents flipping more cards after the second choosen card.
  * Uses a timer that sets for how long each card is shown
- */
+*/
 function flipCard() {
     if (isCheckingMatch) return; // Prevent flipping if checking match
     let cardId = this.getAttribute('data-id');
@@ -65,7 +62,7 @@ function flipCard() {
 
 /**
  * Checking if the two chosen cards match and check when level is complete
- */
+*/
 function checkMatch() {
     let cards = document.querySelectorAll('.game-grid img');
     let [optionOneId, optionTwoId] = cardsChosenIds;

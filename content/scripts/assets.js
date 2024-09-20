@@ -1,7 +1,6 @@
 /**
  * ASSETS
- */
-
+*/
 const GENERAL_ASSETS = [
     {
         name: "cardBack",
@@ -15,7 +14,6 @@ const GENERAL_ASSETS = [
 ];
 
 //Game assets level 1-3 total of 6 assets
-
 const GAME_ASSETS_LEVEL_1TO3 = [
     {
         name: "card",
@@ -79,7 +77,6 @@ const GAME_ASSETS_LEVEL_1TO3 = [
 
 ];
 
-
 const BACKGROUND_IMAGES= [
     {
         name: "level1Bg",
@@ -92,7 +89,6 @@ const BACKGROUND_IMAGES= [
     }
 
 ];
-
 
 // Function to get the path based on the name
 function getGeneralAssets(name) {

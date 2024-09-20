@@ -50,7 +50,7 @@ function gameInit() {
 /**
  * Initialise the visual elements after pressing the START GAME button 
  * Start the game timer after pressing GOT IT button on the level one popup
- */
+*/
 function boardInit() {
     const START_GAME_BUTTON = document.querySelector('.start-game');
     const GOT_IT_BUTTON = document.querySelector('.got-it-button');
@@ -78,7 +78,7 @@ function menuElements(){
     hideShowElement(true, ".game-area-wrapper");
     hideShowElement(true, ".game-music-btn");
     hideShowElement(true, ".popup-level1");
-  }
+}
 
 function boardElements(){
     menuBtnOnClick();
@@ -104,14 +104,14 @@ function btnToggleAudio() {
 }
 
 /**
- *  Menu POPUP - The popup that loads first when loading the game.
+ * Menu POPUP - The popup that loads first when loading the game.
  * This is here just so the sound works as the user has to interact with the 
  * game first in order for the sound to play. The user will interact with either the
  * Let's play button or the close button
  * 
  * This is a change happened in Chrome browser
  *  Expose openPopup for testing
- * */
+*/
 function menuPop() {
     window.addEventListener("load", function() {
         setTimeout(openPopup, 200);
@@ -131,7 +131,7 @@ function openPopup() {
  * Function that enables the the user to close the popup
  *  Add event listeners for each selector
  * Special case for popup-level1 with additional logic
- */
+*/
 function closePopup() {
     function closeAndPlayAudio(selector) {
         document.querySelector(selector).addEventListener("click", function() {
@@ -164,7 +164,7 @@ function assignBackground(background) {
  * First level tutorial popup .Removed the Window Onload because
  * the page is already loaded at this point
  * It also set a background blur so that the popout stands out
- */
+*/
 function levelOnePop() {
     displayTimer();
     setTimeout(
@@ -178,7 +178,7 @@ function levelOnePop() {
 
 /**
  * Function that displays the timer element
- */
+*/
 function displayTimer() {
     hideShowElement(false, ".timer-text");
 }
@@ -189,7 +189,7 @@ function displayTimer() {
  * Start the interval and store its reference in the global 'count'
  *
  * Call gameOver when the timer hits 0
- */
+*/
 function gameTimer(timer) {
     let timerHtml = document.querySelector('.timer');
     currentTimer = timer;  
@@ -206,6 +206,7 @@ function gameTimer(timer) {
         }
     }, 1000);  
 }
+
 /**NEEDS REFACTORING */
 function calculateScore(){
     
@@ -252,15 +253,19 @@ function scoreHighMultiplier(){
 
 /**
  * Function that keeps track of high score and stores it into the browser's cache
- */
+ * Retrieve the current high score and store it in a variable
+ * Compare current score with the stored high score
+ * Update localStorage with the new high score
+ * Ensure UI shows current high score if not updated
+*/
 function updateHighScore(currentScore) {
     try {
-        let storedHighScore = highScore(); // Retrieve the current high score and store it in a variable
-        if (currentScore > storedHighScore) { // Compare current score with the stored high score
-            localStorage.setItem('highScore', currentScore); // Update localStorage with the new high score
-            document.querySelector('.high-score-value').textContent = currentScore; // Update the UI
+        let storedHighScore = highScore(); 
+        if (currentScore > storedHighScore) {
+            localStorage.setItem('highScore', currentScore); 
+            document.querySelector('.high-score-value').textContent = currentScore; 
         } else {
-            document.querySelector('.high-score-value').textContent = storedHighScore; // Ensure UI shows current high score if not updated
+            document.querySelector('.high-score-value').textContent = storedHighScore;
         }
     } catch (error) {
         console.error('Error accessing localStorage:', error);
@@ -268,25 +273,27 @@ function updateHighScore(currentScore) {
     }
 }
 
+/** 
+ * Get the high score from localStorage, default to 0 if not found
+*/
 function highScore() {
-    // Get the high score from localStorage, default to 0 if not found
     let score = parseFloat(localStorage.getItem('highScore'));
     return isNaN(score) ? 0 : score;
 }
 
 /**
  * Level complete function
- */
+ * Freeze the timer by clearing the interval
+*/
 function levelComplete() {
     hideShowElement(false, ".popup-level-complete");
-    clearInterval(count);  // Freeze the timer by clearing the interval
-    // At this point, 'currentTimer' holds the frozen value
+    clearInterval(count);  // 
     calculateScore();
 }
 
 /**
  * GameOver function restars the game and displays the GameOver popup
- */
+*/
 function gameOver() {
     hideShowElement(false, ".popup-game-over");
 }
