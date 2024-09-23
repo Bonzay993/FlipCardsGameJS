@@ -111,8 +111,6 @@ Wireframes were created using tools like Figma or Adobe XD.
 
 ## 10. Code Testing
 
-## Code Testing
-
 ### Testing Framework
 
 The Memory Card Game uses [Jest](https://jestjs.io/) for unit testing. Jest is a delightful JavaScript Testing Framework with a focus on simplicity.
@@ -221,7 +219,7 @@ Ensuring the quality and correctness of the code is crucial for a robust and rel
   <img src="https://github.com/Bonzay993/FlipCardsGameJS/blob/main/testcases/lighthouse-report.PNG" style="width:80%;">
 </p>
 
-### 11. Supported screens and browsers
+## 11. Supported screens and browsers
 
 #### Supported Screens
 This website is designed to be responsive and works seamlessly across various screen sizes, including:
