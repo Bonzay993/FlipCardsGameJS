@@ -86,7 +86,7 @@ Wireframes were designed to plan the layout of the game interface across differe
 - **Desktop View:** A grid layout with a score display at the top, the game grid in the center, and control buttons at the bottom.
 - **Mobile View:** A vertically stacked layout where the score, timer, and controls are positioned at the top, followed by the game grid.
   
-Wireframes were created using tools like Figma or Adobe XD. (Add screenshots or links to wireframes if available.)
+Wireframes were created using tools like Figma or Adobe XD.
 
 ## 9. Technology
 
@@ -163,6 +163,7 @@ Additional tests can be added to cover other game functionalities such as:
 
 ## Test Cases
 
+For detailed test cases and steps to test the website, please refer to the [Test Cases](https://github.com/Bonzay993/) Wiki.
 ### 1. Game Initialization
 - **Test Case 1.1:** Ensure the game initializes correctly when the page is loaded.
   - Verify that the hover sound effect is active.
@@ -202,4 +203,24 @@ Additional tests can be added to cover other game functionalities such as:
 - **Test Case 7.1:** Validate the timer starts correctly when the game begins and stops when the game ends.
 - **Test Case 7.2:** Confirm the score is accurately calculated and displayed after each match.
 - **Test Case 7.3:** Check that the high score is updated and stored properly across game sessions.
+
+### Code Validation
+
+Ensuring the quality and correctness of the code is crucial for a robust and reliable website. The HTML and CSS code for the NetNest Website has been validated using the W3C validation services.
+
+#### HTML Validation
+- **W3C HTML Validator:** The HTML code has been checked using the W3C HTML Validator to ensure it follows the standards and is free from errors.
+  - [Validate HTML](https://validator.w3.org/)
+
+#### CSS Validation
+- **W3C CSS Validator:** The CSS code has been validated using the W3C CSS Validator to ensure it meets the standards and is error-free.
+  - [Validate CSS](https://jigsaw.w3.org/css-validator/)
+
+#### Ligthouse Report
+<p align="center">
+  <img src="https://github.com/Bonzay993/FlipCardsGameJS/blob/main/testcases/lighthouse-report.png" style="width:80%;">
+</p>
+
+
+
 
