@@ -1,5 +1,9 @@
 # Memory Card Game
 
+<p align="center">
+   <img src="https://github.com/Bonzay993/Website-NetNest/blob/main/testcases/game-mockup.png" style="margin: 0 auto;"> 
+ </p>
+
 ## 1. Purpose of the Project
 
 The Memory Card Game is designed as a fun and educational tool to enhance memory and cognitive skills. The project was developed to create an engaging experience where users can challenge themselves to match pairs of cards within a limited time. It also aims to teach basic web development concepts through the creation of a simple, yet interactive, browser-based game.
