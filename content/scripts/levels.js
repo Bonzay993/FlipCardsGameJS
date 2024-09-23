@@ -63,53 +63,104 @@ function flipCard() {
  * Checking if the two chosen cards match and check when level is complete
 */
 function checkMatch() {
-    let cards = document.querySelectorAll('.game-grid img');
     let [optionOneId, optionTwoId] = cardsChosenIds;
-    let totalPairs = cards.length / 2; // Calculate total number of pairs
-    let isMatch = cardsChosen[0] === cardsChosen[1];
-    let isSameCard = optionOneId === optionTwoId;
     
-    // Prevent matching the same card with itself
-    if (isSameCard) {
-        resetCards();
-    } else if (isMatch) {
-        handleMatch();
+    if (isSameCard(optionOneId, optionTwoId)) {
+        handleSameCard(optionOneId, optionTwoId);
+    } else if (isMatch(optionOneId, optionTwoId)) {
+        handleMatch(optionOneId, optionTwoId);
     } else {
-        resetCards();
-    }
-
-    resetChosenCards(); // Reset the checking match flag
-
-    // Check if all pairs have been matched
-    if (cardsWon.length === totalPairs) {
-        levelComplete(); // Call the function to display the success message
-    }
-
-    function resetCards() {
-        cards[optionOneId].setAttribute('src', getGeneralAssets("cardBack"));
-        cards[optionTwoId].setAttribute('src', getGeneralAssets("cardBack"));
-        failedMatchAudio();
-    }
-
-    function handleMatch() {
-        successMatchAudio();
-        setCardToEmpty(optionOneId);
-        setCardToEmpty(optionTwoId);
-        cards[optionOneId].removeEventListener('click', flipCard);
-        cards[optionTwoId].removeEventListener('click', flipCard);
-        cardsWon.push(cardsChosen);
+        handleNoMatch(optionOneId, optionTwoId);
     }
     
-    function setCardToEmpty(cardId) {
-        cards[cardId].setAttribute('src', getGeneralAssets("emptyCard"));
-    }
+    resetChosenCards();
     
-    // Resets the cards
-    function resetChosenCards() {
-        cardsChosen = [];
-        cardsChosenIds = [];
-        isCheckingMatch = false;
+    if (checkLevelComplete()) {
+        levelComplete();
     }
+}
+
+/**
+ * Sets the card to an "empty" state (after a successful match)
+ */
+function setCardToEmpty(cardId) {
+    let cards = document.querySelectorAll('.game-grid img');
+    cards[cardId].setAttribute('src', getGeneralAssets("emptyCard"));
+}
+
+/**
+ * Check if the selected cards are the same card
+ */
+function isSameCard(cardId1, cardId2) {
+    return cardId1 === cardId2;
+}
+
+/**
+ * Handles logic if the same card is clicked twice
+ */
+function handleSameCard(cardId1, cardId2) {
+    resetCards(cardId1, cardId2);
+}
+
+/**
+ * Check if two chosen cards are a match
+ */
+function isMatch(cardId1, cardId2) {
+    return cardsChosen[0] === cardsChosen[1];
+}
+
+/**
+ * Handles the logic when two cards match
+ */
+function handleMatch(cardId1, cardId2) {
+    successMatchAudio();
+    setCardToEmpty(cardId1);
+    setCardToEmpty(cardId2);
+    removeCardListeners(cardId1, cardId2);
+    cardsWon.push(cardsChosen);
+}
+
+/**
+ * Handles logic when two cards do not match
+ */
+function handleNoMatch(cardId1, cardId2) {
+    resetCards(cardId1, cardId2);
+    failedMatchAudio();
+}
+
+/**
+ * Resets the chosen cards to show the back side
+ */
+function resetCards(cardId1, cardId2) {
+    let cards = document.querySelectorAll('.game-grid img');
+    cards[cardId1].setAttribute('src', getGeneralAssets("cardBack"));
+    cards[cardId2].setAttribute('src', getGeneralAssets("cardBack"));
+}
+
+/**
+ * Removes the event listeners after a successful match
+ */
+function removeCardListeners(cardId1, cardId2) {
+    let cards = document.querySelectorAll('.game-grid img');
+    cards[cardId1].removeEventListener('click', flipCard);
+    cards[cardId2].removeEventListener('click', flipCard);
+}
+
+/**
+ * Resets the selected cards and clears the match check flag
+ */
+function resetChosenCards() {
+    cardsChosen = [];
+    cardsChosenIds = [];
+    isCheckingMatch = false;
+}
+
+/**
+ * Check if all pairs have been matched
+ */
+function checkLevelComplete() {
+    let totalPairs = document.querySelectorAll('.game-grid img').length / 2;
+    return cardsWon.length === totalPairs;
 }
 
 
