@@ -161,7 +161,7 @@ Additional tests can be added to cover other game functionalities such as:
 
 ## Test Cases
 
-For detailed test cases and steps to test the website, please refer to the [Test Cases](https://github.com/Bonzay993/) Wiki.
+For detailed test cases and steps to test the website, please refer to the [Test Cases](https://github.com/Bonzay993/FlipCardsGameJS/wiki/Test-Cases) Wiki.
 ### 1. Game Initialization
 - **Test Case 1.1:** Ensure the game initializes correctly when the page is loaded.
   - Verify that the hover sound effect is active.
