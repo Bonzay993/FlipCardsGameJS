@@ -218,7 +218,7 @@ Ensuring the quality and correctness of the code is crucial for a robust and rel
 
 #### Ligthouse Report
 <p align="center">
-  <img src="https://github.com/Bonzay993/FlipCardsGameJS/blob/main/testcases/lighthouse-report.png" style="width:80%;">
+  <img src="https://github.com/Bonzay993/FlipCardsGameJS/blob/main/testcases/lighthouse-report.PNG" style="width:80%;">
 </p>
 
 ### 11. Supported screens and browsers
