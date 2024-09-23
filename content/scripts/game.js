@@ -2,6 +2,11 @@ const MENU_CONTAINER = document.querySelector(".menu-container");
 const TITLE_HEADING = document.querySelector(".title-heading");
 const SCORE_PARAGRAPH = document.querySelector(".score-paragraph");
 const HIGH_SCORE_PARAGRAPH = document.querySelector(".high-score-paragraph");
+/**Score Multiplier Variables */
+const LOWEST_MULTIPLIER = 1;
+const LOW_MULTIPLIER = 1.5;
+const MEDIUM_MULTIPLIER = 2.5;
+const HIGH_MULTIPLIER = 3.5;
 
 let count;  
 let currentTimer;
@@ -212,43 +217,21 @@ function calculateScore(){
     
 
     if (currentTimer >= 40 && currentTimer <= 50){
-        scoreHighMultiplier();
+        calculateMultiplier(HIGH_MULTIPLIER);
     } else if (currentTimer >= 30 && currentTimer <= 40) {
-        scoreMediumMultiplier();
+        calculateMultiplier(MEDIUM_MULTIPLIER);
     } else if (currentTimer >= 20 && currentTimer <= 30) {
-        scoreLowMultiplier();
+        calculateMultiplier(LOW_MULTIPLIER);
     } else {
-        scoreLowestMultiplier();
+        calculateMultiplier(LOWEST_MULTIPLIER);
     }
     
 }
 
-function scoreLowestMultiplier(){
-    let multiplierLowest = currentTimer *1;
-    timerHtml.innerHTML = multiplierLowest;
-    score.textContent = multiplierLowest;
-    updateHighScore(multiplierLowest);
-}
-
-function scoreLowMultiplier(){
-    let multiplierOne = currentTimer *1.5;
-    timerHtml.innerHTML = multiplierOne;
-    score.textContent = multiplierOne;
-    updateHighScore(multiplierOne);
-}
-
-function scoreMediumMultiplier(){
-    let multiplierTwo = currentTimer * 2.5;
-    timerHtml.innerHTML = multiplierTwo;
-    score.textContent= multiplierTwo;
-    updateHighScore(multiplierTwo);
-}
-
-function scoreHighMultiplier(){
-    let multiplierThree = currentTimer * 3.5;
-    timerHtml.innerHTML = multiplierThree;
-    score.textContent = multiplierThree;
-    updateHighScore(multiplierThree);
+function calculateMultiplier(multiplier){
+    let calculatedScore = currentTimer * multiplier
+    timerHtml.innerHTML = score.textContent = calculatedScore;
+    updateHighScore(calculatedScore);
 }
 
 /**
