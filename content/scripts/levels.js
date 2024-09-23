@@ -39,7 +39,6 @@ function shuffleArray() {
     }
 }
 
-
 /**
  * Flipping cards rules .
  * Prevents flipping more cards after the second choosen card.
