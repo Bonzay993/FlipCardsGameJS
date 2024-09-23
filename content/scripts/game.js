@@ -10,8 +10,7 @@ const HIGH_MULTIPLIER = 3.5;
 
 let count;  
 let currentTimer;
-let timerHtml = document.querySelector(".score-calculated");
-let score = document.querySelector(".score-value");
+
 
 
 
@@ -212,10 +211,9 @@ function gameTimer(timer) {
     }, 1000);  
 }
 
-/**NEEDS REFACTORING */
+
 function calculateScore(){
     
-
     if (currentTimer >= 40 && currentTimer <= 50){
         calculateMultiplier(HIGH_MULTIPLIER);
     } else if (currentTimer >= 30 && currentTimer <= 40) {
@@ -229,6 +227,8 @@ function calculateScore(){
 }
 
 function calculateMultiplier(multiplier){
+    let timerHtml = document.querySelector(".score-calculated");
+    let score = document.querySelector(".score-value");
     let calculatedScore = currentTimer * multiplier
     timerHtml.innerHTML = score.textContent = calculatedScore;
     updateHighScore(calculatedScore);
@@ -291,5 +291,4 @@ module.exports = {
     levelComplete,
     gameOver,
     hideShowElement,
-    
 };
