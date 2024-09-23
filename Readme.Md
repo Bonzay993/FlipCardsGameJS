@@ -1,4 +1,4 @@
-# Memory Card Game
+# FlipCardsGameJS
 
 <p align="center">
    <img src="https://github.com/Bonzay993/FlipCardsGameJS/blob/main/testcases/game-mockup.png" style="margin: 0 auto;"> 
@@ -8,7 +8,7 @@
 
 The Memory Card Game is designed as a fun and educational tool to enhance memory and cognitive skills. The project was developed to create an engaging experience where users can challenge themselves to match pairs of cards within a limited time. It also aims to teach basic web development concepts through the creation of a simple, yet interactive, browser-based game.
 
-## Releases
+## Releases / Bug Fixes
 
 For detailed changelogs and download links, see the [Releases](https://github.com/Bonzay993/FlipCardsGameJS/releases) section on GitHub. Each release includes a summary of changes and improvements made, ensuring that users and developers can easily understand what has been updated or fixed in each version of the game.
 
