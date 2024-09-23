@@ -1,7 +1,7 @@
 # Memory Card Game
 
 <p align="center">
-   <img src="https://github.com/Bonzay993/Website-NetNest/blob/main/testcases/game-mockup.png" style="margin: 0 auto;"> 
+   <img src="https://github.com/Bonzay993/FlipCardsGameJS/blob/main/testcases/game-mockup.png" style="margin: 0 auto;"> 
  </p>
 
 ## 1. Purpose of the Project
