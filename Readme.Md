@@ -74,21 +74,20 @@ For detailed changelogs and download links, see the [Releases](https://github.co
 
 ### Typography
 
-- **Primary Font:** The game uses a sans-serif font like *Arial* or *Verdana* for readability and modern appearance.
-- **Title Font:** A bold, playful font like *Comic Sans MS* or *Impact* is used for game titles and headings to attract attention and set a fun tone.
+- **Primary Font:** The game uses Montserrat and Sans-Serif for readability and modern appearance.
 
 ### Color Scheme
 
 - **Background Colors:** Soft, pastel shades are used for backgrounds to avoid straining the eyes and to make the game visually appealing.
-- **Card Colors:** Cards have distinct, vibrant colors to differentiate them easily. The card back design uses a subtle pattern.
-- **Text Colors:** Dark colors (like navy blue or black) for text to ensure readability against lighter backgrounds.
+- **Card Colors:** Cards have distinct, vibrant colors to differentiate them easily. The card back design uses a subtle pattern. Cards are image assets build in Adobe.
+- **Text Colors:** White colors for text to ensure readability against darker backgrounds.
 
 ## 8. Wireframes
 
 Wireframes were designed to plan the layout of the game interface across different screen sizes.
 
-- **Desktop View:** A grid layout with a score display at the top, the game grid in the center, and control buttons at the bottom.
-- **Mobile View:** A vertically stacked layout where the score, timer, and controls are positioned at the top, followed by the game grid.
+- **Desktop View:** A layout with a score display on the right, the game grid in the center, and music control button on the left. On top there is the Level Number and the timer.
+- **Mobile View:** A vertically stacked layout where the score and highscore are at the bottom, and the level number and timer are positioned at the top. The game grid stays in the center
 <p align="center">
    <img src="https://github.com/Bonzay993/FlipCardsGameJS/blob/main/wireframes/main-menu.png" style="margin: 0 auto;"> 
  </p>
