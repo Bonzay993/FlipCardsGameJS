@@ -39,12 +39,31 @@ For detailed changelogs and download links, see the [Releases](https://github.co
 ## 5. User Stories
 
 - **As a player**, I want to start a new game and understand the objective immediately.
+<p align="center">
+   <img src="https://github.com/Bonzay993/FlipCardsGameJS/blob/main/testcases/tutorial.png" style="margin: 0 auto;"> 
+ </p>
+
 - **As a player**, I want the game to be responsive and work well on my mobile device.
+<p align="center">
+   <img src="https://github.com/Bonzay993/FlipCardsGameJS/blob/main/testcases/user-stories-responsiveness.png" style="margin: 0 auto;"> 
+ </p>
+
 - **As a player**, I want to be able to track my progress with a visible score and timer.
+- **As a player**, I want the game to remember my highest score, so I can aim to beat it in future sessions.
+<p align="center">
+   <img src="https://github.com/Bonzay993/FlipCardsGameJS/blob/main/testcases/user-stories-score.png" style="margin: 0 auto;"> 
+ </p>
+ <p align="center">
+   <img src="https://github.com/Bonzay993/FlipCardsGameJS/blob/main/testcases/user-stories-timer.png" style="margin: 0 auto;"> 
+ </p>
+
 - **As a player**, I want to hear sound effects that enhance the gameplay experience.
 - **As a player**, I want to be able to toggle the background music on and off.
-- **As a player**, I want the game to remember my highest score, so I can aim to beat it in future sessions.
-- **As a player**, I want to see visual feedback when I successfully match a pair of cards.
+<p align="center">
+   <img src="https://github.com/Bonzay993/FlipCardsGameJS/blob/main/testcases/gifs/game-mechanics.gif" style="margin: 0 auto;"> 
+ </p>
+
+- **As a player**, I want to hear audio feedback when I successfully match a pair of cards.
 
 ## 6. Features
 
@@ -117,7 +136,6 @@ Wireframes were created using tools like Figma or Adobe XD.
 - **Text Editor:** Developed using code editors like Visual Studio Code.
 - **Browser:** Tested across multiple browsers including Chrome, Firefox, and Safari to ensure compatibility.
 
----
 
 ## 11. Code Testing
 ###  Test Cases 
