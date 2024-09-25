@@ -89,6 +89,13 @@ Wireframes were designed to plan the layout of the game interface across differe
 
 - **Desktop View:** A grid layout with a score display at the top, the game grid in the center, and control buttons at the bottom.
 - **Mobile View:** A vertically stacked layout where the score, timer, and controls are positioned at the top, followed by the game grid.
+<p align="center">
+   <img src="https://github.com/Bonzay993/FlipCardsGameJS/blob/main/wireframes/main-menu.png" style="margin: 0 auto;"> 
+ </p>
+
+ <p align="center">
+   <img src="https://github.com/Bonzay993/FlipCardsGameJS/blob/main/wireframes/game-area-mock.png" style="margin: 0 auto;"> 
+ </p>
   
 Wireframes were created using tools like Figma or Adobe XD.
 
