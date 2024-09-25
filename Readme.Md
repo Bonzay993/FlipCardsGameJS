@@ -40,7 +40,7 @@ For detailed changelogs and download links, see the [Releases](https://github.co
 
 - **As a player**, I want to start a new game and understand the objective immediately.
 <p align="center">
-   <img src="https://github.com/Bonzay993/FlipCardsGameJS/blob/main/testcases/tutorial.png" style="margin: 0 auto;"> 
+   <img src="https://github.com/Bonzay993/FlipCardsGameJS/blob/main/testcases/user-stories-tutorial.png" style="margin: 0 auto;"> 
  </p>
 
 - **As a player**, I want the game to be responsive and work well on my mobile device.
