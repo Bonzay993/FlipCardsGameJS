@@ -61,7 +61,7 @@ For detailed changelogs and download links, see the [Releases](https://github.co
 - **As a player**, I want to be able to toggle the background music on and off.
 - **As a player**, I want to hear audio feedback when I successfully match a pair of cards.
 <p align="center">
-   [Watch the video]("https://github.com/Bonzay993/FlipCardsGameJS/blob/main/testcases/user-stories-audio.mp4")
+   [Watch the video](https://github.com/Bonzay993/FlipCardsGameJS/blob/main/testcases/user-stories-audio.mp4)
  </p>
 
 
