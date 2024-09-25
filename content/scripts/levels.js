@@ -14,6 +14,7 @@ let levelOneBackground = getBackgroundImages("level1Bg");
 
 /**Level 1 board settings as:
  * Number of cards 
+ * Background picture
 */
 function levelOneBoard() {
     shuffleArray(NUMBER_OF_CARDS_LEVEL_ONE);

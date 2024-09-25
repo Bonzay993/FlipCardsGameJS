@@ -126,7 +126,8 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-size: cover;
+    background-size:cover;
+    background-repeat: no-repeat;
     border-radius: 15px;
   }
 
@@ -137,35 +138,62 @@
   .button-wrapper {
     display: flex;
     flex-flow: column wrap;
-    width: 100%;
+    width: 30%;
+    height: 20%;
     justify-content: center;
     align-items: center;
-    gap: 10px;
-    margin: 20px 0;
+    gap: 10%;
     flex-direction: column;
+    border-radius: 15px;
+    /*background-color: rgb(225, 225, 225);*/
+    /*box-shadow: 1px 10px 20px rgba(0, 0, 0, 0.6);*/
   }
   
   .menu-btn {
-    width: 30%;
-    min-width: 120px;
-    font-size: 1rem;
+    width: 90%;
+    font-size: 0.8rem;
     font-weight: bold;
     border-radius: 15px;
-    border: 1.2px solid black;
-    padding: 10px;
+    padding:10px;
     text-align: center;
     transition: background-color 0.3s ease;
+    background: #3D94F6;
+   background-image: -webkit-linear-gradient(top, #3D94F6, #1E62D0);
+   background-image: -moz-linear-gradient(top, #3D94F6, #1E62D0);
+   background-image: -ms-linear-gradient(top, #3D94F6, #1E62D0);
+   background-image: -o-linear-gradient(top, #3D94F6, #1E62D0);
+   background-image: -webkit-gradient(to bottom, #3D94F6, #1E62D0);
+   color: #FFFFFF;
+   text-shadow: 1px 1px 20px #000000;
+   box-shadow: 1px 1px 20px 0 #000000;
+   border: solid #337FED 1px;
+   text-decoration: none;
+   display: inline-block;
+   cursor: pointer;
+   text-align: center;
+   
   }
   
   .menu-btn:hover {
     cursor: pointer;
     background-color: rgb(179, 217, 249);
+    border: solid #337FED 1px;
+   background: #1E62D0;
+   background-image: -webkit-linear-gradient(top, #1E62D0, #3D94F6);
+   background-image: -moz-linear-gradient(top, #1E62D0, #3D94F6);
+   background-image: -ms-linear-gradient(top, #1E62D0, #3D94F6);
+   background-image: -o-linear-gradient(top, #1E62D0, #3D94F6);
+   background-image: -webkit-gradient(to bottom, #1E62D0, #3D94F6);
+   -webkit-border-radius: 20px;
+   -moz-border-radius: 20px;
+   border-radius: 20px;
+   text-decoration: none;
   }
   
   /* GAME LOGO TITLE */
   .title {
     background-color: rgba(255, 255, 255, 0.4);
-    box-shadow: 1px 10px 20px rgba(255, 255, 255, 0.6);
+    box-shadow: 1px 10px 1000px rgba(255, 255, 255, 0.6);
     padding: 20px;
     border-radius: 10px;
   }
@@ -203,8 +231,8 @@
     cursor: pointer;
     font-weight: bold;
     border-radius: 15px;
-    border: 1.2px solid black;
     display: block;
+    padding:0px;
   }
 
   .game-music-btn:hover{
@@ -274,7 +302,11 @@
       width: 100%;
       font-size: 1rem;
     }
-  
+
+    .game-music-btn{
+      width:25%;
+    }
+
     .button-wrapper {
       width: 50%;
       flex-direction: column;
@@ -300,6 +332,8 @@
 
     .game-music-btn{
       width:25%;
+      font-size: 80%;
+      height:7%;
     } 
   
     .popup {
@@ -338,6 +372,7 @@
         width:25%;
         height:6%;
         font-size: 70%;
+        
       }
 
       .popup-level-complete{
