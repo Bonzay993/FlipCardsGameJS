@@ -8,12 +8,12 @@
 
 The Memory Card Game is designed as a fun and educational tool to enhance memory and cognitive skills. The project was developed to create an engaging experience where users can challenge themselves to match pairs of cards within a limited time. It also aims to teach basic web development concepts through the creation of a simple, yet interactive, browser-based game.
 
-## Releases / Bug Fixes
+## 2. Releases / Bug Fixes
 
 For detailed changelogs and download links, see the [Releases](https://github.com/Bonzay993/FlipCardsGameJS/releases) section on GitHub. Each release includes a summary of changes and improvements made, ensuring that users and developers can easily understand what has been updated or fixed in each version of the game.
 
 
-## 2. Installation
+## 3. Installation
 
 1. **Clone the repository:**
 
@@ -29,14 +29,14 @@ For detailed changelogs and download links, see the [Releases](https://github.co
 
 3. **Open `index.html` in your preferred browser.**
 
-## 3. Usage
+## 4. Usage
 
 - **Start the Game:** Click on the "Start Game" button to begin.
 - **Flip Cards:** Click on any card to flip it over. Match pairs of cards to win.
 - **Complete Levels:** Once all pairs are matched, the level is complete.
 - **Sound Toggle:** You can toggle the sound on and off using the provided button.
 
-## 4. User Stories
+## 5. User Stories
 
 - **As a player**, I want to start a new game and understand the objective immediately.
 - **As a player**, I want the game to be responsive and work well on my mobile device.
@@ -46,7 +46,7 @@ For detailed changelogs and download links, see the [Releases](https://github.co
 - **As a player**, I want the game to remember my highest score, so I can aim to beat it in future sessions.
 - **As a player**, I want to see visual feedback when I successfully match a pair of cards.
 
-## 5. Features
+## 6. Features
 
 ### Core Features
 
@@ -62,7 +62,7 @@ For detailed changelogs and download links, see the [Releases](https://github.co
 - **Sound Effects:** Includes sounds for button clicks, card flips, and successful or failed matches.
 - **Audio Toggle:** Allows users to turn the background music on or off.
 
-## 6. Future Features
+## 7. Future Features
 
 - **Additional Levels:** Introduce more levels with increasing difficulty, including more cards and complex patterns.
 - **Themes:** Offer different visual themes (e.g., nature, space, animals) that players can select before starting the game.
@@ -70,7 +70,7 @@ For detailed changelogs and download links, see the [Releases](https://github.co
 - **Leaderboard:** Implement a global leaderboard where players can submit their high scores and compete with others worldwide.
 - **Hints:** Add a hint feature that temporarily reveals all cards for a few seconds to assist players.
 
-## 7. Typography and Color Scheme
+## 8. Typography and Color Scheme
 
 ### Typography
 
@@ -82,7 +82,7 @@ For detailed changelogs and download links, see the [Releases](https://github.co
 - **Card Colors:** Cards have distinct, vibrant colors to differentiate them easily. The card back design uses a subtle pattern. Cards are image assets build in Adobe.
 - **Text Colors:** White colors for text to ensure readability against darker backgrounds.
 
-## 8. Wireframes
+## 9. Wireframes
 
 Wireframes were designed to plan the layout of the game interface across different screen sizes.
 
@@ -98,7 +98,7 @@ Wireframes were designed to plan the layout of the game interface across differe
   
 Wireframes were created using tools like Figma or Adobe XD.
 
-## 9. Technology
+## 10. Technology
 
 ### Languages
 
@@ -119,7 +119,10 @@ Wireframes were created using tools like Figma or Adobe XD.
 
 ---
 
-## 10. Code Testing
+## 11. Code Testing
+###  Test Cases 
+
+For detailed test cases and steps to test the website, please refer to the [Test Cases](https://github.com/Bonzay993/FlipCardsGameJS/wiki/Test-Cases) Wiki.
 
 ### Testing Framework
 
@@ -169,10 +172,6 @@ Additional tests can be added to cover other game functionalities such as:
 - **Sound Effects:** Verifying that the correct sound effects play during different game events (e.g., card flip, match success/failure).
 - **UI/UX Elements:** Testing the responsiveness and visibility of UI components like popups, buttons, and score displays.
 
-## Test Cases
-
-For detailed test cases and steps to test the website, please refer to the [Test Cases](https://github.com/Bonzay993/FlipCardsGameJS/wiki/Test-Cases) Wiki.
-
 ### Code Validation
 
 Ensuring the quality and correctness of the code is crucial for a robust and reliable website. The HTML and CSS code for the NetNest Website has been validated using the W3C validation services.
@@ -185,20 +184,20 @@ Ensuring the quality and correctness of the code is crucial for a robust and rel
 - **W3C CSS Validator:** The CSS code has been validated using the W3C CSS Validator to ensure it meets the standards and is error-free.
   - [Validate CSS](https://jigsaw.w3.org/css-validator/)
 
-#### Ligthouse Report
+### Ligthouse Report
 <p align="center">
   <img src="https://github.com/Bonzay993/FlipCardsGameJS/blob/main/testcases/lighthouse-report.PNG" style="width:80%;">
 </p>
 
-## 11. Supported screens and browsers
+## 12. Supported screens and browsers
 
-#### Supported Screens
+### Supported Screens
 This website is designed to be responsive and works seamlessly across various screen sizes, including:
 - Desktop screens (1200 pixels and above)
 - Tablets and small laptops (976 pixels and above)
 - Mobile devices (less than 976 pixels)
 
-#### Supported Browsers
+### Supported Browsers
 The website is compatible with all modern browsers, including:
 - Google Chrome (latest versions)
 - Mozilla Firefox (latest versions)
@@ -206,7 +205,7 @@ The website is compatible with all modern browsers, including:
 - Microsoft Edge (latest versions)
 - Opera (latest versions)
 
-#### Simulators Used for Testing
+### Simulators Used for Testing
 To ensure the website looks great on all devices and browsers, the following simulators were used:
 - Chrome DevTools Device Mode
 - Firefox Responsive Design Mode
@@ -214,9 +213,9 @@ To ensure the website looks great on all devices and browsers, the following sim
 - Microsoft Edge DevTools
 - Opera Developer Tools
 
-## 12. Deployment
+## 13. Deployment
 
-### 12.1 Gitpod 
+### 13.1 Gitpod 
 
 #### 1. Linking the Repository to GitHub
 
@@ -275,7 +274,7 @@ Install in Gitpod:
    - Adds icons to files and folders in the file explorer for better navigation.
      
 
-### 12.2 GitHub Pages
+### 13.2 GitHub Pages
 
 #### Setting Up GitHub Pages
 
@@ -301,7 +300,7 @@ Install in Gitpod:
 
 Whenever new changes are pushed to the main branch on GitHub, GitHub Pages will automatically rebuild and update the site.
 
-## 13. Credits
+## 14. Credits
 **[Font Awesome](https://fontawesome.com/search)** - Custom fonts -- Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.
 
 **[VectorStock](https://www.vectorstock.com/)** - Images
