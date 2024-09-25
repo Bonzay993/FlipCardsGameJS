@@ -17,17 +17,17 @@ let currentTimer;
 /**
  * RUNNING THE GAME
  *
- */
+*/
 window.addEventListener('DOMContentLoaded', () => {
-        let menuBackground = getBackgroundImages("menuBg");
-        gameInit();
-        assignBackground(menuBackground);
-    
-  });
+    let menuBackground = getBackgroundImages("menuBg");
+    gameInit();
+    assignBackground(menuBackground);
+});
 
-  /**
+
+/**
  * Function that hides and show elements
- */
+*/
 function hideShowElement(hide, elementSelector) {
     let element = document.querySelector(elementSelector);
     if (hide) {
@@ -41,7 +41,7 @@ function hideShowElement(hide, elementSelector) {
  * Initialise the elements when loading the game
  * Ex: Hover sound effect, Menu Music, Menu Popup
  * boardInit();
- */
+*/
 function gameInit() {
     menuElements();
     menuBtnHover();
@@ -114,7 +114,7 @@ function btnToggleAudio() {
  * Let's play button or the close button
  * 
  * This is a change happened in Chrome browser
- *  Expose openPopup for testing
+ * Expose openPopup for testing
 */
 function menuPop() {
     window.addEventListener("load", function() {
@@ -133,7 +133,7 @@ function openPopup() {
 
 /**
  * Function that enables the the user to close the popup
- *  Add event listeners for each selector
+ * Add event listeners for each selector
  * Special case for popup-level1 with additional logic
 */
 function closePopup() {
@@ -198,7 +198,6 @@ function gameTimer(timer) {
     let timerHtml = document.querySelector('.timer');
     currentTimer = timer;  
     
-   
     count = setInterval(() => {
         timerHtml.textContent = currentTimer;  // Display the current value of timer
         if (currentTimer < 0) {
@@ -210,7 +209,6 @@ function gameTimer(timer) {
         }
     }, 1000);  
 }
-
 
 function calculateScore(){
     
