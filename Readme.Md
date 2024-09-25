@@ -279,7 +279,7 @@ Install in Gitpod:
 #### Setting Up GitHub Pages
 
 1. **Navigate to Repository Settings:**
-   - Go to the GitHub repository: [Website-NetNest](https://github.com/Bonzay993/FlipCardsGameJS).
+   - Go to the GitHub repository: [FlipCardsGameJS](https://github.com/Bonzay993/FlipCardsGameJS).
    - Click on the "Settings" tab.
 
 2. **Select Source Branch:**
