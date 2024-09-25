@@ -59,11 +59,12 @@ For detailed changelogs and download links, see the [Releases](https://github.co
 
 - **As a player**, I want to hear sound effects that enhance the gameplay experience.
 - **As a player**, I want to be able to toggle the background music on and off.
+- **As a player**, I want to hear audio feedback when I successfully match a pair of cards.
 <p align="center">
-   <img src="https://github.com/Bonzay993/FlipCardsGameJS/blob/main/testcases/gifs/game-mechanics.gif" style="margin: 0 auto;"> 
+   [Watch the video]("https://github.com/Bonzay993/FlipCardsGameJS/blob/main/testcases/user-stories-audio.mp4")
  </p>
 
-- **As a player**, I want to hear audio feedback when I successfully match a pair of cards.
+
 
 ## 6. Features
 
