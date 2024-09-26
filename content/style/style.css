@@ -286,11 +286,16 @@ body {
 }
 
 .version-paragraph {
-  color: #e7dc49df;
-  text-shadow: 0.5px 0.5px 0.5px #3b3232;
+  color: #090909df;
 }
 
 /* Media Queries for Responsiveness */
+@media  (min-width: 2000px){
+  .version-paragraph{
+    color:white;
+  }
+}
+
 @media (max-width: 1367px) {
   .score {
     margin: 0 auto;
