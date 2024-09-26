@@ -29,7 +29,6 @@ body {
   align-items: center;
   flex-direction: column;
   overflow: hidden;
-  
 }
 
 /* POPUPS STYLE */
@@ -121,7 +120,7 @@ body {
 .menu-container {
   width: 60%;
   height: 80%;
-  background-color: aliceblue;
+  background-color: #f0f8ff;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -129,7 +128,6 @@ body {
   padding: 20px;
   background-size: cover;
   background-repeat: no-repeat;
-  
 }
 
 /* MAIN MENU BUTTONS WRAPPER */
@@ -142,7 +140,6 @@ body {
   justify-content: center;
   align-items: center;
   gap: 10%;
-  flex-direction: column;
   border-radius: 15px;
   background-color: #eee3e310;
 }
@@ -226,7 +223,7 @@ body {
 .game-area-button-wrapper{
   display:flex;
   flex-flow:column wrap;
-  gap:2%;
+  gap:5%;
 }
 
 /*The music button in the game area*/
@@ -296,23 +293,14 @@ body {
 
 /* GAME VERSION STYLE */
 .version-game-container {
-  margin: 20px 0;
-  display: flex;
-  justify-content: center;
   font-weight: 800;
 }
 
 .version-paragraph {
-  color: #090909df;
+  color: #252222df;
 }
 
 /* Media Queries for Responsiveness */
-@media  (min-width: 1539px){
-  .version-paragraph{
-    color:white;
-  }
-}
-
 @media (max-width: 1367px) {
   .score {
     margin: 0 auto;
@@ -356,6 +344,7 @@ body {
   .game-area-button-wrapper{
     flex-flow: column wrap;
   }
+
 }
 
 @media (max-width: 540px) {
@@ -372,7 +361,7 @@ body {
 
   .menu-container {
     width: 88%;
-    height: 92%;
+    height: 90%;
     position: absolute;
     top: 0%;
   }
