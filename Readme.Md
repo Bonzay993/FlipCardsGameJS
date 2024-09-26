@@ -200,6 +200,10 @@ Ensuring the quality and correctness of the code is crucial for a robust and rel
 - **W3C CSS Validator:** The CSS code has been validated using the W3C CSS Validator to ensure it meets the standards and is error-free.
   - [Validate CSS](https://jigsaw.w3.org/css-validator/)
 
+#### Js Linter 
+- The Javascript code has been passed trough a linter with no issues.
+  - [Validate JS](https://www.jslint.com/)
+
 ### Ligthouse Report
 <p align="center">
   <img src="https://github.com/Bonzay993/FlipCardsGameJS/blob/main/testcases/lighthouse-report.PNG" style="width:80%;">
