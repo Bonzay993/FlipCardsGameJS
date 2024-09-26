@@ -90,7 +90,7 @@ const BACKGROUND_IMAGES= [
 
 ];
 
-// Function to get the path based on the name
+/**This function will return a general asset based on it's name */
 function getGeneralAssets(name) {
     let asset = GENERAL_ASSETS.find(asset => asset.name === name);
     if (!asset) {
@@ -100,6 +100,7 @@ function getGeneralAssets(name) {
     return asset.path;
 }
 
+/**This function will return a background image asset based on it's name */
 function getBackgroundImages(name) {
     let asset = BACKGROUND_IMAGES.find(asset => asset.name === name);
     if (!asset) {

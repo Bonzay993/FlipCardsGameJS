@@ -197,8 +197,8 @@ function gameTimer(timer) {
     }, 1000);  
 }
 
+/** Function that sets the scoring rules */
 function calculateScore(){
-    
     if (currentTimer >= 40 && currentTimer <= 50){
         calculateMultiplier(HIGH_MULTIPLIER);
     } else if (currentTimer >= 30 && currentTimer <= 40) {
@@ -210,7 +210,7 @@ function calculateScore(){
     }
     
 }
-
+/** Function that calculates the score based on the seconds left on the timer */
 function calculateMultiplier(multiplier){
     let timerHtml = document.querySelector(".score-calculated");
     let score = document.querySelector(".score-value");
