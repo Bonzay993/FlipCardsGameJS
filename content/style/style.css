@@ -207,13 +207,12 @@ body {
 }
 
 /* GAME AREA STYLE*/
-
 /* GAME AREA WRAPPER */
 .game-area-wrapper {
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 10px;
-  width: 100%;
+  width: 90%;
   padding: 20px;
   display: flex;
 }
@@ -264,10 +263,10 @@ body {
 
 /* SCORE AREA STYLE */
 .score {
-  font-size: 1.87rem;
-  width: 10rem;
+  font-size: 2.5rem;
   display: block;
   text-shadow: 0 1px 5px #090909;
+  font-weight: bold;
 }
 
 .high-score-paragraph {
@@ -310,7 +309,6 @@ body {
     padding-bottom: 10%;
   }
 }
-
 
 @media (max-width: 768px) {
   .title-heading {

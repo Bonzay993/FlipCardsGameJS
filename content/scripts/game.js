@@ -11,9 +11,6 @@ const HIGH_MULTIPLIER = 3.5;
 let count;  
 let currentTimer;
 
-
-
-
 /**
  * RUNNING THE GAME
  *
@@ -23,7 +20,6 @@ window.addEventListener('DOMContentLoaded', () => {
     gameInit();
     assignBackground(menuBackground);
 });
-
 
 /**
  * Function that hides and show elements
@@ -92,7 +88,6 @@ function boardElements(){
     levelOneBoard();
 }
 
-
 /**Function that adds Menu Toggle to music on-off buttons */
 function btnToggleAudio() {
     document.querySelectorAll(".music-on-off").forEach(button => {
@@ -155,7 +150,6 @@ function assignBackground(background) {
     }
     gameContainer.style.backgroundImage = `url('${background}')`;
 }
-
 
 /**
  * First level tutorial popup .Removed the Window Onload because
