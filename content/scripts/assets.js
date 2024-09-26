@@ -80,7 +80,7 @@ const GAME_ASSETS_LEVEL_1TO3 = [
 const BACKGROUND_IMAGES= [
     {
         name: "level1Bg",
-        path: "./content/img/level1-background.webp"
+        path: "./content/img/level1-background.png"
     },
 
     {
