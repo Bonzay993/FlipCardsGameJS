@@ -43,7 +43,6 @@ function hideShowElement(hide, elementSelector) {
  * boardInit();
 */
 function gameInit() {
-    menuElements();
     menuBtnHover();
     playMenuAudio();
     menuPop();
@@ -76,10 +75,6 @@ function boardInit() {
     } else {
         console.error("GOT_IT_BUTTON is null.");
     }
-}
-
-function menuElements(){
-   
 }
 
 function boardElements(){
