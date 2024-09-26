@@ -90,7 +90,9 @@ const BACKGROUND_IMAGES= [
 
 ];
 
-/**This function will return a general asset based on it's name */
+/**This function will return a general asset based on it's name.
+ * If not it will return a fallback asset confirming an error
+ */
 function getGeneralAssets(name) {
     let asset = GENERAL_ASSETS.find(asset => asset.name === name);
     if (!asset) {
@@ -100,7 +102,9 @@ function getGeneralAssets(name) {
     return asset.path;
 }
 
-/**This function will return a background image asset based on it's name */
+/**This function will return a background image asset based on it's name.
+ * If not it will return a fallback asset confirming an error
+ */
 function getBackgroundImages(name) {
     let asset = BACKGROUND_IMAGES.find(asset => asset.name === name);
     if (!asset) {
