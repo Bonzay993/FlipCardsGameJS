@@ -137,11 +137,11 @@ Wireframes were created using tools like Figma or Adobe XD.
 
 
 ## 11. Code Testing
-###  Test Cases 
+###  Manual Testing Test Cases 
 
 For detailed test cases and steps to test the website, please refer to the [Test Cases](https://github.com/Bonzay993/FlipCardsGameJS/wiki/Test-Cases) Wiki.
 
-### Testing Framework
+### Automated Testing Framework
 
 The Memory Card Game uses [Jest](https://jestjs.io/) for unit testing. Jest is a delightful JavaScript Testing Framework with a focus on simplicity.
 
