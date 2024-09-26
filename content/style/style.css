@@ -217,6 +217,13 @@ body {
   padding: 20px;
   display: flex;
 }
+
+.game-area-button-wrapper{
+  display:flex;
+  flex-flow:column wrap;
+  gap:2%;
+}
+
 /*The music button in the game area*/
 .game-music-btn {
   height: 40px;
@@ -289,7 +296,21 @@ body {
   .score {
     margin: 0 auto;
   }
+
+  .game-area-button-wrapper{
+    flex-flow: row wrap;
+    margin:0 auto;
+    justify-content: center;
+    width:50%
+  }
+
+  .game-grid{
+    margin:0 auto;
+    padding-top:10%;
+    padding-bottom: 10%;
+  }
 }
+
 
 @media (max-width: 768px) {
   .title-heading {
@@ -301,13 +322,26 @@ body {
     font-size: 1rem;
   }
 
-  .game-music-btn {
-    width: 25%;
-  }
-
   .button-wrapper {
     width: 50%;
     flex-direction: column;
+  }
+
+  .game-music-btn {
+    width: 50%;
+    height: 70%;
+    font-size: 70%;
+  }
+
+  .game-area-button-wrapper{
+    flex-flow: column wrap;
+  }
+}
+
+@media (max-width: 540px) {
+  .game-grid img {
+    width: 60px;
+    height: 60px;
   }
 }
 
@@ -328,12 +362,6 @@ body {
     font-size: 0.9rem;
   }
 
-  .game-music-btn {
-    width: 25%;
-    font-size: 80%;
-    height: 7%;
-  }
-
   .popup {
     width: 80%;
   }
@@ -350,6 +378,19 @@ body {
     font-size: 1.5rem;
   }
 
+  .game-music-btn {
+    width: 50%;
+    height: 70%;
+    font-size: 70%;
+  }
+
+  .game-area-button-wrapper{
+    flex-flow: column wrap;
+    margin:0 auto;
+    justify-content: center;
+    width:50%
+  }
+
   @media (max-width: 380px) {
     .title {
       padding: 3%;
@@ -364,8 +405,8 @@ body {
     }
 
     .game-music-btn {
-      width: 25%;
-      height: 6%;
+      width: 50%;
+      height: 70%;
       font-size: 70%;
     }
 
@@ -381,11 +422,17 @@ body {
     .title {
       font-size: 80%;
     }
+
   }
 
   @media (max-width: 325px) {
     .menu-container {
       width: 85%;
+    }
+
+    .game-grid img {
+      width: 60px;
+      height: 60px;
     }
   }
 }

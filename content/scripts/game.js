@@ -79,9 +79,7 @@ function boardInit() {
 }
 
 function menuElements(){
-    hideShowElement(true, ".game-area-wrapper");
-    hideShowElement(true, ".game-music-btn");
-    hideShowElement(true, ".popup-level1");
+   
 }
 
 function boardElements(){
@@ -93,7 +91,7 @@ function boardElements(){
     HIGH_SCORE_PARAGRAPH.classList.remove('hide');
     hideShowElement(false, ".game-music-btn");
     hideShowElement(false, ".game-area-wrapper");
-    hideShowElement(false, ".game-music-btn");
+    hideShowElement(false,".game-menu-btn")
     hideShowElement(true, ".version-paragraph");
     levelOnePop();
     levelOneBoard();
