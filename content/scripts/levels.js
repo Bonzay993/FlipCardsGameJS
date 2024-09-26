@@ -1,10 +1,8 @@
-
 /**
  * LEVEL1;
 */
 const NUMBER_OF_CARDS_LEVEL_ONE = 12; //declare number of cards
 const TIMER_LEVEL_ONE = 60; //declare timer
-
 
 let isCheckingMatch = false; // Variable to track if checking match
 let cardsChosen = [];
@@ -20,7 +18,6 @@ function levelOneBoard() {
     shuffleArray(NUMBER_OF_CARDS_LEVEL_ONE);
     assignBackground(levelOneBackground);
 }
-
 
 /**
  * Shuffles the array of cards 
@@ -163,11 +160,3 @@ function checkLevelComplete() {
     let totalPairs = document.querySelectorAll('.game-grid img').length / 2;
     return cardsWon.length === totalPairs;
 }
-
-
-
-
-
-
-
-

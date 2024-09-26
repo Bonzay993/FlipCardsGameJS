@@ -41,8 +41,6 @@ function getSounds(name) {
     return asset ? asset.path : null; // Return the path if found, otherwise return null
 }
 
-
-
 /**
  * Function that plays the Music
  */
@@ -60,7 +58,6 @@ function stopMenuAudio() {
     menuAudio.pause();
     menuAudio.loop = false;
 }
-
 
 /**
  * Functions that toogles the audio in the menu and ingame and 

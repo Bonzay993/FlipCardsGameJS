@@ -1,7 +1,6 @@
 /**
  * @jest-environment jsdom
  */
-
 const {
   gameInit,
   menuPop,
@@ -92,13 +91,8 @@ describe('Game Initialization and Functionality Tests', () => {
   });
 
   test("levelComplete should display the level complete popup", () => {
-    // First, call gameInit to make sure everything is initialized.
     gameInit();
-
-    // Now call the levelComplete function.
     levelComplete();
-
-    // Check if the level complete popup is correctly displayed.
     const popup = document.querySelector('.popup-level-complete');
     expect(popup.classList).not.toContain('hide');
   });
