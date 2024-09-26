@@ -29,6 +29,7 @@ body {
   align-items: center;
   flex-direction: column;
   overflow: hidden;
+  
 }
 
 /* POPUPS STYLE */
@@ -44,7 +45,7 @@ body {
   top: 50%;
   border-radius: 15px;
   color: black;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 1px 15px rgb(0, 0, 0);
   text-align: center;
 }
 
@@ -82,6 +83,7 @@ body {
 .popup-level-complete-heading {
   color: #38b23a;
 }
+
 /* Score that's being displayed on the level-complete popup */
 .score-calculator {
   margin-top: 4%;
@@ -127,6 +129,7 @@ body {
   padding: 20px;
   background-size: cover;
   background-repeat: no-repeat;
+  
 }
 
 /* MAIN MENU BUTTONS WRAPPER */
@@ -135,11 +138,13 @@ body {
   flex-flow: column wrap;
   width: 30%;
   height: 20%;
+  padding:15%;
   justify-content: center;
   align-items: center;
   gap: 10%;
   flex-direction: column;
   border-radius: 15px;
+  background-color: #eee3e310;
 }
 
 /* Menu buttons style*/
@@ -165,6 +170,7 @@ body {
   display: inline-block;
   cursor: pointer;
   text-align: center;
+  
 }
 
 .menu-btn:hover {
@@ -185,7 +191,7 @@ body {
 
 /* GAME LOGO TITLE */
 .title {
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: #ffffff66 ;
   box-shadow: 1px 10px 1000px rgba(255, 255, 255, 0.6);
   padding: 20px;
   border-radius: 10px;
@@ -256,14 +262,17 @@ body {
   height: 100px;
   box-shadow: 10px 10px 2px rgba(30, 30, 30, 0.15);
   cursor: pointer;
+  border-radius: 0px; 
+  transition: box-shadow 0.3s ease, border-radius 0.2s ease; 
 }
 
-.game-grid img:hover{
+.game-grid img:hover,
+.game-grid img:active { 
   box-sizing: border-box;
-  box-shadow:0px 0px 15px #fffffe;
+  box-shadow: 0px 0px 20px #f0f07d;
   border-radius: 15px;
-
 }
+
 /* USED TO HIDE USING FUNCTION hideShowElement*/
 .hide {
   display: none;
@@ -298,7 +307,7 @@ body {
 }
 
 /* Media Queries for Responsiveness */
-@media  (min-width: 2000px){
+@media  (min-width: 1539px){
   .version-paragraph{
     color:white;
   }

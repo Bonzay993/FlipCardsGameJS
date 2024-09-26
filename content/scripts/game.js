@@ -257,6 +257,7 @@ function levelComplete() {
     hideShowElement(false, ".popup-level-complete");
     clearInterval(count);  // 
     calculateScore();
+    setup();
 }
 
 /**
