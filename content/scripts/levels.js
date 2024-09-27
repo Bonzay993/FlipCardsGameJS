@@ -1,10 +1,10 @@
 /**
  * LEVEL1;
 */
-const NUMBER_OF_CARDS_LEVEL_ONE = 12; //declare number of cards
-const TIMER_LEVEL_ONE = 60; //declare timer
+const NUMBER_OF_CARDS_LEVEL_ONE = 12; 
+const TIMER_LEVEL_ONE = 60; 
 
-let isCheckingMatch = false; // Variable to track if checking match
+let isCheckingMatch = false;
 let cardsChosen = [];
 let cardsChosenIds = [];
 let cardsWon = [];

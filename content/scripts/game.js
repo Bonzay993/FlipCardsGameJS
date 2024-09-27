@@ -65,6 +65,7 @@ function boardInit() {
     if (GOT_IT_BUTTON) {
         GOT_IT_BUTTON.addEventListener('click', function () {
             hideShowElement(true, ".popup-level1");
+            MENU_CONTAINER.classList.remove("blur");
             menuBtnOnClick();
             gameTimer(TIMER_LEVEL_ONE);
         });
@@ -77,9 +78,9 @@ function boardElements(){
     menuBtnOnClick();
     TITLE_HEADING.innerHTML= 'Level 1';
     hideShowElement(true, ".button-wrapper");
-    MENU_CONTAINER.classList.add('game-container');
-    SCORE_PARAGRAPH.classList.remove('hide');
-    HIGH_SCORE_PARAGRAPH.classList.remove('hide');
+    MENU_CONTAINER.classList.add("game-container");
+    SCORE_PARAGRAPH.classList.remove("hide");
+    HIGH_SCORE_PARAGRAPH.classList.remove("hide");
     hideShowElement(false, ".game-music-btn");
     hideShowElement(false, ".game-area-wrapper");
     hideShowElement(false,".game-menu-btn")
@@ -164,7 +165,7 @@ function levelOnePop() {
         },
         200
     );
-    MENU_CONTAINER.style.filter = 'blur(3px)';
+    MENU_CONTAINER.classList.add("blur");
 }
 
 /**
@@ -178,7 +179,6 @@ function displayTimer() {
  * Function that displays the timer and accepts a timer value
  * that can be set.
  * Start the interval and store its reference in the global 'count'
- *
  * Call gameOver when the timer hits 0
 */
 function gameTimer(timer) {
@@ -257,11 +257,10 @@ function levelComplete() {
     hideShowElement(false, ".popup-level-complete");
     clearInterval(count);  // 
     calculateScore();
-    setup();
 }
 
 /**
- * GameOver function restars the game and displays the GameOver popup
+ * GameOver function restars the game (check HTML) and displays the GameOver popup
 */
 function gameOver() {
     hideShowElement(false, ".popup-game-over");

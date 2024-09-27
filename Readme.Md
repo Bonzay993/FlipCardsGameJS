@@ -105,7 +105,7 @@ For detailed changelogs and download links, see the [Releases](https://github.co
 Wireframes were designed to plan the layout of the game interface across different screen sizes.
 
 - **Desktop View:** A layout with a score display on the right, the game grid in the center, and music control button on the left. On top there is the Level Number and the timer.
-- **Mobile View:** A vertically stacked layout where the score and highscore are at the bottom, and the level number and timer are positioned at the top. The game grid stays in the center
+- **Mobile View:** A vertically stacked layout where the score and highscore are at the bottom, and the level number and timer are positioned at the top. The game grid stays in the center as it is the main focus of the game.
 <p align="center">
    <img src="https://github.com/Bonzay993/FlipCardsGameJS/blob/main/wireframes/main-menu.png" style="margin: 0 auto;"> 
  </p>
@@ -120,9 +120,10 @@ Wireframes were created using tools like Figma or Adobe XD.
 
 ### Languages
 
-- **HTML5:** Used for the basic structure of the game, including the layout of the game grid and control buttons.
-- **CSS3:** Provides styling for the game, including the layout, colors, and responsive design adjustments.
-- **JavaScript:** Implements the game logic, including card shuffling, matching mechanics, score tracking, and sound management.
+  - **[HTML:](https://www.w3schools.com/html/)** Provides the structure and content of the website.
+  - **[CSS3:](https://www.w3schools.com/css/)** Used for styling and layout, ensuring a visually appealing design.
+  - **[JavaScript:](https://www.w3schools.com/js/)** Adds interactivity and dynamic content to the Help section of the website.
+  - **[Font Awesome:](https://fontawesome.com/search)** Provides scalable vector icons that can be customized with CSS.
 
 ### Tools and Libraries
 
@@ -132,7 +133,7 @@ Wireframes were created using tools like Figma or Adobe XD.
 
 ### Development Environment
 
-- **Text Editor:** Developed using code editors like Visual Studio Code.
+- **Text Editor:** Developed using code editors like Visual Studio Code and Github.io
 - **Browser:** Tested across multiple browsers including Chrome, Firefox, and Safari to ensure compatibility.
 
 
@@ -327,6 +328,7 @@ Whenever new changes are pushed to the main branch on GitHub, GitHub Pages will 
 **[VectorStock](https://www.vectorstock.com/)** - Images
 
 **[Vecteezy](https://www.vecteezy.com/)** -Images
+**[PixaBay](https://pixabay.com/)** - Free royalty music and sound effects
 
 
 
