@@ -48,6 +48,10 @@ body {
   text-align: center;
 }
 
+.blur {
+  filter: blur(3px);
+}
+
 .popup-heading {
   text-align: center;
 }
@@ -120,7 +124,7 @@ body {
 .menu-container {
   width: 60%;
   height: 80%;
-  background-color: #badcf9;
+  background-color: #cbdceb;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

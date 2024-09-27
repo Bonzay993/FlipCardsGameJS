@@ -65,6 +65,7 @@ function boardInit() {
     if (GOT_IT_BUTTON) {
         GOT_IT_BUTTON.addEventListener('click', function () {
             hideShowElement(true, ".popup-level1");
+            MENU_CONTAINER.classList.remove("blur");
             menuBtnOnClick();
             gameTimer(TIMER_LEVEL_ONE);
         });
@@ -164,7 +165,7 @@ function levelOnePop() {
         },
         200
     );
-    MENU_CONTAINER.style.filter = 'blur(3px)';
+    MENU_CONTAINER.classList.add("blur");
 }
 
 /**
@@ -178,7 +179,6 @@ function displayTimer() {
  * Function that displays the timer and accepts a timer value
  * that can be set.
  * Start the interval and store its reference in the global 'count'
- *
  * Call gameOver when the timer hits 0
 */
 function gameTimer(timer) {

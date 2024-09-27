@@ -1,14 +1,12 @@
 /**
- * SETTING THE MENU AUDIO TOGGLE FOR MUSIC
+ * Defining Variables
  */
-
 let isAudioPlayed = false;
 let musicButtons = document.querySelectorAll(".on-off");
 
 /**
  * Sound objects
  */
-
 const GAME_SOUNDS = [{
         name: "background-music",
         path: './content/sound/menu.mp3'
