@@ -155,8 +155,10 @@ The Memory Card Game uses [Jest](https://jestjs.io/) for unit testing. Jest is a
      ```
 
 2. **Run the Tests:**
-   - To run the tests, use the following command in your terminal:
+   - This projects comes with Jest Test installed in the libraries folder.
+   - To run the tests, use the following commands in your terminal:
      ```
+     cd libraries
      npm test
      ```
    - Jest will automatically find and run any test files following the naming convention `*.test.js` or located in the `__tests__` directory.
@@ -252,7 +254,7 @@ To ensure the website looks great on all devices and browsers, the following sim
  **Link to GitHub:**
    - Navigate into the cloned repository directory:
      ```bash
-     cd Website-NetNest
+     cd FlipCardsGameJS
      ```
    - Link the local repository to the GitHub repository:
      ```bash
@@ -328,7 +330,8 @@ Whenever new changes are pushed to the main branch on GitHub, GitHub Pages will 
 **[VectorStock](https://www.vectorstock.com/)** - Images
 
 **[Vecteezy](https://www.vecteezy.com/)** -Images
-**[PixaBay](https://pixabay.com/)** - Free royalty music and sound effects
+
+**[PixaBay](https://pixabay.com/)** -Free royalty music and sound effects
 
 
 
