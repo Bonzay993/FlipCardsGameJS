@@ -12,6 +12,8 @@ The Memory Card Game is designed as a fun and educational tool to enhance memory
 
 For detailed changelogs and download links, see the [Releases](https://github.com/Bonzay993/FlipCardsGameJS/releases) section on GitHub. Each release includes a summary of changes and improvements made, ensuring that users and developers can easily understand what has been updated or fixed in each version of the game.
 
+Bugs found can also be reported for review here : [Issues](https://github.com/Bonzay993/FlipCardsGameJS/issues) 
+
 
 ## 3. Installation
 
