@@ -77,9 +77,9 @@ function boardElements(){
     menuBtnOnClick();
     TITLE_HEADING.innerHTML= 'Level 1';
     hideShowElement(true, ".button-wrapper");
-    MENU_CONTAINER.classList.add('game-container');
-    SCORE_PARAGRAPH.classList.remove('hide');
-    HIGH_SCORE_PARAGRAPH.classList.remove('hide');
+    MENU_CONTAINER.classList.add("game-container");
+    SCORE_PARAGRAPH.classList.remove("hide");
+    HIGH_SCORE_PARAGRAPH.classList.remove("hide");
     hideShowElement(false, ".game-music-btn");
     hideShowElement(false, ".game-area-wrapper");
     hideShowElement(false,".game-menu-btn")
@@ -257,11 +257,10 @@ function levelComplete() {
     hideShowElement(false, ".popup-level-complete");
     clearInterval(count);  // 
     calculateScore();
-    setup();
 }
 
 /**
- * GameOver function restars the game and displays the GameOver popup
+ * GameOver function restars the game (check HTML) and displays the GameOver popup
 */
 function gameOver() {
     hideShowElement(false, ".popup-game-over");

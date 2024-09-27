@@ -3,6 +3,7 @@
  */
 
 let isAudioPlayed = false;
+let musicButtons = document.querySelectorAll(".on-off");
 
 /**
  * Sound objects
@@ -71,7 +72,6 @@ function stopMenuAudio() {
  */
 function toggleAudio() {
     menuBtnOnClick();
-    let musicButtons = document.querySelectorAll(".on-off");
     let currentState = musicButtons[0].innerText;
     let newState = currentState === "Off" ? "On" : "Off";
    
@@ -81,8 +81,10 @@ function toggleAudio() {
 
     if (newState === "On") {
         playMenuAudio();
+        changeColorGreen();
     } else {
         stopMenuAudio();
+        changeColorRed();
     }
 }
 
@@ -127,6 +129,19 @@ function successMatchAudio() {
  * Sound Effect when 2 cards are not matched
  */
 function failedMatchAudio() {
-    let failedAudio = new Audio(getSounds('failed-match'));
+    let failedAudio = new Audio(getSounds("failed-match"));
     failedAudio.play();
+}
+
+function changeColorRed(){
+    musicButtons.forEach(button =>{
+        button.classList.remove("green")
+        button.classList.add("red");
+    })
+}
+
+function changeColorGreen(){
+    musicButtons.forEach(button =>{
+        button.classList.add("green");
+    })
 }

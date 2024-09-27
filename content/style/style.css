@@ -120,7 +120,7 @@ body {
 .menu-container {
   width: 60%;
   height: 80%;
-  background-color: #f0f8ff;
+  background-color: #badcf9;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -136,12 +136,11 @@ body {
   flex-flow: column wrap;
   width: 30%;
   height: 20%;
-  padding:15%;
   justify-content: center;
   align-items: center;
   gap: 10%;
   border-radius: 15px;
-  background-color: #eee3e310;
+  background-color: #ffffff00;
 }
 
 /* Menu buttons style*/
@@ -240,6 +239,15 @@ body {
 .game-music-btn:hover {
   background-color: rgb(179, 217, 249);
 }
+
+.red{
+  color:#f7360b
+}
+
+.green{
+  color:#38b23a
+}
+
 /* CARD GRID STYLE */
 .game-grid {
   display: none;
