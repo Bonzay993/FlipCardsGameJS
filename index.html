@@ -12,68 +12,75 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body class="prevent-select">
-    <!--MAIN MENU-->
-    <div class="menu-container set-background">
-        <div class="title">
-            <h3 class="title-heading">CARD FLIPPER <i class="fa-brands fa-square-js"></i></h3>
-            <h3 class="timer-text hide">Time: <span class="timer"></span></h3>
-        </div>
-        <div class="button-wrapper">
-            <button class="start-game menu-btn">Start Game</button>
-            <button class="music-on-off menu-btn">Music: <span class="on-off green">On</span></button>
-        </div>
-        <!--GAME AREA-->
-        <div class="game-area-wrapper hide">
-            <div class="game-area-button-wrapper">
-                <button class="music-on-off game-music-btn menu-btn hide">Music: <span class="on-off green">On</span>
-                </button>
-                <button class="game-music-btn menu-btn game-menu-btn hide" onclick='window.location.href = "./index.html"'>Main Menu
-                </button>
-            </div>
+    <!-- MAIN MENU -->
+    <main class="menu-container set-background">
+        <header class="title">
+            <h1 class="title-heading">CARD FLIPPER <i class="fa-brands fa-square-js"></i></h1>
+            <p class="timer-text hide">Time: <span class="timer"></span></p>
+        </header>
+
+        <section class="button-wrapper">
+            <button class="start-game menu-btn" aria-label="Start Game">Start Game</button>
+            <button class="music-on-off menu-btn" aria-label="Toggle Music">Music: <span class="on-off green">On</span></button>
+        </section>
+
+        <!-- GAME AREA -->
+        <section class="game-area-wrapper hide" aria-label="Game Area">
+            <nav class="game-area-button-wrapper">
+                <button class="music-on-off game-music-btn menu-btn hide" aria-label="Toggle Music in Game">Music: <span class="on-off green">On</span></button>
+                <button class="game-music-btn menu-btn game-menu-btn hide" onclick="window.location.href='./index.html'" aria-label="Main Menu">Main Menu</button>
+            </nav>
+
             <div class="game-grid prevent-select"></div>
-            <div class="score">
-                <p class="score-paragraph hide">SCORE: <span class="score-value">0</span>
-                </p>
-                <p class="high-score-paragraph hide">HIGH SCORE: <span class="high-score-value">0</span>
-                </p>
-            </div>
-        </div>
-        <div class="version-game-container">
+
+            <section class="score">
+                <p class="score-paragraph hide">SCORE: <span class="score-value">0</span></p>
+                <p class="high-score-paragraph hide">HIGH SCORE: <span class="high-score-value">0</span></p>
+            </section>
+        </section>
+
+        <footer class="version-game-container">
             <p class="version-paragraph">v1.0.3</p>
-        </div>
-    </div>
-    <!--POP-UPS-->
-    <!--WELCOME POPUP-->
-    <div class="popup">
-        <button class="close">&times;</button>
-        <h1 class="popup-heading">Welcome to CardFlipperJS!</h1>
+        </footer>
+    </main>
+
+    <!-- POP-UPS -->
+    <!-- WELCOME POPUP -->
+    <section class="popup" aria-label="Welcome Popup">
+        <button class="close" aria-label="Close Popup">&times;</button>
+        <h2 class="popup-heading">Welcome to CardFlipperJS!</h2>
         <p class="popup-paragraph">Your goal is to get the highest points in this thrilling Card Flipper Game</p>
-        <a class="popup-anchor close-link">Let's Play</a>
-    </div>
+        <a class="popup-anchor close-link" href="#">Let's Play</a>
+    </section>
+
     <audio class="menu-audio">
-        <source src="./content/sound/menu.mp3">
+        <source src="./content/sound/menu.mp3" type="audio/mpeg">
     </audio>
-    <!--TUTORIAL POPUP-->
-    <div class="popup popup-level1 hide">
-        <h1 class="popup-heading">Tutorial</h1>
-        <p class="popup-paragraph">Earn points by matching pair of cards before the time runs out!</p>
-        <a class="popup-anchor got-it-button">Got it!</a>
-    </div>
-    <!--GAME OVER POPUP-->
-    <div class="popup popup-game-over hide">
-        <h1 class="popup-heading">TIME EXPIRED</h1>
+
+    <!-- TUTORIAL POPUP -->
+    <section class="popup popup-level1 hide" aria-label="Tutorial Popup">
+        <h2 class="popup-heading">Tutorial</h2>
+        <p class="popup-paragraph">Earn points by matching pairs of cards before the time runs out!</p>
+        <a class="popup-anchor got-it-button" href="#">Got it!</a>
+    </section>
+
+    <!-- GAME OVER POPUP -->
+    <section class="popup popup-game-over hide" aria-label="Game Over Popup">
+        <h2 class="popup-heading">TIME EXPIRED</h2>
         <p class="popup-paragraph">Sorry, time is up!</p>
         <a class="popup-anchor" href="./index.html">Restart</a>
-    </div>
-    <!--LEVEL COMPLETE POPUP-->
-    <div class="popup  popup-level-complete hide">
-        <h1 class="popup-heading popup-level-complete-heading">Congratulations</h1>
+    </section>
+
+    <!-- LEVEL COMPLETE POPUP -->
+    <section class="popup popup-level-complete hide" aria-label="Level Complete Popup">
+        <h2 class="popup-heading popup-level-complete-heading">Congratulations</h2>
         <p class="popup-paragraph">You have passed this level</p>
-        <h2 class="popup-second-paragraph">Your score is:</h2>
+        <h3 class="popup-second-paragraph">Your score is:</h3>
         <p class="score-calculator"><span class="score-calculated">0</span></p>
         <p class="popup-paragraph popup-level-under-construction">Next Level under Construction</p>
         <a class="popup-anchor popup-restart" href="./index.html">Restart</a>
-    </div>
+    </section>
+
     <script src="./content/scripts/assets.js"></script>
     <script src="./content/scripts/game.js"></script>
     <script src="./content/scripts/sound.js"></script>
