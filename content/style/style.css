@@ -332,6 +332,34 @@ body {
   }
 }
 
+@media (max-width: 1280px){
+  .game-area-wrapper{
+    flex-flow: column wrap;
+    height:70%;
+  }
+  
+  .game-grid {
+    width:50%;
+    padding:5%
+  }
+  
+  .game-grid img{
+    width:70px;
+    height:70px;
+  }
+
+  .game-area-button-wrapper{
+    width:30%;
+    flex-flow:row;
+   }
+
+   .game-music-btn{
+      width:34%;
+      font-size: 0.7rem;
+      height:150%
+   }
+}
+
 @media (max-width: 768px) {
   .title-heading {
     font-size: 3rem;
