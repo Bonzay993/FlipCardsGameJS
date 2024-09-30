@@ -266,14 +266,16 @@ function gameOver() {
     hideShowElement(false, ".popup-game-over");
 }
 
-//Exporting Jest Tests
-module.exports = {
-    gameInitialisation,
-    menuPoput,
-    levelOnePop,
-    gameTimer,
-    updateHighScore,
-    levelComplete,
-    gameOver,
-    hideShowElement,
-};
+// Exporting Jest Tests for Node.js (e.g., Jest) only
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = {
+        gameInitialisation,
+        menuPoput,
+        levelOnePop,
+        gameTimer,
+        updateHighScore,
+        levelComplete,
+        gameOver,
+        hideShowElement,
+    };
+}

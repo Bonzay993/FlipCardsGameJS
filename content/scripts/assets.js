@@ -114,6 +114,9 @@ function getBackgroundImages(name) {
     return asset.path;
 }
 
-module.exports = {
-    getBackgroundImages,
-};
+// Exporting Jest Tests for Node.js (e.g., Jest) only
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = {
+        getBackgroundImages,
+    };
+}
