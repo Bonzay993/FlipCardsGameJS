@@ -17,7 +17,7 @@ let currentTimer;
 */
 window.addEventListener('DOMContentLoaded', () => {
     let menuBackground = getBackgroundImages("menuBg");
-    gameInit();
+    gameInitialisation();
     assignBackground(menuBackground);
 });
 
@@ -36,21 +36,21 @@ function hideShowElement(hide, elementSelector) {
 /**
  * Initialise the elements when loading the game
  * Ex: Hover sound effect, Menu Music, Menu Popup
- * boardInit();
+ * boardInitialisation();
 */
-function gameInit() {
+function gameInitialisation() {
     menuBtnHover();
     playMenuAudio();
-    menuPop();
+    menuPoput();
     btnToggleAudio();
-    boardInit(); 
+    boardInitialisation(); 
 }
 
 /**
  * Initialise the visual elements after pressing the START GAME button 
  * Start the game timer after pressing GOT IT button on the level one popup
 */
-function boardInit() {
+function boardInitialisation() {
     const START_GAME_BUTTON = document.querySelector('.start-game');
     const GOT_IT_BUTTON = document.querySelector('.got-it-button');
 
@@ -105,7 +105,7 @@ function btnToggleAudio() {
  * This is a change happened in Chrome browser
  * Expose openPopup for testing
 */
-function menuPop() {
+function menuPoput() {
     window.addEventListener("load", function() {
         setTimeout(openPopup, 200);
     });
@@ -268,8 +268,8 @@ function gameOver() {
 
 //Exporting Jest Tests
 module.exports = {
-    gameInit,
-    menuPop,
+    gameInitialisation,
+    menuPoput,
     levelOnePop,
     gameTimer,
     updateHighScore,
