@@ -81,6 +81,8 @@ body {
 /* Popup that shows when level complete*/
 .popup-level-complete {
   height: 40%;
+  align-content: center;
+  
 }
 
 .popup-level-complete-heading {
@@ -352,6 +354,10 @@ body {
     position: absolute;
     top: 0%;
   }
+
+  .popup-level-complete{
+    height:50%
+  }
 }
 
 @media (max-width: 1024px) {
@@ -363,10 +369,19 @@ body {
     width:60px;
     height: 60px;
   }
+
+  .popup-level-complete{
+    height:30%
+  }
+}
+
+@media (max-width:1024px) and (max-height:600px){
+  .popup-level-complete{
+    height:60%
+  }
 }
 @media (max-width: 854px) {
 
-    
     .game-grid {
       width:70%;
     }
@@ -374,6 +389,10 @@ body {
     .game-grid img{
       width:120px;
       height:120px;
+    }
+    
+    .popup-level-complete{
+      height:40%
     }
 }
 
@@ -426,6 +445,10 @@ body {
   .game-grid img {
     width: 60px;
     height: 60px;
+  }
+
+  .popup-level-complete{
+    height:50%;
   }
 }
 
@@ -481,64 +504,74 @@ body {
     justify-content: center;
     width:50%
   }
+}
 
-  @media (max-width: 380px) {
-  
-    .title {
-      padding: 3%;
-    }
+@media (max-width: 380px) {
 
-    .game-area-wrapper{
-      height:90%;
-    }
-    .game-grid {
-      padding: 2%;
-      margin: 0 auto;
-    }
-    .version-game-container {
-      margin: 0 auto;
-    }
-
-    .game-music-btn {
-      width: 50%;
-      height: 70%;
-      font-size: 70%;
-    }
-
-    .popup-level-complete {
-      height: 50%;
-      margin: 0 auto;
-    }
-
-    .popup-first-paragraph {
-      padding: 0%;
-    }
-
-    .title {
-      font-size: 80%;
-    }
-
+  .title {
+    padding: 3%;
   }
 
-  @media (max-width: 344px) {
-    .menu-container{
-      width:84%;
-      height:92%;
-    }
+  .game-area-wrapper{
+    height:90%;
+  }
+  .game-grid {
+    padding: 2%;
+    margin: 0 auto;
+  }
+  .version-game-container {
+    margin: 0 auto;
   }
 
-  @media (max-width: 325px) {
-    .menu-container {
-      width: 85%;
-    }
+  .game-music-btn {
+    width: 50%;
+    height: 70%;
+    font-size: 70%;
+  }
 
-    .game-grid img {
-      width: 60px;
-      height: 60px;
-    }
+  .popup-level-complete {
+    height: 50%;
+    margin: 0 auto;
+  }
 
-    .game-music-btn{
-      font-size: 60%;
-    }
+  .popup-first-paragraph {
+    padding: 0%;
+  }
+
+  .title {
+    font-size: 80%;
+  }
+
+}
+
+@media (max-width: 344px) {
+  .menu-container{
+    width:84%;
+    height:92%;
+  }
+
+  .popup-level-complete{
+    height:40%;
+    align-content: center;
   }
 }
+
+@media (max-width: 325px) {
+  .menu-container {
+    width: 85%;
+  }
+
+  .game-grid img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .game-music-btn{
+    font-size: 60%;
+  }
+
+  .popup-level-complete{
+    height:55%
+  }
+}
+
