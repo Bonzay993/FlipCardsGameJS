@@ -2,8 +2,8 @@
  * @jest-environment jsdom
  */
 const {
-  gameInit,
-  menuPop,
+  gameInitialisation,
+  menuPoput,
   updateHighScore,
   levelComplete,
   gameOver,
@@ -19,7 +19,7 @@ jest.mock('./assets.js', () => ({
 // Manually define mocks for global functions used in game.js
 global.menuBtnHover = jest.fn();
 global.playMenuAudio = jest.fn();
-global.boardInit = jest.fn(); 
+global.boardInitialisation = jest.fn(); 
 global.toggleAudio = jest.fn();
 global.btnToggleAudio = jest.fn();
 global.menuBtnOnClick = jest.fn();  
@@ -50,8 +50,8 @@ describe('Game Initialization and Functionality Tests', () => {
     localStorage.clear();
  });
 
-  test('gameInit should initialize the game elements', () => {
-    gameInit();
+  test('gameInitialisation should initialize the game elements', () => {
+    gameInitialisation();
   
     expect(document.querySelector(".menu-container")).not.toBeNull();  
     expect(document.querySelector(".start-game")).not.toBeNull();  
@@ -66,8 +66,8 @@ describe('Game Initialization and Functionality Tests', () => {
     }
   });
 
-  test('menuPop should display the popup and set up close button events', () => {
-    const { openPopup } = menuPop();
+  test('menuPoput should display the popup and set up close button events', () => {
+    const { openPopup } = menuPoput();
     openPopup();
     
     expect(document.querySelector('.popup').classList.contains('hide')).toBe(false);  
@@ -91,7 +91,7 @@ describe('Game Initialization and Functionality Tests', () => {
   });
 
   test("levelComplete should display the level complete popup", () => {
-    gameInit();
+    gameInitialisation();
     levelComplete();
     const popup = document.querySelector('.popup-level-complete');
     expect(popup.classList).not.toContain('hide');

@@ -171,11 +171,11 @@ The Memory Card Game uses [Jest](https://jestjs.io/) for unit testing. Jest is a
 The tests focus on the following core functionalities:
 
 - **Game Initialization**
-  - Tests the `gameInit` function to ensure proper setup of game elements and event listeners.
+  - Tests the `gameInitialisation` function to ensure proper setup of game elements and event listeners.
   - Verifies that buttons for starting the game and toggling audio are functional and correctly trigger their associated actions.
 
 - **Popup Management**
-  - Tests for functions like `menuPop`, `levelOnePop`, and `gameOver` to verify the correct display and closure of popups.
+  - Tests for functions like `menuPoput`, `levelOnePop`, and `gameOver` to verify the correct display and closure of popups.
   - Ensures popups appear and hide as expected, providing a seamless user experience.
 
 - **Game Progression**
