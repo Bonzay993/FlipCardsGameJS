@@ -44,7 +44,7 @@ function hideShowElement(hide, elementSelector) {
 function gameInitialisation() {
     menuBtnHover();
     playMenuAudio();
-    menuPoput();
+    menuPopup();
     btnToggleAudio();
     boardInitialisation();
 }
@@ -106,11 +106,16 @@ function btnToggleAudio() {
  * The user will interact with either the
  * Let's play button or the close button
  */
-function menuPoput() {
+function menuPopup() {
     window.addEventListener("load", function () {
         setTimeout(openPopup, 200);
     });
     closePopup();
+
+    // Return an object with the openPopup function
+    return {
+        openPopup: openPopup
+    };
 }
 
 /** Unhide the Popup */
@@ -281,12 +286,12 @@ function gameOver() {
 if (typeof module !== "undefined" && module.exports) {
     module.exports = {
         gameInitialisation,
-        menuPoput,
+        menuPopup,
         levelOnePop,
         gameTimer,
         updateHighScore,
         levelComplete,
         gameOver,
-        hideShowElement,
+        hideShowElement
     };
 }
