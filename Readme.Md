@@ -244,6 +244,29 @@ To ensure the website looks great on all devices and browsers, the following sim
 - Microsoft Edge DevTools
 - Opera Developer Tools
 
+### Mobile Supported Devices
+Game interface and responsiveness is currently optimized for the following mobile devices, but others may be supported. More to be added to the list in upcoming patches:
+- iPhone SE
+- Iphone X
+- iPhone XR
+- iPhone 12 PRO
+- iPhone 12
+- iPhone 14 PRO Max
+- Pixel 7
+- Pixel 8
+- Samsung Galaxy S8+
+- Samsung Galaxy S20 Ultra
+- Ipad Mini
+- Ipad Air
+- Ipad Pro
+- Surface 7
+- Surface Duo
+- Galaxy Z Fold 5
+- Asus Zenbook Fold
+- Samsung Galaxy A51/71
+- Nest Hub
+- Nest Hub Max
+
 ## 13. Deployment
 
 ### 13.1 Gitpod 
