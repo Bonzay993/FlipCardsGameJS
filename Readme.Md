@@ -40,6 +40,8 @@ Bugs found can also be reported for review here : [Issues](https://github.com/Bo
 
 ## 5. User Stories
 
+- **Target Audience : All ages**
+
 - **As a player**, I want to start a new game and understand the objective immediately.
 <p align="center">
    <img src="https://github.com/Bonzay993/FlipCardsGameJS/blob/main/testcases/user-stories-tutorial.png" style="margin: 0 auto;"> 
@@ -116,7 +118,9 @@ Wireframes were designed to plan the layout of the game interface across differe
  <p align="center">
    <img src="https://github.com/Bonzay993/FlipCardsGameJS/blob/main/wireframes/game-area-mock.png" style="margin: 0 auto;"> 
  </p>
-  
+
+The reasoning behind this design choice is to have the main game components always in the user's focus for better gameplay.
+An orange hover effect is used on the cards to be easily distinguished against the rest that are not hovered by the player.  
 Wireframes were created using tools like Figma or Adobe XD.
 
 ## 10. Technology
