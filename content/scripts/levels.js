@@ -1,8 +1,8 @@
 /**
  * LEVEL1;
 */
-const NUMBER_OF_CARDS_LEVEL_ONE = 12; 
-const TIMER_LEVEL_ONE = 60; 
+const NUMBER_OF_CARDS_LEVEL_ONE = 12;
+const TIMER_LEVEL_ONE = 60;
 
 let isCheckingMatch = false;
 let cardsChosen = [];
@@ -11,7 +11,7 @@ let cardsWon = [];
 let levelOneBackground = getBackgroundImages("level1Bg");
 
 /**Level 1 board settings as:
- * Number of cards 
+ * Number of cards
  * Background picture
 */
 function levelOneBoard() {
@@ -20,40 +20,40 @@ function levelOneBoard() {
 }
 
 /**
- * Shuffles the array of cards 
+ * Shuffles the array of cards randomly
 */
 function shuffleArray() {
-    GAME_ASSETS_LEVEL_1TO3.sort(() => 0.5 - Math.random()); //made the array shuffle random   
-    let gameGrid = document.querySelector('.game-grid');
-    gameGrid.style.display = 'flex';
+    GAME_ASSETS_LEVEL_1TO3.sort(() => 0.5 - Math.random());
+    let gameGrid = document.querySelector(".game-grid");
+    gameGrid.style.display = "flex";
 
     for (let i = 0; i < NUMBER_OF_CARDS_LEVEL_ONE; i++) {
         let card = document.createElement("img");
-        card.setAttribute('src', "content/img/card-back.webp");
-        card.setAttribute('draggable', "false");
-        card.setAttribute('data-id', i);
-        card.addEventListener('click', flipCard);
+        card.setAttribute("src", "content/img/card-back.webp");
+        card.setAttribute("draggable", "false");
+        card.setAttribute("data-id", i);
+        card.addEventListener("click", flipCard);
         gameGrid.appendChild(card);
     }
 }
 
 /**
- * Flipping cards rules .
+ * Flipping cards rules.
  * Prevents flipping more cards after the second choosen card.
  * Uses a timer that sets for how long each card is shown
 */
 function flipCard() {
-    if (isCheckingMatch) return; // Prevent flipping if checking match
-    let cardId = this.getAttribute('data-id');
+    if (isCheckingMatch) return;
+    let cardId = this.getAttribute("data-id");
     cardsChosen.push(GAME_ASSETS_LEVEL_1TO3[cardId].name);
     cardsChosenIds.push(cardId);
 
-    this.setAttribute('src', GAME_ASSETS_LEVEL_1TO3[cardId].path);
+    this.setAttribute("src", GAME_ASSETS_LEVEL_1TO3[cardId].path);
 
     if (cardsChosen.length === 2) {
-        isCheckingMatch = true; // Set the checking match flag
+        isCheckingMatch = true;
 
-        setTimeout(checkMatch, 500); //the timer that sets how long the card is shown
+        setTimeout(checkMatch, 500);
     }
 }
 
@@ -62,7 +62,6 @@ function flipCard() {
 */
 function checkMatch() {
     let [optionOneId, optionTwoId] = cardsChosenIds;
-    
     if (isSameCard(optionOneId, optionTwoId)) {
         handleSameCard(optionOneId, optionTwoId);
     } else if (isMatch(optionOneId, optionTwoId)) {
@@ -70,9 +69,7 @@ function checkMatch() {
     } else {
         handleNoMatch(optionOneId, optionTwoId);
     }
-    
     resetChosenCards();
-    
     if (checkLevelComplete()) {
         levelComplete();
     }
@@ -82,8 +79,8 @@ function checkMatch() {
  * Sets the card to an "empty" state (after a successful match)
 */
 function setCardToEmpty(cardId) {
-    let cards = document.querySelectorAll('.game-grid img');
-    cards[cardId].setAttribute('src', getGeneralAssets("emptyCard"));
+    let cards = document.querySelectorAll(".game-grid img");
+    cards[cardId].setAttribute("src", getGeneralAssets("emptyCard"));
 }
 
 /**
@@ -130,18 +127,18 @@ function handleNoMatch(cardId1, cardId2) {
  * Resets the chosen cards to show the back side
 */
 function resetCards(cardId1, cardId2) {
-    let cards = document.querySelectorAll('.game-grid img');
-    cards[cardId1].setAttribute('src', getGeneralAssets("cardBack"));
-    cards[cardId2].setAttribute('src', getGeneralAssets("cardBack"));
+    let cards = document.querySelectorAll(".game-grid img");
+    cards[cardId1].setAttribute("src", getGeneralAssets("cardBack"));
+    cards[cardId2].setAttribute("src", getGeneralAssets("cardBack"));
 }
 
 /**
  * Removes the event listeners after a successful match
 */
 function removeCardListeners(cardId1, cardId2) {
-    let cards = document.querySelectorAll('.game-grid img');
-    cards[cardId1].removeEventListener('click', flipCard);
-    cards[cardId2].removeEventListener('click', flipCard);
+    let cards = document.querySelectorAll(".game-grid img");
+    cards[cardId1].removeEventListener("click", flipCard);
+    cards[cardId2].removeEventListener("click", flipCard);
 }
 
 /**
@@ -157,6 +154,6 @@ function resetChosenCards() {
  * Check if all pairs have been matched
 */
 function checkLevelComplete() {
-    let totalPairs = document.querySelectorAll('.game-grid img').length / 2;
+    let totalPairs = document.querySelectorAll(".game-grid img").length / 2;
     return cardsWon.length === totalPairs;
 }

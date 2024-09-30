@@ -1,3 +1,5 @@
+/*global document, Audio */
+
 /**
  * Defining Variables
  */
@@ -7,37 +9,40 @@ let musicButtons = document.querySelectorAll(".on-off");
 /**
  * Sound objects
  */
-const GAME_SOUNDS = [{
+const GAME_SOUNDS = [
+    {
         name: "background-music",
-        path: './content/sound/menu.mp3'
+        path: "./content/sound/menu.mp3"
     },
-
     {
         name: "menu-btn-onclick",
-        path: './content/sound/menu-btn-onclick.mp3'
+        path: "./content/sound/menu-btn-onclick.mp3"
     },
-
     {
         name: "menu-hover-sound",
         path: "./content/sound/menu-btn-hover.mp3"
     },
-
     {
         name: "succes-match",
         path: "./content/sound/successmatch.mp3"
     },
-
     {
         name: "failed-match",
         path: "./content/sound/failedmatch.mp3"
-    },
-
+    }
 ];
 
-/**Function that gets the sound objects based on their name */
+/**
+ * Function that gets the sound objects based on their name
+ * Return the path if found, otherwise return null
+ */
 function getSounds(name) {
-    let asset = GAME_SOUNDS.find(asset => asset.name === name);
-    return asset ? asset.path : null; // Return the path if found, otherwise return null
+    let asset = GAME_SOUNDS.find(function (asset) {
+        return asset.name === name;
+    });
+    return (
+        asset ? asset.path : null
+    );
 }
 
 /**
@@ -50,7 +55,9 @@ function playMenuAudio() {
     menuAudio.loop = true;
 }
 
-/**Function that stops the Music */
+/**
+ * Function that stops the Music
+ */
 function stopMenuAudio() {
     isAudioPlayed = false;
     let menuAudio = document.querySelector(".menu-audio");
@@ -59,8 +66,8 @@ function stopMenuAudio() {
 }
 
 /**
- * Functions that toogles the audio in the menu and ingame and 
- * does a sync :
+ * Function that toggles the audio in the menu and ingame and
+ * does a sync:
  * Play the button click sound
  * Get all music toggle buttons
  * Determine the current state based on the first button
@@ -71,9 +78,10 @@ function stopMenuAudio() {
 function toggleAudio() {
     menuBtnOnClick();
     let currentState = musicButtons[0].innerText;
-    let newState = currentState === "Off" ? "On" : "Off";
-   
-    musicButtons.forEach(button => {
+    let newState = (
+        currentState === "Off" ? "On" : "Off"
+    );
+    musicButtons.forEach(function (button) {
         button.innerText = newState;
     });
 
@@ -90,25 +98,26 @@ function toggleAudio() {
  * Sound when clicking on buttons
  */
 function menuBtnOnClick() {
-    let menuBtnClick = new Audio(getSounds('menu-btn-onclick'));
+    let menuBtnClick = new Audio(getSounds("menu-btn-onclick"));
     menuBtnClick.play();
 }
 
-//Mouse hover sound function that iterates to each menu btn
 /**
- * This code checks if the audio is currently playing (!menuBtnClick.paused is true). 
- * If it is, the code resets the audio to the beginning (menuBtnClick.currentTime = 0) before playing it again. 
- * This ensures that when the user hover over the button multiple times in quick succession, 
- * the sound restarts instead of overlapping.
+ * Mouse hover sound function that iterates to each menu button
+ * This code checks if the audio is currently playing
+ * If it is, the code resets the audio to the beginning
+ * before playing it again.
+ * This ensures that when the user hovers over the button
+ * multiple times in quick succession, the sound restarts instead of overlapping.
  */
 function menuBtnHover() {
-    let menuBtnClick = new Audio(getSounds('menu-hover-sound'));
+    let menuBtnClick = new Audio(getSounds("menu-hover-sound"));
     let buttons = document.querySelectorAll(".menu-btn");
 
-    buttons.forEach(button => {
-        button.addEventListener('mouseover', function() {
+    buttons.forEach(function (button) {
+        button.addEventListener("mouseover", function () {
             if (!menuBtnClick.paused) {
-                menuBtnClick.currentTime = 0; //resets to the beginning
+                menuBtnClick.currentTime = 0; // resets to the beginning
             }
             menuBtnClick.play();
         });
@@ -131,15 +140,15 @@ function failedMatchAudio() {
     failedAudio.play();
 }
 
-function changeColorRed(){
-    musicButtons.forEach(button =>{
-        button.classList.remove("green")
+function changeColorRed() {
+    musicButtons.forEach(function (button) {
+        button.classList.remove("green");
         button.classList.add("red");
-    })
+    });
 }
 
-function changeColorGreen(){
-    musicButtons.forEach(button =>{
+function changeColorGreen() {
+    musicButtons.forEach(function (button) {
         button.classList.add("green");
-    })
+    });
 }
