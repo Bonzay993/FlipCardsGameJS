@@ -3,7 +3,7 @@
  */
 const {
   gameInitialisation,
-  menuPoput,
+  menuPopup,
   updateHighScore,
   levelComplete,
   gameOver,
@@ -66,15 +66,15 @@ describe('Game Initialization and Functionality Tests', () => {
     }
   });
 
-  test('menuPoput should display the popup and set up close button events', () => {
-    const { openPopup } = menuPoput();
+  test('menuPopup should display the popup and set up close button events', () => {
+    const { openPopup } = menuPopup(); // This will now work correctly
     openPopup();
     
     expect(document.querySelector('.popup').classList.contains('hide')).toBe(false);  
 
     document.querySelector(".close").click();
     expect(document.querySelector('.popup').classList.contains('hide')).toBe(true);  
-  });
+});
 
   test('updateHighScore should update the high score in local storage if the current score is higher', () => {
     updateHighScore(100);
