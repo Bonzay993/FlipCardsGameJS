@@ -365,19 +365,33 @@ body {
     width:94%;
     height:94%;
   }
+
+  .game-grid{
+    width:100%;
+  }
+  
   .game-grid img{
-    width:60px;
-    height: 60px;
+    width:130px;
+    height:130px;
   }
 
   .popup-level-complete{
     height:30%
   }
 }
-
+/*NEST HUB*/
 @media (max-width:1024px) and (max-height:600px){
   .popup-level-complete{
     height:60%
+  }
+
+  .game-grid{
+    width:32%;
+  }
+
+  .game-grid img{
+    width:60px;
+    height:60px;
   }
 }
 @media (max-width: 854px) {
