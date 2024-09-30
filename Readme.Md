@@ -104,7 +104,8 @@ Bugs found can also be reported for review here : [Issues](https://github.com/Bo
 
 ## 9. Wireframes
 
-Wireframes were designed to plan the layout of the game interface across different screen sizes.
+Wireframes were designed to plan the layout of the game interface across different screen sizes. The wireframes also follow the user stories as demonstrated below:
+
 
 - **Desktop View:** A layout with a score display on the right, the game grid in the center, and music control button on the left. On top there is the Level Number and the timer.
 - **Mobile View:** A vertically stacked layout where the score and highscore are at the bottom, and the level number and timer are positioned at the top. The game grid stays in the center as it is the main focus of the game.
